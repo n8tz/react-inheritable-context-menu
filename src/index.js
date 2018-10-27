@@ -85,7 +85,7 @@ class ContextMenu extends React.Component {
 			let rootExclusive,
 			    menuComps = findAllMenuFrom(e.target)
 				    .map(findReactComponent)
-				    .reduceRight(
+				    .reduce(
 					    ( list, cmp ) => {
 						    if ( !cmp || rootExclusive ) return list;
 						    list.push(cmp);

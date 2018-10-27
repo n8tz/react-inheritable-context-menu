@@ -99,7 +99,7 @@ var ContextMenu = function (_React$Component) {
 			document.addEventListener("contextmenu", function (e) {
 				if (currentMenu) return;
 				var rootExclusive = void 0,
-				    menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduceRight(function (list, cmp) {
+				    menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduce(function (list, cmp) {
 					if (!cmp || rootExclusive) return list;
 					list.push(cmp);
 					if (cmp.props.hasOwnProperty("root")) rootExclusive = cmp;
