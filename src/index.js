@@ -90,7 +90,6 @@ class ContextMenu extends React.Component {
 		)
 		caipiDom.addEvent(layer, 'click', ( e ) => {
 			layer.style.display = 'none';
-			ReactDOM.unmountComponentAtNode(layer)
 			openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
 			layer.innerHTML = '';
 			currentMenu     = null;
@@ -123,6 +122,7 @@ class ContextMenu extends React.Component {
 					return menuComps.map(cmp => cmp.renderWithContext(menuComps, e));
 				}
 			)
+			openPortals.push(currentMenu);
 			caipiDom.applyCss(
 				currentMenu,
 				{
@@ -166,9 +166,13 @@ class ContextMenu extends React.Component {
 		let RComp = ContextMenu.DefaultSubMenuComp, me = this;
 		
 		class RCComp extends React.Component {
+			componentWillUnmount() {
+				console.warn('unmounted')
+			}
+			
 			componentDidMount() {
 				// ...
-				me.renderWithContext_ex(this.refs.node.parentNode, menus, e);
+				openPortals.push(me.renderWithContext_ex(this.refs.node.parentNode, menus, e));
 			}
 			
 			render() {
