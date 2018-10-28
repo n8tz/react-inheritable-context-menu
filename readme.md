@@ -29,14 +29,14 @@ render(){
                a word<br/>
                <div>
                    another word<br/>
-                   <ContextMenu>
+                   <ContextMenu>  // show Menu root & menu 2
                        <ul><li>Menu 2</li></ul>
                    </ContextMenu>
                </div>
 
                <div>
                    another word<br/>
-                   <ContextMenu
+                   <ContextMenu  // show Menu root & menu 2
                       renderMenu={
                          (e, allMenuComps) => <ul><li>Menu 2</li></ul>
                       }/>
@@ -49,6 +49,12 @@ render(){
                       renderMenu={
                          (e, allMenuComps) => <ul><li>Menu 2</li></ul>
                       }/>
+               </div>
+               <div>
+                   root word<br/>
+                   <ContextMenu
+                      native         // use natve menu
+                      />
                </div>
            </div>;
 }
