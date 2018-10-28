@@ -89,10 +89,15 @@ class ContextMenu extends React.Component {
 			}
 		)
 		caipiDom.addEvent(layer, 'click', ( e ) => {
+			
 			layer.style.display = 'none';
-			openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
-			layer.innerHTML = '';
-			currentMenu     = null;
+			setTimeout(
+				tm => {
+					currentMenu = null;
+					openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
+					layer.innerHTML = '';
+				}
+			)
 		})
 		document.body.appendChild(layer);
 		document.addEventListener("contextmenu", function ( e ) {

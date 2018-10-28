@@ -104,12 +104,15 @@ var ContextMenu = function (_React$Component) {
 				display: 'none'
 			});
 			caipiDom.addEvent(layer, 'click', function (e) {
+
 				layer.style.display = 'none';
-				openPortals.forEach(function (node) {
-					return ReactDOM.unmountComponentAtNode(node);
+				setTimeout(function (tm) {
+					currentMenu = null;
+					openPortals.forEach(function (node) {
+						return ReactDOM.unmountComponentAtNode(node);
+					});
+					layer.innerHTML = '';
 				});
-				layer.innerHTML = '';
-				currentMenu = null;
 			});
 			document.body.appendChild(layer);
 			document.addEventListener("contextmenu", function (e) {
