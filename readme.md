@@ -13,7 +13,7 @@ Simple Context menu component for react showing all inherited parents menu in th
 
 ```es6
 
-import {ContextMenu] from "react-inheritable-contextmenu";
+import {ContextMenu} from "react-inheritable-contextmenu";
 
 // override default rendered comps
 ContextMenu.DefaultMenuComp = Paper
@@ -24,13 +24,13 @@ ContextMenu.DefaultSubMenuComp = 'ul'
 render(){
     return <div>
                <ContextMenu>
-                   <ul><li>Menu root</li></ul>
+                   <li>Menu root</li>
                </ContextMenu>
                a word<br/>
                <div>
                    another word<br/>
                    <ContextMenu>  // show Menu root & menu 2
-                       <ul><li>Menu 2</li></ul>
+                       <li>Menu 2</li>
                    </ContextMenu>
                </div>
 
@@ -38,7 +38,7 @@ render(){
                    another word<br/>
                    <ContextMenu  // show Menu root & menu 2
                       renderMenu={
-                         (e, allMenuComps) => <ul><li>Menu 2</li></ul>
+                         (e, allMenuComps) => <li>Menu 2</li>
                       }/>
                </div>
 
@@ -47,7 +47,7 @@ render(){
                    <ContextMenu
                       root         // don't show parent's menu
                       renderMenu={
-                         (e, allMenuComps) => <ul><li>Menu 2</li></ul>
+                         (e, allMenuComps) => <li>Menu 2</li>
                       }/>
                </div>
                <div>
