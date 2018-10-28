@@ -181,11 +181,6 @@ var ContextMenu = function (_React$Component) {
 				}
 
 				_createClass(RCComp, [{
-					key: 'componentWillUnmount',
-					value: function componentWillUnmount() {
-						console.warn('unmounted');
-					}
-				}, {
 					key: 'componentDidMount',
 					value: function componentDidMount() {
 						// ...

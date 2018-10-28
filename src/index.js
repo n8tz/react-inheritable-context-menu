@@ -166,9 +166,6 @@ class ContextMenu extends React.Component {
 		let RComp = ContextMenu.DefaultSubMenuComp, me = this;
 		
 		class RCComp extends React.Component {
-			componentWillUnmount() {
-				console.warn('unmounted')
-			}
 			
 			componentDidMount() {
 				// ...
