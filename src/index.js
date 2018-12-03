@@ -1,28 +1,11 @@
 /*
- * Copyright (c)  2018 Wise Wild Web .
+ * Copyright (c) 2018. Wise Wild Web
  *
- *  MIT License
+ * This File is part of Caipi and under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
+ * Full license at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
  *
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- *
- * @author : Nathanael Braun
- * @contact : caipilabs@gmail.com
+ *  @author : Nathanael Braun
+ *  @contact : caipilabs@gmail.com
  */
 
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer;
@@ -31,6 +14,7 @@ var
     React                      = require('react'),
     ReactDOM                   = require('react-dom'),
     caipiDom                   = require('caipi-dom'),
+
     findAllMenuFrom            = function ( el ) {
 	    let menus = [];
 	    do {
@@ -66,7 +50,26 @@ var
     layer,
     currentMenu,
     openPortals                = [],
-    initialized;
+    initialized,
+    airRender                  = ( render, menus, e ) => {
+	    return ( Comp ) => {
+		
+		    return class RCComp extends React.Component {
+			
+			    componentDidMount() {
+				    // ...
+				    openPortals.push(render(this.refs.node.parentNode, menus, e));
+			    }
+			
+			    render() {
+				    return <Comp>
+					    <span ref={ "node" } style={ { display: "none" } }/>
+				    </Comp>
+			    }
+		    }
+	    }
+    }
+;
 
 
 class ContextMenu extends React.Component {
@@ -96,7 +99,8 @@ class ContextMenu extends React.Component {
 					currentMenu = null;
 					openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
 					layer.innerHTML = '';
-				}
+				},
+				500
 			)
 		})
 		document.body.appendChild(layer);
@@ -162,28 +166,13 @@ class ContextMenu extends React.Component {
 		});
 	}
 	
-	constructor() {
+	constructor( props ) {
 		super(...arguments)
 		!initialized && ContextMenu.initContextListeners(this);
 	}
 	
 	renderWithContext( menus, e ) {
-		let RComp = ContextMenu.DefaultSubMenuComp, me = this;
-		
-		class RCComp extends React.Component {
-			
-			componentDidMount() {
-				// ...
-				openPortals.push(me.renderWithContext_ex(this.refs.node.parentNode, menus, e));
-			}
-			
-			render() {
-				return <RComp>
-					<span ref={ "node" } style={ { display: "none" } }/>
-				</RComp>
-			}
-		}
-		
+		let RCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
 		return <RCComp/>;
 	}
 	
@@ -197,18 +186,26 @@ class ContextMenu extends React.Component {
 				    //children: [this.renderMenu()]
 				    //ref: r => (obj.reactElement = r)
 			    });
-		
 		let menu = document.createElement("div");
 		target.appendChild(menu)
-		renderSubtreeIntoContainer(this, Renderer, menu);
+		renderSubtreeIntoContainer(this, Renderer, menu)
+		
 		return menu
 	}
 	
+	shouldComponentUpdate( props, ns ) {
+		this.renderableChilds = React.Children.toArray(props.children) || [];
+		return false;
+	}
+	
 	renderMenu( e, menus ) {
-		return this.props.renderMenu ? this.props.renderMenu(e, menus) : <div>{ this.props.children || '' }</div>
+		let childs = is.array(this.renderableChilds) ? this.renderableChilds : [this.renderableChilds]
+		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
+		       <React.Fragment>{ childs.map(( c, i ) => React.cloneElement(c, { key: i })) || '' }</React.Fragment>
 	}
 	
 	render() {
+		this.renderableChilds = React.Children.toArray(this.props.children) || [];
 		return <div className={ "caipiContextMenuComp" } style={ { display: "none" } }></div>;
 	}
 }

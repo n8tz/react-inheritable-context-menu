@@ -15,30 +15,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 /*
- * Copyright (c)  2018 Wise Wild Web .
+ * Copyright (c) 2018. Wise Wild Web
  *
- *  MIT License
+ * This File is part of Caipi and under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
+ * Full license at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
  *
- *  Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
- *  in the Software without restriction, including without limitation the rights
- *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *  copies of the Software, and to permit persons to whom the Software is
- *  furnished to do so, subject to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be included in all
- *  copies or substantial portions of the Software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *  SOFTWARE.
- *
- * @author : Nathanael Braun
- * @contact : caipilabs@gmail.com
+ *  @author : Nathanael Braun
+ *  @contact : caipilabs@gmail.com
  */
 
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer;
@@ -84,10 +67,43 @@ var is = require('is'),
     layer,
     currentMenu,
     openPortals = [],
-    initialized;
+    initialized,
+    airRender = function airRender(render, menus, e) {
+	return function (Comp) {
 
-var ContextMenu = function (_React$Component) {
-	_inherits(ContextMenu, _React$Component);
+		return function (_React$Component) {
+			_inherits(RCComp, _React$Component);
+
+			function RCComp() {
+				_classCallCheck(this, RCComp);
+
+				return _possibleConstructorReturn(this, (RCComp.__proto__ || Object.getPrototypeOf(RCComp)).apply(this, arguments));
+			}
+
+			_createClass(RCComp, [{
+				key: 'componentDidMount',
+				value: function componentDidMount() {
+					// ...
+					openPortals.push(render(this.refs.node.parentNode, menus, e));
+				}
+			}, {
+				key: 'render',
+				value: function render() {
+					return React.createElement(
+						Comp,
+						null,
+						React.createElement('span', { ref: "node", style: { display: "none" } })
+					);
+				}
+			}]);
+
+			return RCComp;
+		}(React.Component);
+	};
+};
+
+var ContextMenu = function (_React$Component2) {
+	_inherits(ContextMenu, _React$Component2);
 
 	_createClass(ContextMenu, null, [{
 		key: 'initContextListeners',
@@ -112,7 +128,7 @@ var ContextMenu = function (_React$Component) {
 						return ReactDOM.unmountComponentAtNode(node);
 					});
 					layer.innerHTML = '';
-				});
+				}, 500);
 			});
 			document.body.appendChild(layer);
 			document.addEventListener("contextmenu", function (e) {
@@ -159,50 +175,19 @@ var ContextMenu = function (_React$Component) {
 		}
 	}]);
 
-	function ContextMenu() {
+	function ContextMenu(props) {
 		_classCallCheck(this, ContextMenu);
 
-		var _this = _possibleConstructorReturn(this, (ContextMenu.__proto__ || Object.getPrototypeOf(ContextMenu)).apply(this, arguments));
+		var _this2 = _possibleConstructorReturn(this, (ContextMenu.__proto__ || Object.getPrototypeOf(ContextMenu)).apply(this, arguments));
 
-		!initialized && ContextMenu.initContextListeners(_this);
-		return _this;
+		!initialized && ContextMenu.initContextListeners(_this2);
+		return _this2;
 	}
 
 	_createClass(ContextMenu, [{
 		key: 'renderWithContext',
 		value: function renderWithContext(menus, e) {
-			var RComp = ContextMenu.DefaultSubMenuComp,
-			    me = this;
-
-			var RCComp = function (_React$Component2) {
-				_inherits(RCComp, _React$Component2);
-
-				function RCComp() {
-					_classCallCheck(this, RCComp);
-
-					return _possibleConstructorReturn(this, (RCComp.__proto__ || Object.getPrototypeOf(RCComp)).apply(this, arguments));
-				}
-
-				_createClass(RCComp, [{
-					key: 'componentDidMount',
-					value: function componentDidMount() {
-						// ...
-						openPortals.push(me.renderWithContext_ex(this.refs.node.parentNode, menus, e));
-					}
-				}, {
-					key: 'render',
-					value: function render() {
-						return React.createElement(
-							RComp,
-							null,
-							React.createElement('span', { ref: "node", style: { display: "none" } })
-						);
-					}
-				}]);
-
-				return RCComp;
-			}(React.Component);
-
+			var RCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
 			return React.createElement(RCComp, null);
 		}
 	}, {
@@ -217,24 +202,34 @@ var ContextMenu = function (_React$Component) {
 				//children: [this.renderMenu()]
 				//ref: r => (obj.reactElement = r)
 			});
-
 			var menu = document.createElement("div");
 			target.appendChild(menu);
 			renderSubtreeIntoContainer(this, Renderer, menu);
+
 			return menu;
+		}
+	}, {
+		key: 'shouldComponentUpdate',
+		value: function shouldComponentUpdate(props, ns) {
+			this.renderableChilds = React.Children.toArray(props.children) || [];
+			return false;
 		}
 	}, {
 		key: 'renderMenu',
 		value: function renderMenu(e, menus) {
-			return this.props.renderMenu ? this.props.renderMenu(e, menus) : React.createElement(
-				'div',
+			var childs = is.array(this.renderableChilds) ? this.renderableChilds : [this.renderableChilds];
+			return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) : React.createElement(
+				React.Fragment,
 				null,
-				this.props.children || ''
+				childs.map(function (c, i) {
+					return React.cloneElement(c, { key: i });
+				}) || ''
 			);
 		}
 	}, {
 		key: 'render',
 		value: function render() {
+			this.renderableChilds = React.Children.toArray(this.props.children) || [];
 			return React.createElement('div', { className: "caipiContextMenuComp", style: { display: "none" } });
 		}
 	}]);
