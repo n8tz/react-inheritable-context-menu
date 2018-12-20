@@ -10,71 +10,71 @@
 
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer;
 var
-    is                         = require('is'),
-    React                      = require('react'),
-    ReactDOM                   = require('react-dom'),
-    caipiDom                   = require('caipi-dom'),
-
-    findAllMenuFrom            = function ( el ) {
-	    let menus = [];
-	    do {
-		    menus.push(...[...el.children].filter(node => node.classList.contains("caipiContextMenuComp")))
-		    el = el.parentNode;
-	    } while ( el && el !== document );
-	    return menus;
-    },
-    findReactComponent         = function ( el ) {
-	    let fiberNode;
-	    for ( const key in el ) {
-		    if ( key.startsWith('__reactInternalInstance$') ) {
-			    fiberNode = el[key];
-			
-			    return fiberNode && fiberNode.return && fiberNode.return.stateNode;
-		    }
-	    }
-	    return null;
-    },
-    renderMenu                 = ( target, menus, renderChilds ) => {
-	    let RComp    = ContextMenu.DefaultMenuComp,
-	        Renderer = React.cloneElement(
-		        <RComp>
-			        { renderChilds() }
-		        </RComp>);
-	
-	    let menu = document.createElement("div");
-	    target.appendChild(menu)
-	
-	    renderSubtreeIntoContainer(menus[0], Renderer, menu);
-	    return menu
-    },
-    layer,
-    currentMenu,
-    openPortals                = [],
-    initialized,
-    airRender                  = ( render, menus, e ) => {
-	    return ( Comp ) => {
+	is                         = require('is'),
+	React                      = require('react'),
+	ReactDOM                   = require('react-dom'),
+	caipiDom                   = require('caipi-dom'),
+	findAllMenuFrom            = function ( el ) {
+		let menus = [];
+		do {
+			menus.push(...[...el.children].filter(node => node.classList.contains("caipiContextMenuComp")))
+			el = el.parentNode;
+		} while ( el && el !== document );
+		return menus;
+	},
+	findReactComponent         = function ( el ) {
+		let fiberNode;
+		for ( const key in el ) {
+			if ( key.startsWith('__reactInternalInstance$') ) {
+				fiberNode = el[key];
+				
+				return fiberNode && fiberNode.return && fiberNode.return.stateNode;
+			}
+		}
+		return null;
+	},
+	renderMenu                 = ( target, menus, renderChilds ) => {
+		let RComp    = ContextMenu.DefaultMenuComp,
+		    Renderer = React.cloneElement(
+			    <RComp>
+				    { renderChilds() }
+			    </RComp>);
 		
-		    return class RCComp extends React.Component {
+		let menu = document.createElement("div");
+		target.appendChild(menu)
+		
+		renderSubtreeIntoContainer(menus[0], Renderer, menu);
+		return menu
+	},
+	layer,
+	currentMenu,
+	openPortals                = [],
+	initialized,
+	airRender                  = ( render, menus, e ) => {
+		return ( Comp ) => {
 			
-			    componentDidMount() {
-				    // ...
-				    openPortals.push(render(this.refs.node.parentNode, menus, e));
-			    }
-			
-			    render() {
-				    return <Comp>
-					    <span ref={ "node" } style={ { display: "none" } }/>
-				    </Comp>
-			    }
-		    }
-	    }
-    }
+			return class RCComp extends React.Component {
+				
+				componentDidMount() {
+					// ...
+					openPortals.push(render(this.refs.node.parentNode, menus, e));
+				}
+				
+				render() {
+					return <Comp>
+						<span ref={ "node" } style={ { display: "none" } }/>
+					</Comp>
+				}
+			}
+		}
+	}
 ;
 
 
 class ContextMenu extends React.Component {
-	static DefaultMenuComp    = 'div'
-	static DefaultSubMenuComp = 'div'
+	static DefaultZIndex      = 1000;
+	static DefaultMenuComp    = 'div';
+	static DefaultSubMenuComp = 'div';
 	
 	static initContextListeners() {
 		initialized = true;
@@ -88,6 +88,7 @@ class ContextMenu extends React.Component {
 				height  : "100%",
 				top     : "0",
 				left    : "0",
+				zIndex  : ContextMenu.DefaultZIndex,
 				display : 'none'
 			}
 		)
@@ -186,7 +187,7 @@ class ContextMenu extends React.Component {
 				    //children: [this.renderMenu()]
 				    //ref: r => (obj.reactElement = r)
 			    });
-		let menu = document.createElement("div");
+		let menu     = document.createElement("div");
 		target.appendChild(menu)
 		renderSubtreeIntoContainer(this, Renderer, menu)
 		

@@ -117,6 +117,7 @@ var ContextMenu = function (_React$Component2) {
 				height: "100%",
 				top: "0",
 				left: "0",
+				zIndex: ContextMenu.DefaultZIndex,
 				display: 'none'
 			});
 			caipiDom.addEvent(layer, 'click', function (e) {
@@ -237,6 +238,7 @@ var ContextMenu = function (_React$Component2) {
 	return ContextMenu;
 }(React.Component);
 
+ContextMenu.DefaultZIndex = 1000;
 ContextMenu.DefaultMenuComp = 'div';
 ContextMenu.DefaultSubMenuComp = 'div';
 exports.default = { ContextMenu: ContextMenu };
