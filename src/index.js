@@ -17,7 +17,7 @@ var
 	findAllMenuFrom            = function ( el ) {
 		let menus = [];
 		do {
-			menus.push(...[...el.children].filter(node => node.classList.contains("caipiContextMenuComp")))
+			menus.push(...[...el.children].filter(node => node.classList.contains("inContextMenuComp")))
 			el = el.parentNode;
 		} while ( el && el !== document );
 		return menus;
@@ -141,7 +141,7 @@ class ContextMenu extends React.Component {
 					visibility: 'hidden'
 				}
 			)
-			caipiDom.addCls(currentMenu, "caipiContextMenu")
+			caipiDom.addCls(currentMenu, "inContextMenu")
 			
 			requestAnimationFrame(
 				() => {
@@ -207,7 +207,7 @@ class ContextMenu extends React.Component {
 	
 	render() {
 		this.renderableChilds = React.Children.toArray(this.props.children) || [];
-		return <div className={ "caipiContextMenuComp" } style={ { display: "none" } }></div>;
+		return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
 	}
 }
 

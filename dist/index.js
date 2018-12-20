@@ -33,7 +33,7 @@ var is = require('is'),
 	var menus = [];
 	do {
 		menus.push.apply(menus, _toConsumableArray([].concat(_toConsumableArray(el.children)).filter(function (node) {
-			return node.classList.contains("caipiContextMenuComp");
+			return node.classList.contains("inContextMenuComp");
 		})));
 		el = el.parentNode;
 	} while (el && el !== document);
@@ -155,7 +155,7 @@ var ContextMenu = function (_React$Component2) {
 					display: "flex",
 					visibility: 'hidden'
 				});
-				caipiDom.addCls(currentMenu, "caipiContextMenu");
+				caipiDom.addCls(currentMenu, "inContextMenu");
 
 				requestAnimationFrame(function () {
 					var x = e.x,
@@ -231,7 +231,7 @@ var ContextMenu = function (_React$Component2) {
 		key: 'render',
 		value: function render() {
 			this.renderableChilds = React.Children.toArray(this.props.children) || [];
-			return React.createElement('div', { className: "caipiContextMenuComp", style: { display: "none" } });
+			return React.createElement('div', { className: "inContextMenuComp", style: { display: "none" } });
 		}
 	}]);
 
