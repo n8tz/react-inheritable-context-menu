@@ -83,31 +83,36 @@ class ContextMenu extends React.Component {
 		caipiDom.applyCss(
 			layer,
 			{
-				position: "absolute",
-				width   : "100%",
-				height  : "100%",
-				top     : "0",
-				left    : "0",
-				zIndex  : ContextMenu.DefaultZIndex,
-				display : 'none'
+				pointerEvents: "none",
+				position     : "absolute",
+				width        : "100%",
+				height       : "100%",
+				top          : "0",
+				left         : "0",
+				zIndex       : ContextMenu.DefaultZIndex,
+				display      : 'none'
 			}
 		)
-		caipiDom.addEvent(layer, 'click', ( e ) => {
-			
+		let destroy = ( e, now ) => {
+			let clear           = tm => {
+				currentMenu = null;
+				openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
+				layer.innerHTML = '';
+			};
 			layer.style.display = 'none';
-			setTimeout(
-				tm => {
-					currentMenu = null;
-					openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
-					layer.innerHTML = '';
-				},
+			!now && setTimeout(
+				clear,
 				500
-			)
-		})
+			) || clear()
+			caipiDom.removeEvent(window, 'resize', resize);
+			caipiDom.removeEvent(document.body, 'click', destroy)
+			
+		}, resize
 		document.body.appendChild(layer);
 		document.addEventListener("contextmenu", function ( e ) {
 			if ( currentMenu )
-				return;
+				destroy(null, true);
+			
 			let rootExclusive,
 			    menuComps = findAllMenuFrom(e.target)
 				    .map(findReactComponent)
@@ -120,11 +125,28 @@ class ContextMenu extends React.Component {
 						    return list
 					    },
 					    []
-				    );
+				    ), x, y,
+			    mw        = document.body.offsetWidth,
+			    mh        = document.body.offsetHeight;
 			if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
 				return;
+			caipiDom.addEvent(document.body, 'click', destroy)
 			layer.style.display = 'block';
 			
+			caipiDom.addEvent(window, 'resize', resize = function () {
+				x  = (x / mw) * document.body.offsetWidth;
+				y  = (y / mh) * document.body.offsetHeight;
+				mw = document.body.offsetWidth;
+				mh = document.body.offsetHeight;
+				caipiDom.applyCss(
+					currentMenu,
+					{
+						top : y,
+						left: x,
+					}
+				)
+				console.log('ahaha', x, y)
+			});
 			currentMenu = renderMenu(
 				layer,
 				menuComps,
@@ -136,19 +158,20 @@ class ContextMenu extends React.Component {
 			caipiDom.applyCss(
 				currentMenu,
 				{
-					position  : "absolute",
-					display   : "flex",
-					visibility: 'hidden'
+					pointerEvents: "all",
+					position     : "absolute",
+					display      : "flex",
+					visibility   : 'hidden'
 				}
 			)
 			caipiDom.addCls(currentMenu, "inContextMenu")
 			
 			requestAnimationFrame(
-				() => {
-					let x = e.x, y = e.y;
-					if ( (x + currentMenu.offsetWidth) > document.body.offsetWidth )
+				function () {
+					x = e.x, y = e.y;
+					if ( (x + currentMenu.offsetWidth) > mw )
 						x -= currentMenu.offsetWidth;
-					if ( (y + currentMenu.offsetHeight) > document.body.offsetHeight )
+					if ( (y + currentMenu.offsetHeight) > mh )
 						y -= currentMenu.offsetHeight;
 					
 					caipiDom.applyCss(
@@ -156,6 +179,8 @@ class ContextMenu extends React.Component {
 						{
 							top       : y,
 							left      : x,
+							width     : currentMenu.offsetWidth + 'px',
+							height    : currentMenu.offsetHeight + 'px',
 							visibility: 'visible'
 						}
 					)
