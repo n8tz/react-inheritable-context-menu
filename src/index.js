@@ -135,7 +135,7 @@ class ContextMenu extends React.Component {
 			
 			caipiDom.addEvent(window, 'resize', resize = function () {
 				x  = (x / mw) * document.body.offsetWidth;
-				y  = (y / mh) * document.body.offsetHeight;
+				//y  = (y / mh) * document.body.offsetHeight;
 				mw = document.body.offsetWidth;
 				mh = document.body.offsetHeight;
 				caipiDom.applyCss(
@@ -168,7 +168,7 @@ class ContextMenu extends React.Component {
 			
 			requestAnimationFrame(
 				function () {
-					x = e.x, y = e.y;
+					x = e.x, y = e.y+document.body.scrollTop;
 					if ( (x + currentMenu.offsetWidth) > mw )
 						x -= currentMenu.offsetWidth;
 					if ( (y + currentMenu.offsetHeight) > mh )
