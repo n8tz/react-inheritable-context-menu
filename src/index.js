@@ -168,7 +168,7 @@ class ContextMenu extends React.Component {
 			
 			requestAnimationFrame(
 				function () {
-					x = e.x, y = e.y+document.body.scrollTop;
+					x = e.x, y = e.y + document.body.scrollTop;
 					if ( (x + currentMenu.offsetWidth) > mw )
 						x -= currentMenu.offsetWidth;
 					if ( (y + currentMenu.offsetHeight) > mh )
