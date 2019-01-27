@@ -25786,9 +25786,9 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "root"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu root")), "contextual menu in there", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu root")), "Root contextual menu available here", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "block"
-      }, "another one here which inherit the 1st", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu 2"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, "another one which inherit the 1st", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu 2"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "block"
       }, "same using some contextual render fn", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"] // show Menu root & menu 2
       , {

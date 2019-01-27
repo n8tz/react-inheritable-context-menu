@@ -26,41 +26,46 @@ ContextMenu.DefaultSubMenuComp = 'ul'
 //...
 
 render(){
-    return <div>
-               <ContextMenu>
-                   <li>Menu root</li>
-               </ContextMenu>
-               a word<br/>
-               <div>
-                   another word<br/>
-                   <ContextMenu>  // show Menu root & menu 2
-                       <li>Menu 2</li>
-                   </ContextMenu>
-               </div>
+    return <div className={ "root" }>
+        <ContextMenu>
+            <div>Menu root</div>
+        </ContextMenu>
+        Root contextual menu available here
+        <br/>
+        <br/>
+        <br/>
+        <div className={ "block" }>
+            another one which inherit the 1st<br/>
+            <ContextMenu>
+                <div>Menu 2</div>
+            </ContextMenu>
+        </div>
 
-               <div>
-                   another word<br/>
-                   <ContextMenu  // show Menu root & menu 2
-                      renderMenu={
-                         (e, allMenuComps) => <li>Menu 2</li>
-                      }/>
-               </div>
-
-               <div>
-                   root word<br/>
-                   <ContextMenu
-                      root         // don't show parent's menu
-                      renderMenu={
-                         (e, allMenuComps) => <li>Menu 2</li>
-                      }/>
-               </div>
-               <div>
-                   root word<br/>
-                   <ContextMenu
-                      native         // use natve menu
-                      />
-               </div>
-           </div>;
+        <div className={ "block" }>
+            same using some contextual render fn<br/>
+            <ContextMenu  // show Menu root & menu 2
+                renderMenu={
+                    ( e, allMenuComps ) => <div>Menu 2 <i>x:{ e.x } x:{ e.y }</i></div>
+                }/>
+        </div>
+        <div className={ "block" }>
+            Without parent's menu<br/>
+            <ContextMenu
+                root         // don't show parent's menu
+                renderMenu={
+                    ( e, allMenuComps ) => <div>Menu <i>x:{ e.x } x:{ e.y }</i></div>
+                }/>
+        </div>
+        <div className={ "block" }>
+            native menu<br/>
+            <ContextMenu
+                native         // use natve menu
+            />
+        </div>
+        <br/>
+        <br/>
+        <br/>
+    </div>;
 }
 
 //...
