@@ -15,7 +15,7 @@ Sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheri
 
 # Usage
 
-```es6
+```jsx
 
 import {ContextMenu} from "react-inheritable-contextmenu";
 
