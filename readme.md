@@ -1,9 +1,9 @@
 <h1 align="center">react-inheritable-contextmenu<h1>
 
+<p align="center"><img src="assets/demo.gif" alt="Samples" /><p>
+
 <a href="https://www.npmjs.com/package/react-inheritable-contextmenu">
 <img src="https://img.shields.io/npm/v/react-inheritable-contextmenu.svg" alt="Build Status" /></a>
-
-<p align="center" style="font-size:25px"><img src="assets/demo.gif" alt="Samples" /><p>
 
 Simple Context menu component for react showing all inherited parents menu in theirs contexts.
 
