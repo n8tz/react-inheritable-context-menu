@@ -18,7 +18,10 @@ import {ContextMenu} from "."
 import "./samples.scss"
 
 console.log("Dev !")
-ContextMenu.DefaultMenuComp = ( { children } ) => <div className={ "contextMenu" }>{ children || '' }</div>;
+ContextMenu.DefaultMenuComp = ( { children } ) =>
+	<div className={ "contextMenu" }>
+		<React.Fragment>{ children || '' }</React.Fragment>
+	</div>;
 
 class Sample extends React.Component {
 	render() {

@@ -8,6 +8,10 @@
  *  @contact : n8tz.js@gmail.com
  */
 
+/**
+ * This code need nome smart refactoring
+ */
+
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
     is                         = require('is'),
     React                      = require('react'),
@@ -53,7 +57,7 @@ var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeInto
     airRender                  = ( render, menus, e ) => {
 	    return ( Comp ) => {
 		
-		    return class RCComp extends React.Component {
+		    return class AirRCComp extends React.Component {
 			
 			    componentDidMount() {
 				    // ...
@@ -79,6 +83,7 @@ class ContextMenu extends React.Component {
 	static initContextListeners() {
 		initialized = true;
 		
+		// init overlay
 		layer = document.createElement("div");
 		Object.assign(layer, {
 			pointerEvents: "none",
@@ -90,7 +95,10 @@ class ContextMenu extends React.Component {
 			zIndex       : ContextMenu.DefaultZIndex,
 			display      : 'none'
 		});
+		document.body.appendChild(layer);
+		
 		let destroy = ( e, now ) => {
+			
 			let clear           = tm => {
 				currentMenu = null;
 				openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
@@ -104,87 +112,107 @@ class ContextMenu extends React.Component {
 			window.removeEventListener('resize', resize);
 			document.body.addEventListener('click', destroy)
 			
-		}, resize
-		document.body.appendChild(layer);
-		document.addEventListener("contextmenu", function ( e ) {
-			if ( currentMenu )
-				destroy(null, true);
-			
-			let rootExclusive,
-			    menuComps = findAllMenuFrom(e.target)
-				    .map(findReactComponent)
-				    .reduce(
-					    ( list, cmp ) => {
-						    if ( !cmp || rootExclusive ) return list;
-						    list.push(cmp);
-						    if ( cmp.props.hasOwnProperty("root") )
-							    rootExclusive = cmp;
-						    return list
-					    },
-					    []
-				    ), x, y,
-			    mw        = document.body.offsetWidth,
-			    mh        = document.body.offsetHeight;
-			if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
-				return;
-			document.body.addEventListener('click', destroy)
-			layer.style.display = 'block';
-			
-			window.addEventListener('resize', resize = function () {
-				x  = (x / mw) * document.body.offsetWidth;
-				//y  = (y / mh) * document.body.offsetHeight;
-				mw = document.body.offsetWidth;
-				mh = document.body.offsetHeight;
+		}, resize;
+		
+		// on right click
+		document.addEventListener(
+			"contextmenu",
+			function ( e ) {
+				if ( currentMenu )
+					destroy(null, true);
+				
+				//
+				let rootExclusive,
+				    menuComps = findAllMenuFrom(e.target)
+					    .map(findReactComponent)
+					    .reduce(
+						    ( list, cmp ) => {
+							    if ( !cmp || rootExclusive ) return list;
+							    list.push(cmp);
+							    if ( cmp.props.hasOwnProperty("root") )
+								    rootExclusive = cmp;
+							    return list
+						    },
+						    []
+					    ),
+				    x, y,
+				    mw        = document.body.offsetWidth,
+				    mh        = document.body.offsetHeight;
+				
+				if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
+					return;
+				
+				
+				document.body.addEventListener('click', destroy)
+				
+				layer.style.display = 'block';
+				
+				window.addEventListener(
+					'resize',
+					resize = () => {
+						x  = (x / mw) * document.body.offsetWidth;
+						//y  = (y / mh) * document.body.offsetHeight;
+						mw = document.body.offsetWidth;
+						mh = document.body.offsetHeight;
+						Object.assign(
+							currentMenu.style,
+							{
+								top : y + 'px',
+								left: x + 'px',
+							}
+						)
+					});
+				
+				currentMenu = renderMenu(
+					layer,
+					menuComps,
+					() => {
+						return <React.Fragment>{ menuComps.map(( cmp, i ) => cmp.renderWithContext(menuComps, e, i)) }</React.Fragment>;
+					}
+				);
+				
+				openPortals.push(currentMenu);
+				
 				Object.assign(
 					currentMenu.style,
 					{
-						top : y + 'px',
-						left: x + 'px',
+						pointerEvents: "all",
+						position     : "absolute",
+						display      : "flex",
+						visibility   : 'hidden'
 					}
-				)
+				);
+				
+				currentMenu.className = "inContextMenu";
+				
+				// show on next animaton frame
+				requestAnimationFrame(
+					function () {
+						x = e.x;
+						y = e.y + document.body.scrollTop;
+						
+						if ( (x + currentMenu.offsetWidth) > mw )
+							x -= currentMenu.offsetWidth;
+						if ( (y + currentMenu.offsetHeight) > mh )
+							y -= currentMenu.offsetHeight;
+						
+						Object.assign(
+							currentMenu.style,
+							{
+								top       : y + 'px',
+								left      : x + 'px',
+								width     : currentMenu.offsetWidth + 'px',
+								height    : currentMenu.offsetHeight + 'px',
+								visibility: 'visible'
+							}
+						);
+					}
+				);
+				
+				e.preventDefault()
+				e.stopPropagation()
+				return false;
 			});
-			currentMenu = renderMenu(
-				layer,
-				menuComps,
-				() => {
-					return menuComps.map(cmp => cmp.renderWithContext(menuComps, e));
-				}
-			);
-			openPortals.push(currentMenu);
-			Object.assign(
-				currentMenu.style,
-				{
-					pointerEvents: "all",
-					position     : "absolute",
-					display      : "flex",
-					visibility   : 'hidden'
-				}
-			)
-			currentMenu.className = "inContextMenu";
-			
-			requestAnimationFrame(
-				function () {
-					x = e.x, y = e.y + document.body.scrollTop;
-					if ( (x + currentMenu.offsetWidth) > mw )
-						x -= currentMenu.offsetWidth;
-					if ( (y + currentMenu.offsetHeight) > mh )
-						y -= currentMenu.offsetHeight;
-					
-					Object.assign(currentMenu.style,
-					              {
-						              top       : y + 'px',
-						              left      : x + 'px',
-						              width     : currentMenu.offsetWidth + 'px',
-						              height    : currentMenu.offsetHeight + 'px',
-						              visibility: 'visible'
-					              }
-					)
-				}
-			)
-			e.preventDefault()
-			e.stopPropagation()
-			return false;
-		});
 	}
 	
 	constructor( props ) {
@@ -192,26 +220,23 @@ class ContextMenu extends React.Component {
 		!initialized && ContextMenu.initContextListeners(this);
 	}
 	
-	renderWithContext( menus, e ) {
-		let RCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
-		return <RCComp/>;
+	renderWithContext( menus, e, current ) {
+		let CRCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
+		return <CRCComp key={ current }/>;
 	}
 	
 	renderWithContext_ex( target, menus, e ) {
 		let RComp    = ContextMenu.DefaultSubMenuComp,
 		    Renderer = React.cloneElement(
 			    <RComp>
-				    <React.Fragment>
-					    { this.renderMenu(e, menus) }
-				    </React.Fragment>
+				    <React.Fragment>{ this.renderMenu(e, menus) }</React.Fragment>
 			    </RComp>,
-			    {
-				    //children: [this.renderMenu()]
-				    //ref: r => (obj.reactElement = r)
-			    });
-		let menu     = document.createElement("div");
-		target.appendChild(menu)
-		renderSubtreeIntoContainer(this, Renderer, menu)
+			    {}),
+		    menu     = document.createElement("div");
+		
+		target.appendChild(menu);
+		
+		renderSubtreeIntoContainer(this, Renderer, menu);
 		
 		return menu
 	}
@@ -222,7 +247,7 @@ class ContextMenu extends React.Component {
 	}
 	
 	renderMenu( e, menus ) {
-		let childs = is.array(this.renderableChilds) ? this.renderableChilds : [this.renderableChilds]
+		let childs = this.renderableChilds;
 		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
 		       <React.Fragment>{ childs || '' }</React.Fragment>
 	}

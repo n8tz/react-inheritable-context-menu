@@ -25472,15 +25472,15 @@ var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "./node_mo
     return (
       /*#__PURE__*/
       function (_React$Component) {
-        _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(RCComp, _React$Component);
+        _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(AirRCComp, _React$Component);
 
-        function RCComp() {
-          _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, RCComp);
+        function AirRCComp() {
+          _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, AirRCComp);
 
-          return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(RCComp).apply(this, arguments));
+          return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(AirRCComp).apply(this, arguments));
         }
 
-        _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(RCComp, [{
+        _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(AirRCComp, [{
           key: "componentDidMount",
           value: function componentDidMount() {
             // ...
@@ -25505,7 +25505,7 @@ var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "./node_mo
           }
         }]);
 
-        return RCComp;
+        return AirRCComp;
       }(React.Component)
     );
   };
@@ -25519,7 +25519,8 @@ function (_React$Component2) {
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ContextMenu, null, [{
     key: "initContextListeners",
     value: function initContextListeners() {
-      initialized = true;
+      initialized = true; // init overlay
+
       layer = document.createElement("div");
       Object.assign(layer, {
         pointerEvents: "none",
@@ -25531,6 +25532,7 @@ function (_React$Component2) {
         zIndex: ContextMenu.DefaultZIndex,
         display: 'none'
       });
+      document.body.appendChild(layer);
 
       var destroy = function destroy(e, now) {
         var clear = function clear(tm) {
@@ -25546,11 +25548,12 @@ function (_React$Component2) {
         window.removeEventListener('resize', resize);
         document.body.addEventListener('click', destroy);
       },
-          resize;
+          resize; // on right click
 
-      document.body.appendChild(layer);
+
       document.addEventListener("contextmenu", function (e) {
-        if (currentMenu) destroy(null, true);
+        if (currentMenu) destroy(null, true); //
+
         var rootExclusive,
             menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduce(function (list, cmp) {
           if (!cmp || rootExclusive) return list;
@@ -25576,9 +25579,9 @@ function (_React$Component2) {
           });
         });
         currentMenu = renderMenu(layer, menuComps, function () {
-          return menuComps.map(function (cmp) {
-            return cmp.renderWithContext(menuComps, e);
-          });
+          return React.createElement(React.Fragment, null, menuComps.map(function (cmp, i) {
+            return cmp.renderWithContext(menuComps, e, i);
+          }));
         });
         openPortals.push(currentMenu);
         Object.assign(currentMenu.style, {
@@ -25587,9 +25590,11 @@ function (_React$Component2) {
           display: "flex",
           visibility: 'hidden'
         });
-        currentMenu.className = "inContextMenu";
+        currentMenu.className = "inContextMenu"; // show on next animaton frame
+
         requestAnimationFrame(function () {
-          x = e.x, y = e.y + document.body.scrollTop;
+          x = e.x;
+          y = e.y + document.body.scrollTop;
           if (x + currentMenu.offsetWidth > mw) x -= currentMenu.offsetWidth;
           if (y + currentMenu.offsetHeight > mh) y -= currentMenu.offsetHeight;
           Object.assign(currentMenu.style, {
@@ -25619,18 +25624,18 @@ function (_React$Component2) {
 
   _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ContextMenu, [{
     key: "renderWithContext",
-    value: function renderWithContext(menus, e) {
-      var RCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
-      return React.createElement(RCComp, null);
+    value: function renderWithContext(menus, e, current) {
+      var CRCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
+      return React.createElement(CRCComp, {
+        key: current
+      });
     }
   }, {
     key: "renderWithContext_ex",
     value: function renderWithContext_ex(target, menus, e) {
       var RComp = ContextMenu.DefaultSubMenuComp,
-          Renderer = React.cloneElement(React.createElement(RComp, null, React.createElement(React.Fragment, null, this.renderMenu(e, menus))), {//children: [this.renderMenu()]
-        //ref: r => (obj.reactElement = r)
-      });
-      var menu = document.createElement("div");
+          Renderer = React.cloneElement(React.createElement(RComp, null, React.createElement(React.Fragment, null, this.renderMenu(e, menus))), {}),
+          menu = document.createElement("div");
       target.appendChild(menu);
       renderSubtreeIntoContainer(this, Renderer, menu);
       return menu;
@@ -25644,7 +25649,7 @@ function (_React$Component2) {
   }, {
     key: "renderMenu",
     value: function renderMenu(e, menus) {
-      var childs = is.array(this.renderableChilds) ? this.renderableChilds : [this.renderableChilds];
+      var childs = this.renderableChilds;
       return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) : React.createElement(React.Fragment, null, childs || '');
     }
   }, {
@@ -25767,7 +25772,7 @@ ___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultMenuComp = function (_ref) 
   var children = _ref.children;
   return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
     className: "contextMenu"
-  }, children || '');
+  }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, children || ''));
 };
 
 var Sample =
