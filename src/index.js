@@ -5,69 +5,69 @@
  * Full license at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
  *
  *  @author : Nathanael Braun
- *  @contact : caipilabs@gmail.com
+ *  @contact : n8tz.js@gmail.com
  */
 
-var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer;
-var
-	is                         = require('is'),
-	React                      = require('react'),
-	ReactDOM                   = require('react-dom'),
-	caipiDom                   = require('caipi-dom'),
-	findAllMenuFrom            = function ( el ) {
-		let menus = [];
-		do {
-			menus.push(...[...el.children].filter(node => node.classList.contains("inContextMenuComp")))
-			el = el.parentNode;
-		} while ( el && el !== document );
-		return menus;
-	},
-	findReactComponent         = function ( el ) {
-		let fiberNode;
-		for ( const key in el ) {
-			if ( key.startsWith('__reactInternalInstance$') ) {
-				fiberNode = el[key];
-				
-				return fiberNode && fiberNode.return && fiberNode.return.stateNode;
-			}
-		}
-		return null;
-	},
-	renderMenu                 = ( target, menus, renderChilds ) => {
-		let RComp    = ContextMenu.DefaultMenuComp,
-		    Renderer = React.cloneElement(
-			    <RComp>
-				    { renderChilds() }
-			    </RComp>);
-		
-		let menu = document.createElement("div");
-		target.appendChild(menu)
-		
-		renderSubtreeIntoContainer(menus[0], Renderer, menu);
-		return menu
-	},
-	layer,
-	currentMenu,
-	openPortals                = [],
-	initialized,
-	airRender                  = ( render, menus, e ) => {
-		return ( Comp ) => {
+var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
+    is                         = require('is'),
+    React                      = require('react'),
+    ReactDOM                   = require('react-dom'),
+    findAllMenuFrom            = function ( el ) {
+	    let menus = [];
+	    do {
+		    menus.push(...[...el.children].filter(node => node.classList.contains("inContextMenuComp")))
+		    el = el.parentNode;
+	    } while ( el && el !== document );
+	    return menus;
+    },
+    findReactComponent         = function ( el ) {
+	    let fiberNode;
+	    for ( const key in el ) {
+		    if ( key.startsWith('__reactInternalInstance$') ) {
+			    fiberNode = el[key];
 			
-			return class RCComp extends React.Component {
-				
-				componentDidMount() {
-					// ...
-					openPortals.push(render(this.refs.node.parentNode, menus, e));
-				}
-				
-				render() {
-					return <Comp>
-						<span ref={ "node" } style={ { display: "none" } }/>
-					</Comp>
-				}
-			}
-		}
-	}
+			    return fiberNode && fiberNode.return && fiberNode.return.stateNode;
+		    }
+	    }
+	    return null;
+    },
+    renderMenu                 = ( target, menus, renderChilds ) => {
+	    let RComp    = ContextMenu.DefaultMenuComp,
+	        Renderer = React.cloneElement(
+		        <RComp>
+			        <React.Fragment>
+				        { renderChilds() }
+			        </React.Fragment>
+		        </RComp>);
+	
+	    let menu = document.createElement("div");
+	    target.appendChild(menu)
+	
+	    renderSubtreeIntoContainer(menus[0], Renderer, menu);
+	    return menu
+    },
+    layer,
+    currentMenu,
+    openPortals                = [],
+    initialized,
+    airRender                  = ( render, menus, e ) => {
+	    return ( Comp ) => {
+		
+		    return class RCComp extends React.Component {
+			
+			    componentDidMount() {
+				    // ...
+				    openPortals.push(render(this.refs.node.parentNode, menus, e));
+			    }
+			
+			    render() {
+				    return <Comp>
+					    <span ref={ "node" } style={ { display: "none" } }/>
+				    </Comp>
+			    }
+		    }
+	    }
+    }
 ;
 
 
@@ -80,19 +80,16 @@ class ContextMenu extends React.Component {
 		initialized = true;
 		
 		layer = document.createElement("div");
-		caipiDom.applyCss(
-			layer,
-			{
-				pointerEvents: "none",
-				position     : "absolute",
-				width        : "100%",
-				height       : "100%",
-				top          : "0",
-				left         : "0",
-				zIndex       : ContextMenu.DefaultZIndex,
-				display      : 'none'
-			}
-		)
+		Object.assign(layer, {
+			pointerEvents: "none",
+			position     : "absolute",
+			width        : "100%",
+			height       : "100%",
+			top          : "0",
+			left         : "0",
+			zIndex       : ContextMenu.DefaultZIndex,
+			display      : 'none'
+		});
 		let destroy = ( e, now ) => {
 			let clear           = tm => {
 				currentMenu = null;
@@ -103,9 +100,9 @@ class ContextMenu extends React.Component {
 			!now && setTimeout(
 				clear,
 				500
-			) || clear()
-			caipiDom.removeEvent(window, 'resize', resize);
-			caipiDom.removeEvent(document.body, 'click', destroy)
+			) || clear();
+			window.removeEventListener('resize', resize);
+			document.body.addEventListener('click', destroy)
 			
 		}, resize
 		document.body.appendChild(layer);
@@ -130,22 +127,21 @@ class ContextMenu extends React.Component {
 			    mh        = document.body.offsetHeight;
 			if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
 				return;
-			caipiDom.addEvent(document.body, 'click', destroy)
+			document.body.addEventListener('click', destroy)
 			layer.style.display = 'block';
 			
-			caipiDom.addEvent(window, 'resize', resize = function () {
+			window.addEventListener('resize', resize = function () {
 				x  = (x / mw) * document.body.offsetWidth;
 				//y  = (y / mh) * document.body.offsetHeight;
 				mw = document.body.offsetWidth;
 				mh = document.body.offsetHeight;
-				caipiDom.applyCss(
-					currentMenu,
+				Object.assign(
+					currentMenu.style,
 					{
-						top : y,
-						left: x,
+						top : y + 'px',
+						left: x + 'px',
 					}
 				)
-				console.log('ahaha', x, y)
 			});
 			currentMenu = renderMenu(
 				layer,
@@ -153,10 +149,10 @@ class ContextMenu extends React.Component {
 				() => {
 					return menuComps.map(cmp => cmp.renderWithContext(menuComps, e));
 				}
-			)
+			);
 			openPortals.push(currentMenu);
-			caipiDom.applyCss(
-				currentMenu,
+			Object.assign(
+				currentMenu.style,
 				{
 					pointerEvents: "all",
 					position     : "absolute",
@@ -164,7 +160,7 @@ class ContextMenu extends React.Component {
 					visibility   : 'hidden'
 				}
 			)
-			caipiDom.addCls(currentMenu, "inContextMenu")
+			currentMenu.className = "inContextMenu";
 			
 			requestAnimationFrame(
 				function () {
@@ -174,15 +170,14 @@ class ContextMenu extends React.Component {
 					if ( (y + currentMenu.offsetHeight) > mh )
 						y -= currentMenu.offsetHeight;
 					
-					caipiDom.applyCss(
-						currentMenu,
-						{
-							top       : y,
-							left      : x,
-							width     : currentMenu.offsetWidth + 'px',
-							height    : currentMenu.offsetHeight + 'px',
-							visibility: 'visible'
-						}
+					Object.assign(currentMenu.style,
+					              {
+						              top       : y + 'px',
+						              left      : x + 'px',
+						              width     : currentMenu.offsetWidth + 'px',
+						              height    : currentMenu.offsetHeight + 'px',
+						              visibility: 'visible'
+					              }
 					)
 				}
 			)
@@ -206,7 +201,9 @@ class ContextMenu extends React.Component {
 		let RComp    = ContextMenu.DefaultSubMenuComp,
 		    Renderer = React.cloneElement(
 			    <RComp>
-				    { this.renderMenu(e, menus) }
+				    <React.Fragment>
+					    { this.renderMenu(e, menus) }
+				    </React.Fragment>
 			    </RComp>,
 			    {
 				    //children: [this.renderMenu()]
@@ -227,7 +224,7 @@ class ContextMenu extends React.Component {
 	renderMenu( e, menus ) {
 		let childs = is.array(this.renderableChilds) ? this.renderableChilds : [this.renderableChilds]
 		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
-		       <React.Fragment>{ childs.map(( c, i ) => React.cloneElement(c, { key: i })) || '' }</React.Fragment>
+		       <React.Fragment>{ childs || '' }</React.Fragment>
 	}
 	
 	render() {
@@ -237,4 +234,5 @@ class ContextMenu extends React.Component {
 }
 
 
-export default { ContextMenu };
+export {ContextMenu};
+export default ContextMenu;
