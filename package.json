@@ -14,8 +14,7 @@
       "basedOn": "Component",
       "vars": {
         "externals": "^(react|is)",
-        "webpackPatch": {
-        }
+        "webpackPatch": {}
       },
       "extend": [
         "wpi-react-hmr-ssr"

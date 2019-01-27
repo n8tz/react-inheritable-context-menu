@@ -109,10 +109,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
-/*!**********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -130,10 +130,10 @@ module.exports = _arrayWithoutHoles;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js":
-/*!**************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
-  \**************************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -149,10 +149,10 @@ module.exports = _assertThisInitialized;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js":
-/*!*******************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -166,10 +166,10 @@ module.exports = _classCallCheck;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js":
-/*!****************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js ***!
-  \****************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -193,10 +193,10 @@ module.exports = _createClass;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js":
-/*!*******************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -211,14 +211,14 @@ module.exports = _getPrototypeOf;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js":
-/*!*************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -239,10 +239,10 @@ module.exports = _inherits;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/iterableToArray.js":
-/*!********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/iterableToArray.js ***!
-  \********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -254,10 +254,10 @@ module.exports = _iterableToArray;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/nonIterableSpread.js":
-/*!**********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -269,16 +269,16 @@ module.exports = _nonIterableSpread;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
-/*!******************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
-  \******************************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(/*! ../helpers/typeof */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/typeof.js");
+var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
 
-var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -292,10 +292,10 @@ module.exports = _possibleConstructorReturn;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/setPrototypeOf.js":
-/*!*******************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -312,18 +312,18 @@ module.exports = _setPrototypeOf;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/toConsumableArray.js":
-/*!**********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
 
-var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/iterableToArray.js");
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
 
-var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
 
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
@@ -333,10 +333,10 @@ module.exports = _toConsumableArray;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/typeof.js":
-/*!***********************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/typeof.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -360,14 +360,14 @@ module.exports = _typeof;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/css-loader/index.js?!../../wpi/wpi-react-hmr-ssr/node_modules/postcss-loader/src/index.js?!../../wpi/wpi-react-hmr-ssr/node_modules/sass-loader/lib/loader.js?!./src/samples.scss":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/css-loader??ref--6-1!G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/postcss-loader/src??ref--6-2!G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/sass-loader/lib/loader.js??ref--6-3!./src/samples.scss ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/samples.scss":
+/*!*************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/lib/loader.js??ref--6-3!./src/samples.scss ***!
+  \*************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(/*! ../../../wpi/wpi-react-hmr-ssr/node_modules/css-loader/lib/css-base.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/css-loader/lib/css-base.js")(false);
+exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
 // imports
 
 
@@ -379,10 +379,10 @@ exports.push([module.i, "@charset \"UTF-8\";\n/*!\r\n * The MIT License (MIT)\r\
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/css-loader/lib/css-base.js":
-/*!*****************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/css-loader/lib/css-base.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/css-loader/lib/css-base.js":
+/*!*************************************************!*\
+  !*** ./node_modules/css-loader/lib/css-base.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -466,10 +466,840 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/object-assign/index.js":
-/*!*************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/object-assign/index.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/is/index.js":
+/*!**********************************!*\
+  !*** ./node_modules/is/index.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* globals window, HTMLElement */
+
+
+
+/**!
+ * is
+ * the definitive JavaScript type testing library
+ *
+ * @copyright 2013-2014 Enrico Marino / Jordan Harband
+ * @license MIT
+ */
+
+var objProto = Object.prototype;
+var owns = objProto.hasOwnProperty;
+var toStr = objProto.toString;
+var symbolValueOf;
+if (typeof Symbol === 'function') {
+  symbolValueOf = Symbol.prototype.valueOf;
+}
+var bigIntValueOf;
+if (typeof BigInt === 'function') {
+  bigIntValueOf = BigInt.prototype.valueOf;
+}
+var isActualNaN = function (value) {
+  return value !== value;
+};
+var NON_HOST_TYPES = {
+  'boolean': 1,
+  number: 1,
+  string: 1,
+  undefined: 1
+};
+
+var base64Regex = /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$/;
+var hexRegex = /^[A-Fa-f0-9]+$/;
+
+/**
+ * Expose `is`
+ */
+
+var is = {};
+
+/**
+ * Test general.
+ */
+
+/**
+ * is.type
+ * Test if `value` is a type of `type`.
+ *
+ * @param {*} value value to test
+ * @param {String} type type
+ * @return {Boolean} true if `value` is a type of `type`, false otherwise
+ * @api public
+ */
+
+is.a = is.type = function (value, type) {
+  return typeof value === type;
+};
+
+/**
+ * is.defined
+ * Test if `value` is defined.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if 'value' is defined, false otherwise
+ * @api public
+ */
+
+is.defined = function (value) {
+  return typeof value !== 'undefined';
+};
+
+/**
+ * is.empty
+ * Test if `value` is empty.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is empty, false otherwise
+ * @api public
+ */
+
+is.empty = function (value) {
+  var type = toStr.call(value);
+  var key;
+
+  if (type === '[object Array]' || type === '[object Arguments]' || type === '[object String]') {
+    return value.length === 0;
+  }
+
+  if (type === '[object Object]') {
+    for (key in value) {
+      if (owns.call(value, key)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  return !value;
+};
+
+/**
+ * is.equal
+ * Test if `value` is equal to `other`.
+ *
+ * @param {*} value value to test
+ * @param {*} other value to compare with
+ * @return {Boolean} true if `value` is equal to `other`, false otherwise
+ */
+
+is.equal = function equal(value, other) {
+  if (value === other) {
+    return true;
+  }
+
+  var type = toStr.call(value);
+  var key;
+
+  if (type !== toStr.call(other)) {
+    return false;
+  }
+
+  if (type === '[object Object]') {
+    for (key in value) {
+      if (!is.equal(value[key], other[key]) || !(key in other)) {
+        return false;
+      }
+    }
+    for (key in other) {
+      if (!is.equal(value[key], other[key]) || !(key in value)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  if (type === '[object Array]') {
+    key = value.length;
+    if (key !== other.length) {
+      return false;
+    }
+    while (key--) {
+      if (!is.equal(value[key], other[key])) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  if (type === '[object Function]') {
+    return value.prototype === other.prototype;
+  }
+
+  if (type === '[object Date]') {
+    return value.getTime() === other.getTime();
+  }
+
+  return false;
+};
+
+/**
+ * is.hosted
+ * Test if `value` is hosted by `host`.
+ *
+ * @param {*} value to test
+ * @param {*} host host to test with
+ * @return {Boolean} true if `value` is hosted by `host`, false otherwise
+ * @api public
+ */
+
+is.hosted = function (value, host) {
+  var type = typeof host[value];
+  return type === 'object' ? !!host[value] : !NON_HOST_TYPES[type];
+};
+
+/**
+ * is.instance
+ * Test if `value` is an instance of `constructor`.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an instance of `constructor`
+ * @api public
+ */
+
+is.instance = is['instanceof'] = function (value, constructor) {
+  return value instanceof constructor;
+};
+
+/**
+ * is.nil / is.null
+ * Test if `value` is null.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is null, false otherwise
+ * @api public
+ */
+
+is.nil = is['null'] = function (value) {
+  return value === null;
+};
+
+/**
+ * is.undef / is.undefined
+ * Test if `value` is undefined.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is undefined, false otherwise
+ * @api public
+ */
+
+is.undef = is.undefined = function (value) {
+  return typeof value === 'undefined';
+};
+
+/**
+ * Test arguments.
+ */
+
+/**
+ * is.args
+ * Test if `value` is an arguments object.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an arguments object, false otherwise
+ * @api public
+ */
+
+is.args = is.arguments = function (value) {
+  var isStandardArguments = toStr.call(value) === '[object Arguments]';
+  var isOldArguments = !is.array(value) && is.arraylike(value) && is.object(value) && is.fn(value.callee);
+  return isStandardArguments || isOldArguments;
+};
+
+/**
+ * Test array.
+ */
+
+/**
+ * is.array
+ * Test if 'value' is an array.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an array, false otherwise
+ * @api public
+ */
+
+is.array = Array.isArray || function (value) {
+  return toStr.call(value) === '[object Array]';
+};
+
+/**
+ * is.arguments.empty
+ * Test if `value` is an empty arguments object.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an empty arguments object, false otherwise
+ * @api public
+ */
+is.args.empty = function (value) {
+  return is.args(value) && value.length === 0;
+};
+
+/**
+ * is.array.empty
+ * Test if `value` is an empty array.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an empty array, false otherwise
+ * @api public
+ */
+is.array.empty = function (value) {
+  return is.array(value) && value.length === 0;
+};
+
+/**
+ * is.arraylike
+ * Test if `value` is an arraylike object.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an arguments object, false otherwise
+ * @api public
+ */
+
+is.arraylike = function (value) {
+  return !!value && !is.bool(value)
+    && owns.call(value, 'length')
+    && isFinite(value.length)
+    && is.number(value.length)
+    && value.length >= 0;
+};
+
+/**
+ * Test boolean.
+ */
+
+/**
+ * is.bool
+ * Test if `value` is a boolean.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a boolean, false otherwise
+ * @api public
+ */
+
+is.bool = is['boolean'] = function (value) {
+  return toStr.call(value) === '[object Boolean]';
+};
+
+/**
+ * is.false
+ * Test if `value` is false.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is false, false otherwise
+ * @api public
+ */
+
+is['false'] = function (value) {
+  return is.bool(value) && Boolean(Number(value)) === false;
+};
+
+/**
+ * is.true
+ * Test if `value` is true.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is true, false otherwise
+ * @api public
+ */
+
+is['true'] = function (value) {
+  return is.bool(value) && Boolean(Number(value)) === true;
+};
+
+/**
+ * Test date.
+ */
+
+/**
+ * is.date
+ * Test if `value` is a date.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a date, false otherwise
+ * @api public
+ */
+
+is.date = function (value) {
+  return toStr.call(value) === '[object Date]';
+};
+
+/**
+ * is.date.valid
+ * Test if `value` is a valid date.
+ *
+ * @param {*} value value to test
+ * @returns {Boolean} true if `value` is a valid date, false otherwise
+ */
+is.date.valid = function (value) {
+  return is.date(value) && !isNaN(Number(value));
+};
+
+/**
+ * Test element.
+ */
+
+/**
+ * is.element
+ * Test if `value` is an html element.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an HTML Element, false otherwise
+ * @api public
+ */
+
+is.element = function (value) {
+  return value !== undefined
+    && typeof HTMLElement !== 'undefined'
+    && value instanceof HTMLElement
+    && value.nodeType === 1;
+};
+
+/**
+ * Test error.
+ */
+
+/**
+ * is.error
+ * Test if `value` is an error object.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an error object, false otherwise
+ * @api public
+ */
+
+is.error = function (value) {
+  return toStr.call(value) === '[object Error]';
+};
+
+/**
+ * Test function.
+ */
+
+/**
+ * is.fn / is.function (deprecated)
+ * Test if `value` is a function.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a function, false otherwise
+ * @api public
+ */
+
+is.fn = is['function'] = function (value) {
+  var isAlert = typeof window !== 'undefined' && value === window.alert;
+  if (isAlert) {
+    return true;
+  }
+  var str = toStr.call(value);
+  return str === '[object Function]' || str === '[object GeneratorFunction]' || str === '[object AsyncFunction]';
+};
+
+/**
+ * Test number.
+ */
+
+/**
+ * is.number
+ * Test if `value` is a number.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a number, false otherwise
+ * @api public
+ */
+
+is.number = function (value) {
+  return toStr.call(value) === '[object Number]';
+};
+
+/**
+ * is.infinite
+ * Test if `value` is positive or negative infinity.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is positive or negative Infinity, false otherwise
+ * @api public
+ */
+is.infinite = function (value) {
+  return value === Infinity || value === -Infinity;
+};
+
+/**
+ * is.decimal
+ * Test if `value` is a decimal number.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a decimal number, false otherwise
+ * @api public
+ */
+
+is.decimal = function (value) {
+  return is.number(value) && !isActualNaN(value) && !is.infinite(value) && value % 1 !== 0;
+};
+
+/**
+ * is.divisibleBy
+ * Test if `value` is divisible by `n`.
+ *
+ * @param {Number} value value to test
+ * @param {Number} n dividend
+ * @return {Boolean} true if `value` is divisible by `n`, false otherwise
+ * @api public
+ */
+
+is.divisibleBy = function (value, n) {
+  var isDividendInfinite = is.infinite(value);
+  var isDivisorInfinite = is.infinite(n);
+  var isNonZeroNumber = is.number(value) && !isActualNaN(value) && is.number(n) && !isActualNaN(n) && n !== 0;
+  return isDividendInfinite || isDivisorInfinite || (isNonZeroNumber && value % n === 0);
+};
+
+/**
+ * is.integer
+ * Test if `value` is an integer.
+ *
+ * @param value to test
+ * @return {Boolean} true if `value` is an integer, false otherwise
+ * @api public
+ */
+
+is.integer = is['int'] = function (value) {
+  return is.number(value) && !isActualNaN(value) && value % 1 === 0;
+};
+
+/**
+ * is.maximum
+ * Test if `value` is greater than 'others' values.
+ *
+ * @param {Number} value value to test
+ * @param {Array} others values to compare with
+ * @return {Boolean} true if `value` is greater than `others` values
+ * @api public
+ */
+
+is.maximum = function (value, others) {
+  if (isActualNaN(value)) {
+    throw new TypeError('NaN is not a valid value');
+  } else if (!is.arraylike(others)) {
+    throw new TypeError('second argument must be array-like');
+  }
+  var len = others.length;
+
+  while (--len >= 0) {
+    if (value < others[len]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+/**
+ * is.minimum
+ * Test if `value` is less than `others` values.
+ *
+ * @param {Number} value value to test
+ * @param {Array} others values to compare with
+ * @return {Boolean} true if `value` is less than `others` values
+ * @api public
+ */
+
+is.minimum = function (value, others) {
+  if (isActualNaN(value)) {
+    throw new TypeError('NaN is not a valid value');
+  } else if (!is.arraylike(others)) {
+    throw new TypeError('second argument must be array-like');
+  }
+  var len = others.length;
+
+  while (--len >= 0) {
+    if (value > others[len]) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
+/**
+ * is.nan
+ * Test if `value` is not a number.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is not a number, false otherwise
+ * @api public
+ */
+
+is.nan = function (value) {
+  return !is.number(value) || value !== value;
+};
+
+/**
+ * is.even
+ * Test if `value` is an even number.
+ *
+ * @param {Number} value value to test
+ * @return {Boolean} true if `value` is an even number, false otherwise
+ * @api public
+ */
+
+is.even = function (value) {
+  return is.infinite(value) || (is.number(value) && value === value && value % 2 === 0);
+};
+
+/**
+ * is.odd
+ * Test if `value` is an odd number.
+ *
+ * @param {Number} value value to test
+ * @return {Boolean} true if `value` is an odd number, false otherwise
+ * @api public
+ */
+
+is.odd = function (value) {
+  return is.infinite(value) || (is.number(value) && value === value && value % 2 !== 0);
+};
+
+/**
+ * is.ge
+ * Test if `value` is greater than or equal to `other`.
+ *
+ * @param {Number} value value to test
+ * @param {Number} other value to compare with
+ * @return {Boolean}
+ * @api public
+ */
+
+is.ge = function (value, other) {
+  if (isActualNaN(value) || isActualNaN(other)) {
+    throw new TypeError('NaN is not a valid value');
+  }
+  return !is.infinite(value) && !is.infinite(other) && value >= other;
+};
+
+/**
+ * is.gt
+ * Test if `value` is greater than `other`.
+ *
+ * @param {Number} value value to test
+ * @param {Number} other value to compare with
+ * @return {Boolean}
+ * @api public
+ */
+
+is.gt = function (value, other) {
+  if (isActualNaN(value) || isActualNaN(other)) {
+    throw new TypeError('NaN is not a valid value');
+  }
+  return !is.infinite(value) && !is.infinite(other) && value > other;
+};
+
+/**
+ * is.le
+ * Test if `value` is less than or equal to `other`.
+ *
+ * @param {Number} value value to test
+ * @param {Number} other value to compare with
+ * @return {Boolean} if 'value' is less than or equal to 'other'
+ * @api public
+ */
+
+is.le = function (value, other) {
+  if (isActualNaN(value) || isActualNaN(other)) {
+    throw new TypeError('NaN is not a valid value');
+  }
+  return !is.infinite(value) && !is.infinite(other) && value <= other;
+};
+
+/**
+ * is.lt
+ * Test if `value` is less than `other`.
+ *
+ * @param {Number} value value to test
+ * @param {Number} other value to compare with
+ * @return {Boolean} if `value` is less than `other`
+ * @api public
+ */
+
+is.lt = function (value, other) {
+  if (isActualNaN(value) || isActualNaN(other)) {
+    throw new TypeError('NaN is not a valid value');
+  }
+  return !is.infinite(value) && !is.infinite(other) && value < other;
+};
+
+/**
+ * is.within
+ * Test if `value` is within `start` and `finish`.
+ *
+ * @param {Number} value value to test
+ * @param {Number} start lower bound
+ * @param {Number} finish upper bound
+ * @return {Boolean} true if 'value' is is within 'start' and 'finish'
+ * @api public
+ */
+is.within = function (value, start, finish) {
+  if (isActualNaN(value) || isActualNaN(start) || isActualNaN(finish)) {
+    throw new TypeError('NaN is not a valid value');
+  } else if (!is.number(value) || !is.number(start) || !is.number(finish)) {
+    throw new TypeError('all arguments must be numbers');
+  }
+  var isAnyInfinite = is.infinite(value) || is.infinite(start) || is.infinite(finish);
+  return isAnyInfinite || (value >= start && value <= finish);
+};
+
+/**
+ * Test object.
+ */
+
+/**
+ * is.object
+ * Test if `value` is an object.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is an object, false otherwise
+ * @api public
+ */
+is.object = function (value) {
+  return toStr.call(value) === '[object Object]';
+};
+
+/**
+ * is.primitive
+ * Test if `value` is a primitive.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a primitive, false otherwise
+ * @api public
+ */
+is.primitive = function isPrimitive(value) {
+  if (!value) {
+    return true;
+  }
+  if (typeof value === 'object' || is.object(value) || is.fn(value) || is.array(value)) {
+    return false;
+  }
+  return true;
+};
+
+/**
+ * is.hash
+ * Test if `value` is a hash - a plain object literal.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a hash, false otherwise
+ * @api public
+ */
+
+is.hash = function (value) {
+  return is.object(value) && value.constructor === Object && !value.nodeType && !value.setInterval;
+};
+
+/**
+ * Test regexp.
+ */
+
+/**
+ * is.regexp
+ * Test if `value` is a regular expression.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a regexp, false otherwise
+ * @api public
+ */
+
+is.regexp = function (value) {
+  return toStr.call(value) === '[object RegExp]';
+};
+
+/**
+ * Test string.
+ */
+
+/**
+ * is.string
+ * Test if `value` is a string.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if 'value' is a string, false otherwise
+ * @api public
+ */
+
+is.string = function (value) {
+  return toStr.call(value) === '[object String]';
+};
+
+/**
+ * Test base64 string.
+ */
+
+/**
+ * is.base64
+ * Test if `value` is a valid base64 encoded string.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if 'value' is a base64 encoded string, false otherwise
+ * @api public
+ */
+
+is.base64 = function (value) {
+  return is.string(value) && (!value.length || base64Regex.test(value));
+};
+
+/**
+ * Test base64 string.
+ */
+
+/**
+ * is.hex
+ * Test if `value` is a valid hex encoded string.
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if 'value' is a hex encoded string, false otherwise
+ * @api public
+ */
+
+is.hex = function (value) {
+  return is.string(value) && (!value.length || hexRegex.test(value));
+};
+
+/**
+ * is.symbol
+ * Test if `value` is an ES6 Symbol
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a Symbol, false otherise
+ * @api public
+ */
+
+is.symbol = function (value) {
+  return typeof Symbol === 'function' && toStr.call(value) === '[object Symbol]' && typeof symbolValueOf.call(value) === 'symbol';
+};
+
+/**
+ * is.bigint
+ * Test if `value` is an ES-proposed BigInt
+ *
+ * @param {*} value value to test
+ * @return {Boolean} true if `value` is a BigInt, false otherise
+ * @api public
+ */
+
+is.bigint = function (value) {
+  // eslint-disable-next-line valid-typeof
+  return typeof BigInt === 'function' && toStr.call(value) === '[object BigInt]' && typeof bigIntValueOf.call(value) === 'bigint';
+};
+
+module.exports = is;
+
+
+/***/ }),
+
+/***/ "./node_modules/object-assign/index.js":
+/*!*********************************************!*\
+  !*** ./node_modules/object-assign/index.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -568,10 +1398,10 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/prop-types/checkPropTypes.js":
-/*!*******************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/prop-types/checkPropTypes.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -588,7 +1418,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var printWarning = function() {};
 
 if (true) {
-  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "../../wpi/wpi-react-hmr-ssr/node_modules/prop-types/lib/ReactPropTypesSecret.js");
+  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -671,10 +1501,10 @@ module.exports = checkPropTypes;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/prop-types/lib/ReactPropTypesSecret.js":
-/*!*****************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
-  \*****************************************************************************************/
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -695,10 +1525,10 @@ module.exports = ReactPropTypesSecret;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/react-dom/cjs/react-dom.development.js":
-/*!*****************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/react-dom/cjs/react-dom.development.js ***!
-  \*****************************************************************************************/
+/***/ "./node_modules/react-dom/cjs/react-dom.development.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -720,11 +1550,11 @@ if (true) {
   (function() {
 'use strict';
 
-var React = __webpack_require__(/*! react */ "../../wpi/wpi-react-hmr-ssr/node_modules/react/index.js");
-var _assign = __webpack_require__(/*! object-assign */ "../../wpi/wpi-react-hmr-ssr/node_modules/object-assign/index.js");
-var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "../../wpi/wpi-react-hmr-ssr/node_modules/prop-types/checkPropTypes.js");
-var scheduler = __webpack_require__(/*! scheduler */ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/index.js");
-var tracing = __webpack_require__(/*! scheduler/tracing */ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/tracing.js");
+var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
+var scheduler = __webpack_require__(/*! scheduler */ "./node_modules/scheduler/index.js");
+var tracing = __webpack_require__(/*! scheduler/tracing */ "./node_modules/scheduler/tracing.js");
 
 /**
  * Use invariant() to assert state which your program assumes to be true.
@@ -20792,10 +21622,10 @@ module.exports = reactDom;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/react-dom/index.js":
-/*!*********************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/react-dom/index.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/react-dom/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/react-dom/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20831,29 +21661,29 @@ function checkDCE() {
 }
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-dom/cjs/react-dom.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/react-dom.development.js */ "./node_modules/react-dom/cjs/react-dom.development.js");
 }
 
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
-/*!***********************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
-  \***********************************************************************************************************/
+/***/ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}Object.defineProperty(exports,"__esModule",{value:!0});var React=_interopDefault(__webpack_require__(/*! react */ "../../wpi/wpi-react-hmr-ssr/node_modules/react/index.js")),classCallCheck=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},inherits=function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)},possibleConstructorReturn=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t},AppContainer=function(e){function t(){return classCallCheck(this,t),possibleConstructorReturn(this,e.apply(this,arguments))}return inherits(t,e),t.prototype.render=function(){return React.Children.only(this.props.children)},t}(React.Component),hot_prod=function(){return function(e){return e}},areComponentsEqual=function(e,t){return e===t},setConfig=function(){},cold=function(e){return e},configureComponent=function(){};exports.AppContainer=AppContainer,exports.hot=hot_prod,exports.areComponentsEqual=areComponentsEqual,exports.setConfig=setConfig,exports.cold=cold,exports.configureComponent=configureComponent;
+function _interopDefault(e){return e&&"object"==typeof e&&"default"in e?e.default:e}Object.defineProperty(exports,"__esModule",{value:!0});var React=_interopDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js")),classCallCheck=function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")},inherits=function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)},possibleConstructorReturn=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t},AppContainer=function(e){function t(){return classCallCheck(this,t),possibleConstructorReturn(this,e.apply(this,arguments))}return inherits(t,e),t.prototype.render=function(){return React.Children.only(this.props.children)},t}(React.Component),hot_prod=function(){return function(e){return e}},areComponentsEqual=function(e,t){return e===t},setConfig=function(){},cold=function(e){return e},configureComponent=function(){};exports.AppContainer=AppContainer,exports.hot=hot_prod,exports.areComponentsEqual=areComponentsEqual,exports.setConfig=setConfig,exports.cold=cold,exports.configureComponent=configureComponent;
 
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js":
-/*!****************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js ***!
-  \****************************************************************************/
+/***/ "./node_modules/react-hot-loader/index.js":
+/*!************************************************!*\
+  !*** ./node_modules/react-hot-loader/index.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20872,16 +21702,16 @@ var platformSupported = !!Object.setPrototypeOf && evalAllowed;
 
 if (true) {
   if (false) {}
-  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
+  module.exports = __webpack_require__(/*! ./dist/react-hot-loader.production.min.js */ "./node_modules/react-hot-loader/dist/react-hot-loader.production.min.js");
 } else {}
 
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/react/cjs/react.development.js":
-/*!*********************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/react/cjs/react.development.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/react/cjs/react.development.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/react/cjs/react.development.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20903,8 +21733,8 @@ if (true) {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(/*! object-assign */ "../../wpi/wpi-react-hmr-ssr/node_modules/object-assign/index.js");
-var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "../../wpi/wpi-react-hmr-ssr/node_modules/prop-types/checkPropTypes.js");
+var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
 // TODO: this is special because it gets imported during build.
 
@@ -22773,10 +23603,10 @@ module.exports = react;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/react/index.js":
-/*!*****************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/react/index.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/react/index.js":
+/*!*************************************!*\
+  !*** ./node_modules/react/index.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22784,16 +23614,16 @@ module.exports = react;
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/react/cjs/react.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/react.development.js */ "./node_modules/react/cjs/react.development.js");
 }
 
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/cjs/scheduler-tracing.development.js":
-/*!*************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
-  \*************************************************************************************************/
+/***/ "./node_modules/scheduler/cjs/scheduler-tracing.development.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler-tracing.development.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23225,10 +24055,10 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/cjs/scheduler.development.js":
-/*!*****************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/scheduler/cjs/scheduler.development.js ***!
-  \*****************************************************************************************/
+/***/ "./node_modules/scheduler/cjs/scheduler.development.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/scheduler/cjs/scheduler.development.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23937,14 +24767,14 @@ exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/index.js":
-/*!*********************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/scheduler/index.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/scheduler/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/scheduler/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23952,16 +24782,16 @@ exports.unstable_getFirstCallbackNode = unstable_getFirstCallbackNode;
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/cjs/scheduler.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/scheduler.development.js */ "./node_modules/scheduler/cjs/scheduler.development.js");
 }
 
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/tracing.js":
-/*!***********************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/scheduler/tracing.js ***!
-  \***********************************************************************/
+/***/ "./node_modules/scheduler/tracing.js":
+/*!*******************************************!*\
+  !*** ./node_modules/scheduler/tracing.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23969,16 +24799,16 @@ if (false) {} else {
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/scheduler/cjs/scheduler-tracing.development.js");
+  module.exports = __webpack_require__(/*! ./cjs/scheduler-tracing.development.js */ "./node_modules/scheduler/cjs/scheduler-tracing.development.js");
 }
 
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/addStyles.js":
-/*!********************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/addStyles.js ***!
-  \********************************************************************************/
+/***/ "./node_modules/style-loader/lib/addStyles.js":
+/*!****************************************************!*\
+  !*** ./node_modules/style-loader/lib/addStyles.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -24048,7 +24878,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(/*! ./urls */ "../../wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/urls.js");
+var	fixUrls = __webpack_require__(/*! ./urls */ "./node_modules/style-loader/lib/urls.js");
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -24384,10 +25214,10 @@ function updateLink (link, options, obj) {
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/urls.js":
-/*!***************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/urls.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/style-loader/lib/urls.js":
+/*!***********************************************!*\
+  !*** ./node_modules/style-loader/lib/urls.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -24484,7 +25314,7 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/global.js":
+/***/ "./node_modules/webpack/buildin/global.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -24515,7 +25345,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/harmony-module.js":
+/***/ "./node_modules/webpack/buildin/harmony-module.js":
 /*!*******************************************!*\
   !*** (webpack)/buildin/harmony-module.js ***!
   \*******************************************/
@@ -24550,836 +25380,6 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./node_modules/is/index.js":
-/*!**********************************!*\
-  !*** ./node_modules/is/index.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* globals window, HTMLElement */
-
-
-
-/**!
- * is
- * the definitive JavaScript type testing library
- *
- * @copyright 2013-2014 Enrico Marino / Jordan Harband
- * @license MIT
- */
-
-var objProto = Object.prototype;
-var owns = objProto.hasOwnProperty;
-var toStr = objProto.toString;
-var symbolValueOf;
-if (typeof Symbol === 'function') {
-  symbolValueOf = Symbol.prototype.valueOf;
-}
-var bigIntValueOf;
-if (typeof BigInt === 'function') {
-  bigIntValueOf = BigInt.prototype.valueOf;
-}
-var isActualNaN = function (value) {
-  return value !== value;
-};
-var NON_HOST_TYPES = {
-  'boolean': 1,
-  number: 1,
-  string: 1,
-  undefined: 1
-};
-
-var base64Regex = /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$/;
-var hexRegex = /^[A-Fa-f0-9]+$/;
-
-/**
- * Expose `is`
- */
-
-var is = {};
-
-/**
- * Test general.
- */
-
-/**
- * is.type
- * Test if `value` is a type of `type`.
- *
- * @param {*} value value to test
- * @param {String} type type
- * @return {Boolean} true if `value` is a type of `type`, false otherwise
- * @api public
- */
-
-is.a = is.type = function (value, type) {
-  return typeof value === type;
-};
-
-/**
- * is.defined
- * Test if `value` is defined.
- *
- * @param {*} value value to test
- * @return {Boolean} true if 'value' is defined, false otherwise
- * @api public
- */
-
-is.defined = function (value) {
-  return typeof value !== 'undefined';
-};
-
-/**
- * is.empty
- * Test if `value` is empty.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is empty, false otherwise
- * @api public
- */
-
-is.empty = function (value) {
-  var type = toStr.call(value);
-  var key;
-
-  if (type === '[object Array]' || type === '[object Arguments]' || type === '[object String]') {
-    return value.length === 0;
-  }
-
-  if (type === '[object Object]') {
-    for (key in value) {
-      if (owns.call(value, key)) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  return !value;
-};
-
-/**
- * is.equal
- * Test if `value` is equal to `other`.
- *
- * @param {*} value value to test
- * @param {*} other value to compare with
- * @return {Boolean} true if `value` is equal to `other`, false otherwise
- */
-
-is.equal = function equal(value, other) {
-  if (value === other) {
-    return true;
-  }
-
-  var type = toStr.call(value);
-  var key;
-
-  if (type !== toStr.call(other)) {
-    return false;
-  }
-
-  if (type === '[object Object]') {
-    for (key in value) {
-      if (!is.equal(value[key], other[key]) || !(key in other)) {
-        return false;
-      }
-    }
-    for (key in other) {
-      if (!is.equal(value[key], other[key]) || !(key in value)) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  if (type === '[object Array]') {
-    key = value.length;
-    if (key !== other.length) {
-      return false;
-    }
-    while (key--) {
-      if (!is.equal(value[key], other[key])) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  if (type === '[object Function]') {
-    return value.prototype === other.prototype;
-  }
-
-  if (type === '[object Date]') {
-    return value.getTime() === other.getTime();
-  }
-
-  return false;
-};
-
-/**
- * is.hosted
- * Test if `value` is hosted by `host`.
- *
- * @param {*} value to test
- * @param {*} host host to test with
- * @return {Boolean} true if `value` is hosted by `host`, false otherwise
- * @api public
- */
-
-is.hosted = function (value, host) {
-  var type = typeof host[value];
-  return type === 'object' ? !!host[value] : !NON_HOST_TYPES[type];
-};
-
-/**
- * is.instance
- * Test if `value` is an instance of `constructor`.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an instance of `constructor`
- * @api public
- */
-
-is.instance = is['instanceof'] = function (value, constructor) {
-  return value instanceof constructor;
-};
-
-/**
- * is.nil / is.null
- * Test if `value` is null.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is null, false otherwise
- * @api public
- */
-
-is.nil = is['null'] = function (value) {
-  return value === null;
-};
-
-/**
- * is.undef / is.undefined
- * Test if `value` is undefined.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is undefined, false otherwise
- * @api public
- */
-
-is.undef = is.undefined = function (value) {
-  return typeof value === 'undefined';
-};
-
-/**
- * Test arguments.
- */
-
-/**
- * is.args
- * Test if `value` is an arguments object.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an arguments object, false otherwise
- * @api public
- */
-
-is.args = is.arguments = function (value) {
-  var isStandardArguments = toStr.call(value) === '[object Arguments]';
-  var isOldArguments = !is.array(value) && is.arraylike(value) && is.object(value) && is.fn(value.callee);
-  return isStandardArguments || isOldArguments;
-};
-
-/**
- * Test array.
- */
-
-/**
- * is.array
- * Test if 'value' is an array.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an array, false otherwise
- * @api public
- */
-
-is.array = Array.isArray || function (value) {
-  return toStr.call(value) === '[object Array]';
-};
-
-/**
- * is.arguments.empty
- * Test if `value` is an empty arguments object.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an empty arguments object, false otherwise
- * @api public
- */
-is.args.empty = function (value) {
-  return is.args(value) && value.length === 0;
-};
-
-/**
- * is.array.empty
- * Test if `value` is an empty array.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an empty array, false otherwise
- * @api public
- */
-is.array.empty = function (value) {
-  return is.array(value) && value.length === 0;
-};
-
-/**
- * is.arraylike
- * Test if `value` is an arraylike object.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an arguments object, false otherwise
- * @api public
- */
-
-is.arraylike = function (value) {
-  return !!value && !is.bool(value)
-    && owns.call(value, 'length')
-    && isFinite(value.length)
-    && is.number(value.length)
-    && value.length >= 0;
-};
-
-/**
- * Test boolean.
- */
-
-/**
- * is.bool
- * Test if `value` is a boolean.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a boolean, false otherwise
- * @api public
- */
-
-is.bool = is['boolean'] = function (value) {
-  return toStr.call(value) === '[object Boolean]';
-};
-
-/**
- * is.false
- * Test if `value` is false.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is false, false otherwise
- * @api public
- */
-
-is['false'] = function (value) {
-  return is.bool(value) && Boolean(Number(value)) === false;
-};
-
-/**
- * is.true
- * Test if `value` is true.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is true, false otherwise
- * @api public
- */
-
-is['true'] = function (value) {
-  return is.bool(value) && Boolean(Number(value)) === true;
-};
-
-/**
- * Test date.
- */
-
-/**
- * is.date
- * Test if `value` is a date.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a date, false otherwise
- * @api public
- */
-
-is.date = function (value) {
-  return toStr.call(value) === '[object Date]';
-};
-
-/**
- * is.date.valid
- * Test if `value` is a valid date.
- *
- * @param {*} value value to test
- * @returns {Boolean} true if `value` is a valid date, false otherwise
- */
-is.date.valid = function (value) {
-  return is.date(value) && !isNaN(Number(value));
-};
-
-/**
- * Test element.
- */
-
-/**
- * is.element
- * Test if `value` is an html element.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an HTML Element, false otherwise
- * @api public
- */
-
-is.element = function (value) {
-  return value !== undefined
-    && typeof HTMLElement !== 'undefined'
-    && value instanceof HTMLElement
-    && value.nodeType === 1;
-};
-
-/**
- * Test error.
- */
-
-/**
- * is.error
- * Test if `value` is an error object.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an error object, false otherwise
- * @api public
- */
-
-is.error = function (value) {
-  return toStr.call(value) === '[object Error]';
-};
-
-/**
- * Test function.
- */
-
-/**
- * is.fn / is.function (deprecated)
- * Test if `value` is a function.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a function, false otherwise
- * @api public
- */
-
-is.fn = is['function'] = function (value) {
-  var isAlert = typeof window !== 'undefined' && value === window.alert;
-  if (isAlert) {
-    return true;
-  }
-  var str = toStr.call(value);
-  return str === '[object Function]' || str === '[object GeneratorFunction]' || str === '[object AsyncFunction]';
-};
-
-/**
- * Test number.
- */
-
-/**
- * is.number
- * Test if `value` is a number.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a number, false otherwise
- * @api public
- */
-
-is.number = function (value) {
-  return toStr.call(value) === '[object Number]';
-};
-
-/**
- * is.infinite
- * Test if `value` is positive or negative infinity.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is positive or negative Infinity, false otherwise
- * @api public
- */
-is.infinite = function (value) {
-  return value === Infinity || value === -Infinity;
-};
-
-/**
- * is.decimal
- * Test if `value` is a decimal number.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a decimal number, false otherwise
- * @api public
- */
-
-is.decimal = function (value) {
-  return is.number(value) && !isActualNaN(value) && !is.infinite(value) && value % 1 !== 0;
-};
-
-/**
- * is.divisibleBy
- * Test if `value` is divisible by `n`.
- *
- * @param {Number} value value to test
- * @param {Number} n dividend
- * @return {Boolean} true if `value` is divisible by `n`, false otherwise
- * @api public
- */
-
-is.divisibleBy = function (value, n) {
-  var isDividendInfinite = is.infinite(value);
-  var isDivisorInfinite = is.infinite(n);
-  var isNonZeroNumber = is.number(value) && !isActualNaN(value) && is.number(n) && !isActualNaN(n) && n !== 0;
-  return isDividendInfinite || isDivisorInfinite || (isNonZeroNumber && value % n === 0);
-};
-
-/**
- * is.integer
- * Test if `value` is an integer.
- *
- * @param value to test
- * @return {Boolean} true if `value` is an integer, false otherwise
- * @api public
- */
-
-is.integer = is['int'] = function (value) {
-  return is.number(value) && !isActualNaN(value) && value % 1 === 0;
-};
-
-/**
- * is.maximum
- * Test if `value` is greater than 'others' values.
- *
- * @param {Number} value value to test
- * @param {Array} others values to compare with
- * @return {Boolean} true if `value` is greater than `others` values
- * @api public
- */
-
-is.maximum = function (value, others) {
-  if (isActualNaN(value)) {
-    throw new TypeError('NaN is not a valid value');
-  } else if (!is.arraylike(others)) {
-    throw new TypeError('second argument must be array-like');
-  }
-  var len = others.length;
-
-  while (--len >= 0) {
-    if (value < others[len]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-/**
- * is.minimum
- * Test if `value` is less than `others` values.
- *
- * @param {Number} value value to test
- * @param {Array} others values to compare with
- * @return {Boolean} true if `value` is less than `others` values
- * @api public
- */
-
-is.minimum = function (value, others) {
-  if (isActualNaN(value)) {
-    throw new TypeError('NaN is not a valid value');
-  } else if (!is.arraylike(others)) {
-    throw new TypeError('second argument must be array-like');
-  }
-  var len = others.length;
-
-  while (--len >= 0) {
-    if (value > others[len]) {
-      return false;
-    }
-  }
-
-  return true;
-};
-
-/**
- * is.nan
- * Test if `value` is not a number.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is not a number, false otherwise
- * @api public
- */
-
-is.nan = function (value) {
-  return !is.number(value) || value !== value;
-};
-
-/**
- * is.even
- * Test if `value` is an even number.
- *
- * @param {Number} value value to test
- * @return {Boolean} true if `value` is an even number, false otherwise
- * @api public
- */
-
-is.even = function (value) {
-  return is.infinite(value) || (is.number(value) && value === value && value % 2 === 0);
-};
-
-/**
- * is.odd
- * Test if `value` is an odd number.
- *
- * @param {Number} value value to test
- * @return {Boolean} true if `value` is an odd number, false otherwise
- * @api public
- */
-
-is.odd = function (value) {
-  return is.infinite(value) || (is.number(value) && value === value && value % 2 !== 0);
-};
-
-/**
- * is.ge
- * Test if `value` is greater than or equal to `other`.
- *
- * @param {Number} value value to test
- * @param {Number} other value to compare with
- * @return {Boolean}
- * @api public
- */
-
-is.ge = function (value, other) {
-  if (isActualNaN(value) || isActualNaN(other)) {
-    throw new TypeError('NaN is not a valid value');
-  }
-  return !is.infinite(value) && !is.infinite(other) && value >= other;
-};
-
-/**
- * is.gt
- * Test if `value` is greater than `other`.
- *
- * @param {Number} value value to test
- * @param {Number} other value to compare with
- * @return {Boolean}
- * @api public
- */
-
-is.gt = function (value, other) {
-  if (isActualNaN(value) || isActualNaN(other)) {
-    throw new TypeError('NaN is not a valid value');
-  }
-  return !is.infinite(value) && !is.infinite(other) && value > other;
-};
-
-/**
- * is.le
- * Test if `value` is less than or equal to `other`.
- *
- * @param {Number} value value to test
- * @param {Number} other value to compare with
- * @return {Boolean} if 'value' is less than or equal to 'other'
- * @api public
- */
-
-is.le = function (value, other) {
-  if (isActualNaN(value) || isActualNaN(other)) {
-    throw new TypeError('NaN is not a valid value');
-  }
-  return !is.infinite(value) && !is.infinite(other) && value <= other;
-};
-
-/**
- * is.lt
- * Test if `value` is less than `other`.
- *
- * @param {Number} value value to test
- * @param {Number} other value to compare with
- * @return {Boolean} if `value` is less than `other`
- * @api public
- */
-
-is.lt = function (value, other) {
-  if (isActualNaN(value) || isActualNaN(other)) {
-    throw new TypeError('NaN is not a valid value');
-  }
-  return !is.infinite(value) && !is.infinite(other) && value < other;
-};
-
-/**
- * is.within
- * Test if `value` is within `start` and `finish`.
- *
- * @param {Number} value value to test
- * @param {Number} start lower bound
- * @param {Number} finish upper bound
- * @return {Boolean} true if 'value' is is within 'start' and 'finish'
- * @api public
- */
-is.within = function (value, start, finish) {
-  if (isActualNaN(value) || isActualNaN(start) || isActualNaN(finish)) {
-    throw new TypeError('NaN is not a valid value');
-  } else if (!is.number(value) || !is.number(start) || !is.number(finish)) {
-    throw new TypeError('all arguments must be numbers');
-  }
-  var isAnyInfinite = is.infinite(value) || is.infinite(start) || is.infinite(finish);
-  return isAnyInfinite || (value >= start && value <= finish);
-};
-
-/**
- * Test object.
- */
-
-/**
- * is.object
- * Test if `value` is an object.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is an object, false otherwise
- * @api public
- */
-is.object = function (value) {
-  return toStr.call(value) === '[object Object]';
-};
-
-/**
- * is.primitive
- * Test if `value` is a primitive.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a primitive, false otherwise
- * @api public
- */
-is.primitive = function isPrimitive(value) {
-  if (!value) {
-    return true;
-  }
-  if (typeof value === 'object' || is.object(value) || is.fn(value) || is.array(value)) {
-    return false;
-  }
-  return true;
-};
-
-/**
- * is.hash
- * Test if `value` is a hash - a plain object literal.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a hash, false otherwise
- * @api public
- */
-
-is.hash = function (value) {
-  return is.object(value) && value.constructor === Object && !value.nodeType && !value.setInterval;
-};
-
-/**
- * Test regexp.
- */
-
-/**
- * is.regexp
- * Test if `value` is a regular expression.
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a regexp, false otherwise
- * @api public
- */
-
-is.regexp = function (value) {
-  return toStr.call(value) === '[object RegExp]';
-};
-
-/**
- * Test string.
- */
-
-/**
- * is.string
- * Test if `value` is a string.
- *
- * @param {*} value value to test
- * @return {Boolean} true if 'value' is a string, false otherwise
- * @api public
- */
-
-is.string = function (value) {
-  return toStr.call(value) === '[object String]';
-};
-
-/**
- * Test base64 string.
- */
-
-/**
- * is.base64
- * Test if `value` is a valid base64 encoded string.
- *
- * @param {*} value value to test
- * @return {Boolean} true if 'value' is a base64 encoded string, false otherwise
- * @api public
- */
-
-is.base64 = function (value) {
-  return is.string(value) && (!value.length || base64Regex.test(value));
-};
-
-/**
- * Test base64 string.
- */
-
-/**
- * is.hex
- * Test if `value` is a valid hex encoded string.
- *
- * @param {*} value value to test
- * @return {Boolean} true if 'value' is a hex encoded string, false otherwise
- * @api public
- */
-
-is.hex = function (value) {
-  return is.string(value) && (!value.length || hexRegex.test(value));
-};
-
-/**
- * is.symbol
- * Test if `value` is an ES6 Symbol
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a Symbol, false otherise
- * @api public
- */
-
-is.symbol = function (value) {
-  return typeof Symbol === 'function' && toStr.call(value) === '[object Symbol]' && typeof symbolValueOf.call(value) === 'symbol';
-};
-
-/**
- * is.bigint
- * Test if `value` is an ES-proposed BigInt
- *
- * @param {*} value value to test
- * @return {Boolean} true if `value` is a BigInt, false otherise
- * @api public
- */
-
-is.bigint = function (value) {
-  // eslint-disable-next-line valid-typeof
-  return typeof BigInt === 'function' && toStr.call(value) === '[object BigInt]' && typeof bigIntValueOf.call(value) === 'bigint';
-};
-
-module.exports = is;
-
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -25390,19 +25390,19 @@ module.exports = is;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContextMenu", function() { return ContextMenu; });
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
 /* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6__);
 
 
@@ -25413,7 +25413,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  var enterModule = __webpack_require__(/*! react-hot-loader */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js").enterModule;
+  var enterModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").enterModule;
 
   enterModule && enterModule(module);
 })();
@@ -25427,10 +25427,10 @@ __webpack_require__.r(__webpack_exports__);
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
-var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-dom/index.js").unstable_renderSubtreeIntoContainer,
+var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js").unstable_renderSubtreeIntoContainer,
     is = __webpack_require__(/*! is */ "./node_modules/is/index.js"),
-    React = __webpack_require__(/*! react */ "../../wpi/wpi-react-hmr-ssr/node_modules/react/index.js"),
-    ReactDOM = __webpack_require__(/*! react-dom */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-dom/index.js"),
+    React = __webpack_require__(/*! react */ "./node_modules/react/index.js"),
+    ReactDOM = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"),
     findAllMenuFrom = function findAllMenuFrom(el) {
   var menus = [];
 
@@ -25679,9 +25679,9 @@ var _default = ContextMenu;
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js").default;
+  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").default;
 
-  var leaveModule = __webpack_require__(/*! react-hot-loader */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js").leaveModule;
+  var leaveModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").leaveModule;
 
   if (!reactHotLoader) {
     return;
@@ -25702,7 +25702,7 @@ var _default = ContextMenu;
 })();
 
 ;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/harmony-module.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/harmony-module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
@@ -25715,19 +25715,19 @@ var _default = ContextMenu;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../../wpi/wpi-react-hmr-ssr/node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dom */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var ___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! . */ "./src/index.js");
 /* harmony import */ var _samples_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./samples.scss */ "./src/samples.scss");
@@ -25739,7 +25739,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  var enterModule = __webpack_require__(/*! react-hot-loader */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js").enterModule;
+  var enterModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").enterModule;
 
   enterModule && enterModule(module);
 })();
@@ -25833,9 +25833,9 @@ if (false) {}
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js").default;
+  var reactHotLoader = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").default;
 
-  var leaveModule = __webpack_require__(/*! react-hot-loader */ "../../wpi/wpi-react-hmr-ssr/node_modules/react-hot-loader/index.js").leaveModule;
+  var leaveModule = __webpack_require__(/*! react-hot-loader */ "./node_modules/react-hot-loader/index.js").leaveModule;
 
   if (!reactHotLoader) {
     return;
@@ -25847,7 +25847,7 @@ if (false) {}
 })();
 
 ;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/harmony-module.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/webpack/buildin/harmony-module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 
@@ -25859,7 +25859,7 @@ if (false) {}
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../wpi/wpi-react-hmr-ssr/node_modules/css-loader??ref--6-1!../../../wpi/wpi-react-hmr-ssr/node_modules/postcss-loader/src??ref--6-2!../../../wpi/wpi-react-hmr-ssr/node_modules/sass-loader/lib/loader.js??ref--6-3!./samples.scss */ "../../wpi/wpi-react-hmr-ssr/node_modules/css-loader/index.js?!../../wpi/wpi-react-hmr-ssr/node_modules/postcss-loader/src/index.js?!../../wpi/wpi-react-hmr-ssr/node_modules/sass-loader/lib/loader.js?!./src/samples.scss");
+var content = __webpack_require__(/*! !../node_modules/css-loader??ref--6-1!../node_modules/postcss-loader/src??ref--6-2!../node_modules/sass-loader/lib/loader.js??ref--6-3!./samples.scss */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/lib/loader.js?!./src/samples.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -25873,7 +25873,7 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(/*! ../../../wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/addStyles.js */ "../../wpi/wpi-react-hmr-ssr/node_modules/style-loader/lib/addStyles.js")(content, options);
+var update = __webpack_require__(/*! ../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
 
 if(content.locals) module.exports = content.locals;
 
