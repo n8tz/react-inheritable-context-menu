@@ -1,4 +1,4 @@
-<h1 align="center">react-inheritable-contextmenu<b>
+<h1 align="center">react-inheritable-contextmenu<h1>
 
 <a href="https://www.npmjs.com/package/react-inheritable-contextmenu">
 <img src="https://img.shields.io/npm/v/react-inheritable-contextmenu.svg" alt="Build Status" /></a>
