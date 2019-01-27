@@ -1,9 +1,13 @@
 {
   "name": "react-inheritable-contextmenu",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "license": "MIT",
   "author": "Nathan Braun <caipilabs@gmail.com>",
   "main": "./dist/Comp.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/n8tz/react-inheritable-contextmenu"
+  },
   "wpInherit": {
     "default": {
       "rootFolder": "src",
