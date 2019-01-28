@@ -24832,7 +24832,7 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "root"
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu root")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Root contextual menu available here"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu root")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", null, "Inheritable context menu demo"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "block"
       }, "2nd menu inheriting the 1st", react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"], null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", null, "Menu 2"))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "block"
@@ -24986,7 +24986,7 @@ var findAllMenuFrom = function findAllMenuFrom(el) {
   var menus = [];
 
   do {
-    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(el.children).filter(function (node) {
+    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(Array.from(el.children).filter(function (node) {
       return node.classList.contains("inContextMenuComp");
     })));
     el = el.parentNode;
@@ -25132,8 +25132,7 @@ function initContextListeners(ContextMenu) {
 
 
   document.addEventListener("contextmenu", contextmenuListener = function contextmenuListener(e) {
-    if (currentMenu) destroy(null, true); //
-
+    if (currentMenu) destroy(null, true);
     var rootExclusive,
         menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduce(function (list, cmp) {
       if (!cmp || rootExclusive) return list;
@@ -25184,7 +25183,7 @@ function initContextListeners(ContextMenu) {
         height: currentMenu.offsetHeight + 'px',
         visibility: 'visible'
       });
-      ContextMenu.DefaultShowAnim && applyCssAnim(currentMenu, 'slide-in-blurred-left', ContextMenu.DefaultAnimDuration);
+      ContextMenu.DefaultShowAnim && applyCssAnim(currentMenu, ContextMenu.DefaultShowAnim, ContextMenu.DefaultAnimDuration);
     });
     e.preventDefault();
     e.stopPropagation();
