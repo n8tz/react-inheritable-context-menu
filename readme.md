@@ -2,8 +2,8 @@
 
 <p align="center"><img src="assets/demo.gif" alt="Samples" /></p>
 
-<a href="https://www.npmjs.com/package/react-inheritable-context-menu">
-<img src="https://img.shields.io/npm/v/react-inheritable-context-menu.svg" alt="Build Status" /></a>
+<a href="https://www.npmjs.com/package/react-inheritable-contextmenu">
+<img src="https://img.shields.io/npm/v/react-inheritable-contextmenu.svg" alt="Build Status" /></a>
 
 Simple Context menu component for react showing all inherited parents menu with SSR compatibility.
 
