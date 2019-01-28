@@ -5,7 +5,7 @@
 <a href="https://www.npmjs.com/package/react-inheritable-contextmenu">
 <img src="https://img.shields.io/npm/v/react-inheritable-contextmenu.svg" alt="Build Status" /></a>
 
-Simple Context menu component for react showing all inherited parents menu in theirs contexts.
+Simple Context menu component for react showing all inherited parents menu in theirs contexts with SSR compa.
 
 Sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheritable-contextmenu/blob/master/samples/index.html)
 
@@ -20,8 +20,9 @@ Sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheri
 import {ContextMenu} from "react-inheritable-contextmenu";
 
 // override default rendered comps
+// * there is no css builtin, but there is classNames .inContextMenuLayer > .inContextMenu
 ContextMenu.DefaultMenuComp = Paper
-ContextMenu.DefaultSubMenuComp = 'ul'
+ContextMenu.DefaultSubMenuComp = 'div'
 
 // add optional cool anims ( choose & add in css any anims in http://animista.net/ )
 ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';

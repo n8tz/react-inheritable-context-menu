@@ -124,6 +124,7 @@ export function initContextListeners( ContextMenu ) {
 		zIndex       : ContextMenu.DefaultZIndex,
 		display      : 'none'
 	});
+	layer.className = "inContextMenuLayer";
 	document.body.appendChild(layer);
 	
 	let destroy = ( e, now ) => {

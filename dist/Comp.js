@@ -110,10 +110,10 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
-/*!**********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -131,10 +131,10 @@ module.exports = _arrayWithoutHoles;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js":
-/*!**************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
-  \**************************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -150,10 +150,10 @@ module.exports = _assertThisInitialized;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js":
-/*!*******************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -167,10 +167,10 @@ module.exports = _classCallCheck;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js":
-/*!****************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js ***!
-  \****************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -194,10 +194,10 @@ module.exports = _createClass;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js":
-/*!*******************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -212,14 +212,14 @@ module.exports = _getPrototypeOf;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js":
-/*!*************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js");
 
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
@@ -240,10 +240,10 @@ module.exports = _inherits;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/iterableToArray.js":
-/*!********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/iterableToArray.js ***!
-  \********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -255,10 +255,10 @@ module.exports = _iterableToArray;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/nonIterableSpread.js":
-/*!**********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -270,16 +270,16 @@ module.exports = _nonIterableSpread;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
-/*!******************************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
-  \******************************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var _typeof = __webpack_require__(/*! ../helpers/typeof */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/typeof.js");
+var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime/helpers/typeof.js");
 
-var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
 
 function _possibleConstructorReturn(self, call) {
   if (call && (_typeof(call) === "object" || typeof call === "function")) {
@@ -293,10 +293,10 @@ module.exports = _possibleConstructorReturn;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/setPrototypeOf.js":
-/*!*******************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
-  \*******************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -313,18 +313,18 @@ module.exports = _setPrototypeOf;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/toConsumableArray.js":
-/*!**********************************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
 
-var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/iterableToArray.js");
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/@babel/runtime/helpers/iterableToArray.js");
 
-var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js");
 
 function _toConsumableArray(arr) {
   return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
@@ -334,10 +334,10 @@ module.exports = _toConsumableArray;
 
 /***/ }),
 
-/***/ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/typeof.js":
-/*!***********************************************************************************!*\
-  !*** G:/n8tz/wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/typeof.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -371,15 +371,15 @@ module.exports = _typeof;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContextMenu", function() { return ContextMenu; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
 
 
@@ -534,17 +534,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyCssAnim", function() { return applyCssAnim; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearContextListeners", function() { return clearContextListeners; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initContextListeners", function() { return initContextListeners; });
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "../../wpi/wpi-react-hmr-ssr/node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
 /* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__);
 
 
@@ -689,6 +689,7 @@ function initContextListeners(ContextMenu) {
     zIndex: ContextMenu.DefaultZIndex,
     display: 'none'
   });
+  layer.className = "inContextMenuLayer";
   document.body.appendChild(layer);
 
   var destroy = function destroy(e, now) {
