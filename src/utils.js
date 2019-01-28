@@ -12,6 +12,7 @@
  *  @contact : n8tz.js@gmail.com
  */
 
+
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
     React                      = require('react'),
     ReactDOM                   = require('react-dom');
@@ -20,7 +21,7 @@ let
 	findAllMenuFrom    = function ( el ) {
 		let menus = [];
 		do {
-			menus.push(...[...el.children].filter(node => node.classList.contains("inContextMenuComp")))
+			menus.push(...Array.from(el.children).filter(node => node.classList.contains("inContextMenuComp")))
 			el = el.parentNode;
 		} while ( el && el !== document );
 		return menus;
@@ -153,7 +154,7 @@ export function initContextListeners( ContextMenu ) {
 			if ( currentMenu )
 				destroy(null, true);
 			
-			//
+			
 			let rootExclusive,
 			    menuComps = findAllMenuFrom(e.target)
 				    .map(findReactComponent)
@@ -174,7 +175,6 @@ export function initContextListeners( ContextMenu ) {
 			if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
 				return;
 			
-			
 			document.body.addEventListener('click', destroy);
 			
 			layer.style.display = 'block';
@@ -194,7 +194,6 @@ export function initContextListeners( ContextMenu ) {
 						}
 					)
 				});
-			
 			currentMenu = renderMenu(
 				layer,
 				menuComps,

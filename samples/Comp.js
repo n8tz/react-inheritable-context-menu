@@ -24193,7 +24193,7 @@ var findAllMenuFrom = function findAllMenuFrom(el) {
   var menus = [];
 
   do {
-    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(el.children).filter(function (node) {
+    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(Array.from(el.children).filter(function (node) {
       return node.classList.contains("inContextMenuComp");
     })));
     el = el.parentNode;
@@ -24339,8 +24339,7 @@ function initContextListeners(ContextMenu) {
 
 
   document.addEventListener("contextmenu", contextmenuListener = function contextmenuListener(e) {
-    if (currentMenu) destroy(null, true); //
-
+    if (currentMenu) destroy(null, true);
     var rootExclusive,
         menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduce(function (list, cmp) {
       if (!cmp || rootExclusive) return list;

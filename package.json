@@ -44,6 +44,7 @@
     "react-dom": "^16.3.2"
   },
   "dependencies": {
+    "classlist-polyfill": "^1.2.0",
     "is": "^3.2.1"
   },
   "devDependencies": {
