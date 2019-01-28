@@ -12,10 +12,6 @@
  *  @contact : n8tz.js@gmail.com
  */
 
-/**
- * This code need nome smart refactoring
- */
-
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
     isBrowserSide              = (new Function("try {return this===window;}catch(e){ return false;}"))(),
     utils                      = isBrowserSide && require('./utils'),
@@ -29,6 +25,7 @@ if ( !isBrowserSide ) {
 			return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
 		}
 	}
+	
 	ContextMenu = ContextMenuSSR;
 }
 else {
