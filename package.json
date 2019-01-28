@@ -1,5 +1,5 @@
 {
-  "name": "react-inheritable-context-menu",
+  "name": "react-inheritable-contextmenu",
   "version": "1.0.0",
   "description": "Simple Context menu component for react showing all inherited parents menu with SSR compatibility.",
   "license": "MIT",
@@ -7,7 +7,7 @@
   "main": "./dist/Comp.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/n8tz/react-inheritable-context-menu"
+    "url": "https://github.com/n8tz/react-inheritable-contextmenu"
   },
   "wpInherit": {
     "default": {
