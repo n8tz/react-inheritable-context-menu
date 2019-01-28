@@ -33,7 +33,7 @@ class Sample extends React.Component {
 				<div>Menu root</div>
 			</ContextMenu>
 			<br/>
-			<h1>Root contextual menu available here</h1>
+			<h1>Inheritable context menu demo</h1>
 			<br/>
 			<br/>
 			<div className={ "block" }>
