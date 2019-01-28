@@ -370,22 +370,16 @@ module.exports = _typeof;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContextMenu", function() { return ContextMenu; });
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
-/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6__);
-
-
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
@@ -393,206 +387,52 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /*
- * Copyright (c) 2018. Wise Wild Web
+ * The MIT License (MIT)
+ * Copyright (c) 2019. Wise Wild Web
  *
- * This File is part of Caipi and under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
- * Full license at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
+
+/**
+ * This code need nome smart refactoring
+ */
 var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "undefined?5e9a").unstable_renderSubtreeIntoContainer,
-    is = __webpack_require__(/*! is */ "undefined?63a5"),
+    utils = __webpack_require__(/*! ./utils */ "./src/utils.js"),
     React = __webpack_require__(/*! react */ "undefined?588e"),
-    ReactDOM = __webpack_require__(/*! react-dom */ "undefined?5e9a"),
-    findAllMenuFrom = function findAllMenuFrom(el) {
-  var menus = [];
-
-  do {
-    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6___default()(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_6___default()(el.children).filter(function (node) {
-      return node.classList.contains("inContextMenuComp");
-    })));
-    el = el.parentNode;
-  } while (el && el !== document);
-
-  return menus;
-},
-    findReactComponent = function findReactComponent(el) {
-  var fiberNode;
-
-  for (var key in el) {
-    if (key.startsWith('__reactInternalInstance$')) {
-      fiberNode = el[key];
-      return fiberNode && fiberNode.return && fiberNode.return.stateNode;
-    }
-  }
-
-  return null;
-},
-    renderMenu = function renderMenu(target, menus, renderChilds) {
-  var RComp = ContextMenu.DefaultMenuComp,
-      Renderer = React.cloneElement(React.createElement(RComp, null, React.createElement(React.Fragment, null, renderChilds())));
-  var menu = document.createElement("div");
-  target.appendChild(menu);
-  renderSubtreeIntoContainer(menus[0], Renderer, menu);
-  return menu;
-},
-    layer,
-    currentMenu,
-    openPortals = [],
-    initialized,
-    airRender = function airRender(render, menus, e) {
-  return function (Comp) {
-    return (
-      /*#__PURE__*/
-      function (_React$Component) {
-        _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(AirRCComp, _React$Component);
-
-        function AirRCComp() {
-          _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, AirRCComp);
-
-          return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(AirRCComp).apply(this, arguments));
-        }
-
-        _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(AirRCComp, [{
-          key: "componentDidMount",
-          value: function componentDidMount() {
-            // ...
-            openPortals.push(render(this.refs.node.parentNode, menus, e));
-          }
-        }, {
-          key: "render",
-          value: function render() {
-            return React.createElement(Comp, null, React.createElement("span", {
-              ref: "node",
-              style: {
-                display: "none"
-              }
-            }));
-          }
-        }]);
-
-        return AirRCComp;
-      }(React.Component)
-    );
-  };
-};
+    initialized = 0;
 
 var ContextMenu =
 /*#__PURE__*/
-function (_React$Component2) {
-  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_5___default()(ContextMenu, _React$Component2);
-
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ContextMenu, null, [{
-    key: "initContextListeners",
-    value: function initContextListeners() {
-      initialized = true; // init overlay
-
-      layer = document.createElement("div");
-      Object.assign(layer, {
-        pointerEvents: "none",
-        position: "absolute",
-        width: "100%",
-        height: "100%",
-        top: "0",
-        left: "0",
-        zIndex: ContextMenu.DefaultZIndex,
-        display: 'none'
-      });
-      document.body.appendChild(layer);
-
-      var destroy = function destroy(e, now) {
-        var clear = function clear(tm) {
-          currentMenu = null;
-          openPortals.forEach(function (node) {
-            return ReactDOM.unmountComponentAtNode(node);
-          });
-          layer.innerHTML = '';
-        };
-
-        layer.style.display = 'none';
-        !now && setTimeout(clear, 500) || clear();
-        window.removeEventListener('resize', resize);
-        document.body.addEventListener('click', destroy);
-      },
-          resize; // on right click
-
-
-      document.addEventListener("contextmenu", function (e) {
-        if (currentMenu) destroy(null, true); //
-
-        var rootExclusive,
-            menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduce(function (list, cmp) {
-          if (!cmp || rootExclusive) return list;
-          list.push(cmp);
-          if (cmp.props.hasOwnProperty("root")) rootExclusive = cmp;
-          return list;
-        }, []),
-            x,
-            y,
-            mw = document.body.offsetWidth,
-            mh = document.body.offsetHeight;
-        if (!menuComps.length || menuComps[0].props.hasOwnProperty('native')) return;
-        document.body.addEventListener('click', destroy);
-        layer.style.display = 'block';
-        window.addEventListener('resize', resize = function resize() {
-          x = x / mw * document.body.offsetWidth; //y  = (y / mh) * document.body.offsetHeight;
-
-          mw = document.body.offsetWidth;
-          mh = document.body.offsetHeight;
-          Object.assign(currentMenu.style, {
-            top: y + 'px',
-            left: x + 'px'
-          });
-        });
-        currentMenu = renderMenu(layer, menuComps, function () {
-          return React.createElement(React.Fragment, null, menuComps.map(function (cmp, i) {
-            return cmp.renderWithContext(menuComps, e, i);
-          }));
-        });
-        openPortals.push(currentMenu);
-        Object.assign(currentMenu.style, {
-          pointerEvents: "all",
-          position: "absolute",
-          display: "flex",
-          visibility: 'hidden'
-        });
-        currentMenu.className = "inContextMenu"; // show on next animaton frame
-
-        requestAnimationFrame(function () {
-          x = e.x;
-          y = e.y + document.body.scrollTop;
-          if (x + currentMenu.offsetWidth > mw) x -= currentMenu.offsetWidth;
-          if (y + currentMenu.offsetHeight > mh) y -= currentMenu.offsetHeight;
-          Object.assign(currentMenu.style, {
-            top: y + 'px',
-            left: x + 'px',
-            width: currentMenu.offsetWidth + 'px',
-            height: currentMenu.offsetHeight + 'px',
-            visibility: 'visible'
-          });
-        });
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      });
-    }
-  }]);
+function (_React$Component) {
+  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(ContextMenu, _React$Component);
 
   function ContextMenu(props) {
     var _this;
 
-    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, ContextMenu);
+    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, ContextMenu);
 
-    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4___default()(ContextMenu).apply(this, arguments));
-    !initialized && ContextMenu.initContextListeners(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_0___default()(_this)));
+    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(ContextMenu).apply(this, arguments));
+    if (!initialized) utils.initContextListeners(ContextMenu);
+    initialized++;
     return _this;
   }
 
-  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(ContextMenu, [{
+  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(ContextMenu, [{
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      if (! --initialized) utils.clearContextListeners(ContextMenu);
+    }
+  }, {
     key: "renderWithContext",
     value: function renderWithContext(menus, e, current) {
-      var CRCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
+      var CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
       return React.createElement(CRCComp, {
         key: current
       });
@@ -636,10 +476,264 @@ function (_React$Component2) {
 }(React.Component);
 
 ContextMenu.DefaultZIndex = 1000;
+ContextMenu.DefaultAnimDuration = 250;
 ContextMenu.DefaultMenuComp = 'div';
 ContextMenu.DefaultSubMenuComp = 'div';
+ContextMenu.DefaultShowAnim = false;
+ContextMenu.DefaultHideAnim = false;
 
 /* harmony default export */ __webpack_exports__["default"] = (ContextMenu);
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! exports provided: airRender, applyCssAnim, clearContextListeners, initContextListeners */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "airRender", function() { return airRender; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyCssAnim", function() { return applyCssAnim; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearContextListeners", function() { return clearContextListeners; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initContextListeners", function() { return initContextListeners; });
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/@babel/runtime/helpers/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+
+/*
+ * The MIT License (MIT)
+ * Copyright (c) 2019. Wise Wild Web
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ *
+ *  @author : Nathanael Braun
+ *  @contact : n8tz.js@gmail.com
+ */
+var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "undefined?5e9a").unstable_renderSubtreeIntoContainer,
+    React = __webpack_require__(/*! react */ "undefined?588e"),
+    ReactDOM = __webpack_require__(/*! react-dom */ "undefined?5e9a");
+
+var findAllMenuFrom = function findAllMenuFrom(el) {
+  var menus = [];
+
+  do {
+    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(el.children).filter(function (node) {
+      return node.classList.contains("inContextMenuComp");
+    })));
+    el = el.parentNode;
+  } while (el && el !== document);
+
+  return menus;
+},
+    findReactComponent = function findReactComponent(el) {
+  var fiberNode;
+
+  for (var key in el) {
+    if (key.startsWith('__reactInternalInstance$')) {
+      fiberNode = el[key];
+      return fiberNode && fiberNode.return && fiberNode.return.stateNode;
+    }
+  }
+
+  return null;
+},
+    renderMenu = function renderMenu(target, menus, renderChilds, DefaultMenuComp) {
+  var RComp = DefaultMenuComp,
+      Renderer = React.cloneElement(React.createElement(RComp, null, React.createElement(React.Fragment, null, renderChilds())));
+  var menu = document.createElement("div");
+  target.appendChild(menu);
+  renderSubtreeIntoContainer(menus[0], Renderer, menu);
+  return menu;
+},
+    layer,
+    currentMenu,
+    contextmenuListener,
+    openPortals = [];
+
+function airRender(render, menus, e) {
+  return function (Comp) {
+    return (
+      /*#__PURE__*/
+      function (_React$Component) {
+        _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(AirRCComp, _React$Component);
+
+        function AirRCComp() {
+          _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, AirRCComp);
+
+          return _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default()(AirRCComp).apply(this, arguments));
+        }
+
+        _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(AirRCComp, [{
+          key: "componentDidMount",
+          value: function componentDidMount() {
+            // ...
+            openPortals.push(render(this.refs.node.parentNode, menus, e));
+          }
+        }, {
+          key: "render",
+          value: function render() {
+            return React.createElement(Comp, null, React.createElement("span", {
+              ref: "node",
+              style: {
+                display: "none"
+              }
+            }));
+          }
+        }]);
+
+        return AirRCComp;
+      }(React.Component)
+    );
+  };
+}
+;
+function applyCssAnim(node, id, tm, cb) {
+  tm = tm || 500;
+
+  var stm,
+      evt = function evt(e) {
+    if (e && e.target !== node) {
+      return;
+    }
+
+    clearTimeout(stm);
+    Object.assign(node.style, {
+      animation: null
+    });
+    node.removeEventListener('animationend', evt);
+    cb && cb(node);
+  };
+
+  node.addEventListener('animationend', evt);
+  Object.assign(node.style, {
+    animation: id + " " + tm / 1000 + "s forwards"
+  });
+  stm = setTimeout(evt, tm * 1.1);
+}
+;
+function clearContextListeners() {
+  document.body.removeChild(layer);
+  layer = null;
+}
+function initContextListeners(ContextMenu) {
+  // init overlay
+  layer = document.createElement("div");
+  Object.assign(layer.style, {
+    pointerEvents: "none",
+    position: "absolute",
+    overflow: "hidden",
+    width: "100%",
+    height: "100%",
+    top: "0",
+    left: "0",
+    zIndex: ContextMenu.DefaultZIndex,
+    display: 'none'
+  });
+  document.body.appendChild(layer);
+
+  var destroy = function destroy(e, now) {
+    var clear = function clear(tm) {
+      layer.style.display = 'none';
+      currentMenu = null;
+      openPortals.forEach(function (node) {
+        return ReactDOM.unmountComponentAtNode(node);
+      });
+      layer.innerHTML = '';
+    };
+
+    if (!now) {
+      ContextMenu.DefaultHideAnim && applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
+    } else clear();
+
+    window.removeEventListener('resize', resize);
+    document.body.removeEventListener('click', destroy);
+  },
+      resize; // on right click
+
+
+  document.addEventListener("contextmenu", contextmenuListener = function contextmenuListener(e) {
+    if (currentMenu) destroy(null, true); //
+
+    var rootExclusive,
+        menuComps = findAllMenuFrom(e.target).map(findReactComponent).reduce(function (list, cmp) {
+      if (!cmp || rootExclusive) return list;
+      list.push(cmp);
+      if (cmp.props.hasOwnProperty("root")) rootExclusive = cmp;
+      return list;
+    }, []),
+        x,
+        y,
+        mw = document.body.offsetWidth,
+        mh = document.body.offsetHeight;
+    if (!menuComps.length || menuComps[0].props.hasOwnProperty('native')) return;
+    document.body.addEventListener('click', destroy);
+    layer.style.display = 'block';
+    window.addEventListener('resize', resize = function resize() {
+      x = x / mw * document.body.offsetWidth; //y  = (y / mh) * document.body.offsetHeight;
+
+      mw = document.body.offsetWidth;
+      mh = document.body.offsetHeight;
+      Object.assign(currentMenu.style, {
+        top: y + 'px',
+        left: x + 'px'
+      });
+    });
+    currentMenu = renderMenu(layer, menuComps, function () {
+      return React.createElement(React.Fragment, null, menuComps.map(function (cmp, i) {
+        return cmp.renderWithContext(menuComps, e, i);
+      }));
+    }, ContextMenu.DefaultMenuComp);
+    openPortals.push(currentMenu);
+    Object.assign(currentMenu.style, {
+      pointerEvents: "all",
+      position: "absolute",
+      display: "flex",
+      visibility: 'hidden'
+    });
+    currentMenu.className = "inContextMenu"; // show on next animaton frame
+
+    requestAnimationFrame(function () {
+      x = e.x;
+      y = e.y + document.body.scrollTop;
+      if (x + currentMenu.offsetWidth > mw) x -= currentMenu.offsetWidth;
+      if (y + currentMenu.offsetHeight > mh) y -= currentMenu.offsetHeight;
+      Object.assign(currentMenu.style, {
+        top: y + 'px',
+        left: x + 'px',
+        width: currentMenu.offsetWidth + 'px',
+        height: currentMenu.offsetHeight + 'px',
+        visibility: 'visible'
+      });
+      ContextMenu.DefaultShowAnim && applyCssAnim(currentMenu, 'slide-in-blurred-left', ContextMenu.DefaultAnimDuration);
+    });
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  });
+}
+;
 
 /***/ }),
 
@@ -662,17 +756,6 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom");
-
-/***/ }),
-
-/***/ "undefined?63a5":
-/*!*********************!*\
-  !*** external "is" ***!
-  \*********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("is");
 
 /***/ })
 

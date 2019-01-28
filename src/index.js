@@ -1,8 +1,12 @@
 /*
- * Copyright (c) 2018. Wise Wild Web
+ * The MIT License (MIT)
+ * Copyright (c) 2019. Wise Wild Web
  *
- * This File is part of Caipi and under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
- * Full license at https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
@@ -13,215 +17,34 @@
  */
 
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
-    is                         = require('is'),
+    utils                      = require('./utils'),
     React                      = require('react'),
-    ReactDOM                   = require('react-dom'),
-    findAllMenuFrom            = function ( el ) {
-	    let menus = [];
-	    do {
-		    menus.push(...[...el.children].filter(node => node.classList.contains("inContextMenuComp")))
-		    el = el.parentNode;
-	    } while ( el && el !== document );
-	    return menus;
-    },
-    findReactComponent         = function ( el ) {
-	    let fiberNode;
-	    for ( const key in el ) {
-		    if ( key.startsWith('__reactInternalInstance$') ) {
-			    fiberNode = el[key];
-			
-			    return fiberNode && fiberNode.return && fiberNode.return.stateNode;
-		    }
-	    }
-	    return null;
-    },
-    renderMenu                 = ( target, menus, renderChilds ) => {
-	    let RComp    = ContextMenu.DefaultMenuComp,
-	        Renderer = React.cloneElement(
-		        <RComp>
-			        <React.Fragment>
-				        { renderChilds() }
-			        </React.Fragment>
-		        </RComp>);
-	
-	    let menu = document.createElement("div");
-	    target.appendChild(menu)
-	
-	    renderSubtreeIntoContainer(menus[0], Renderer, menu);
-	    return menu
-    },
-    layer,
-    currentMenu,
-    openPortals                = [],
-    initialized,
-    airRender                  = ( render, menus, e ) => {
-	    return ( Comp ) => {
-		
-		    return class AirRCComp extends React.Component {
-			
-			    componentDidMount() {
-				    // ...
-				    openPortals.push(render(this.refs.node.parentNode, menus, e));
-			    }
-			
-			    render() {
-				    return <Comp>
-					    <span ref={ "node" } style={ { display: "none" } }/>
-				    </Comp>
-			    }
-		    }
-	    }
-    }
-;
+    initialized                = 0;
 
 
 class ContextMenu extends React.Component {
-	static DefaultZIndex      = 1000;
-	static DefaultMenuComp    = 'div';
-	static DefaultSubMenuComp = 'div';
+	static DefaultZIndex       = 1000;
+	static DefaultAnimDuration = 250;
+	static DefaultMenuComp     = 'div';
+	static DefaultSubMenuComp  = 'div';
+	static DefaultShowAnim     = false;
+	static DefaultHideAnim     = false;
 	
-	static initContextListeners() {
-		initialized = true;
-		
-		// init overlay
-		layer = document.createElement("div");
-		Object.assign(layer, {
-			pointerEvents: "none",
-			position     : "absolute",
-			width        : "100%",
-			height       : "100%",
-			top          : "0",
-			left         : "0",
-			zIndex       : ContextMenu.DefaultZIndex,
-			display      : 'none'
-		});
-		document.body.appendChild(layer);
-		
-		let destroy = ( e, now ) => {
-			
-			let clear           = tm => {
-				currentMenu = null;
-				openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
-				layer.innerHTML = '';
-			};
-			layer.style.display = 'none';
-			!now && setTimeout(
-				clear,
-				500
-			) || clear();
-			window.removeEventListener('resize', resize);
-			document.body.addEventListener('click', destroy)
-			
-		}, resize;
-		
-		// on right click
-		document.addEventListener(
-			"contextmenu",
-			function ( e ) {
-				if ( currentMenu )
-					destroy(null, true);
-				
-				//
-				let rootExclusive,
-				    menuComps = findAllMenuFrom(e.target)
-					    .map(findReactComponent)
-					    .reduce(
-						    ( list, cmp ) => {
-							    if ( !cmp || rootExclusive ) return list;
-							    list.push(cmp);
-							    if ( cmp.props.hasOwnProperty("root") )
-								    rootExclusive = cmp;
-							    return list
-						    },
-						    []
-					    ),
-				    x, y,
-				    mw        = document.body.offsetWidth,
-				    mh        = document.body.offsetHeight;
-				
-				if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
-					return;
-				
-				
-				document.body.addEventListener('click', destroy)
-				
-				layer.style.display = 'block';
-				
-				window.addEventListener(
-					'resize',
-					resize = () => {
-						x  = (x / mw) * document.body.offsetWidth;
-						//y  = (y / mh) * document.body.offsetHeight;
-						mw = document.body.offsetWidth;
-						mh = document.body.offsetHeight;
-						Object.assign(
-							currentMenu.style,
-							{
-								top : y + 'px',
-								left: x + 'px',
-							}
-						)
-					});
-				
-				currentMenu = renderMenu(
-					layer,
-					menuComps,
-					() => {
-						return <React.Fragment>{ menuComps.map(( cmp, i ) => cmp.renderWithContext(menuComps, e, i)) }</React.Fragment>;
-					}
-				);
-				
-				openPortals.push(currentMenu);
-				
-				Object.assign(
-					currentMenu.style,
-					{
-						pointerEvents: "all",
-						position     : "absolute",
-						display      : "flex",
-						visibility   : 'hidden'
-					}
-				);
-				
-				currentMenu.className = "inContextMenu";
-				
-				// show on next animaton frame
-				requestAnimationFrame(
-					function () {
-						x = e.x;
-						y = e.y + document.body.scrollTop;
-						
-						if ( (x + currentMenu.offsetWidth) > mw )
-							x -= currentMenu.offsetWidth;
-						if ( (y + currentMenu.offsetHeight) > mh )
-							y -= currentMenu.offsetHeight;
-						
-						Object.assign(
-							currentMenu.style,
-							{
-								top       : y + 'px',
-								left      : x + 'px',
-								width     : currentMenu.offsetWidth + 'px',
-								height    : currentMenu.offsetHeight + 'px',
-								visibility: 'visible'
-							}
-						);
-					}
-				);
-				
-				e.preventDefault()
-				e.stopPropagation()
-				return false;
-			});
-	}
 	
 	constructor( props ) {
 		super(...arguments)
-		!initialized && ContextMenu.initContextListeners(this);
+		if ( !initialized )
+			utils.initContextListeners(ContextMenu);
+		initialized++;
+	}
+	
+	componentWillUnmount() {
+		if ( !--initialized )
+			utils.clearContextListeners(ContextMenu);
 	}
 	
 	renderWithContext( menus, e, current ) {
-		let CRCComp = airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
+		let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
 		return <CRCComp key={ current }/>;
 	}
 	

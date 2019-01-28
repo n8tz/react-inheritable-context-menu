@@ -23,6 +23,13 @@ import {ContextMenu} from "react-inheritable-contextmenu";
 ContextMenu.DefaultMenuComp = Paper
 ContextMenu.DefaultSubMenuComp = 'ul'
 
+// add optional cool anims ( choose & add in css any anims in http://animista.net/ )
+ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
+ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
+
+// set show/hide anims duration (default to 250)
+ContextMenu.DefaultAnimDuration = 200;
+
 //...
 
 render(){
