@@ -7,7 +7,7 @@
 
 Simple Context menu component for react showing all inherited parents menu with SSR compatibility.
 
-Check the sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheritable-context-menu/blob/master/samples/index.html) [sources](src/samples.js)
+Check the sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheritable-context-menu/blob/master/samples/index.html) ( [sources](src/samples.js) )
 
 ```
  npm i react-inheritable-contextmenu -s
