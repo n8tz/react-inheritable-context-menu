@@ -18,8 +18,8 @@ import {ContextMenu} from "."
 import "./samples.scss"
 
 console.log("Dev !")
-//ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
-//ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
+ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
+ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
 ContextMenu.DefaultAnimDuration = 400;
 ContextMenu.DefaultMenuComp = ( { children } ) =>
 	<div className={ "contextMenu" }>

@@ -24808,9 +24808,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log("Dev !"); //ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
-//ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
-
+console.log("Dev !");
+___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultShowAnim = 'slide-in-blurred-left';
+___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultHideAnim = 'slide-out-blurred-right';
 ___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultAnimDuration = 400;
 
 ___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultMenuComp = function (_ref) {
