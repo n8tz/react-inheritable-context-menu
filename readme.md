@@ -16,7 +16,8 @@ Sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheri
 ## Why another context menu ?
 
 Because none of the existing ones have met my requirements :
- - Ability to inherit parents context menus
+ - Ability to inherit & include parents context menus
+ - Possibility to render menu items basing the browser event
  - Simple to use
  - Simple to animate with css
  - Do not break SSR
