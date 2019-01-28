@@ -98,9 +98,15 @@ export function applyCssAnim( node, id, tm, cb ) {
 
 
 export function clearContextListeners() {
+	try {
+		document.body.removeChild(layer);
+		document.removeEventListener(
+			"contextmenu",
+			contextmenuListener);
+		contextmenuListener = layer = null;
+	} catch ( e ) {
 	
-	document.body.removeChild(layer);
-	layer = null;
+	}
 }
 
 export function initContextListeners( ContextMenu ) {

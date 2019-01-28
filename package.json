@@ -1,6 +1,6 @@
 {
   "name": "react-inheritable-contextmenu",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "license": "MIT",
   "author": "Nathan Braun <caipilabs@gmail.com>",
   "main": "./dist/Comp.js",
