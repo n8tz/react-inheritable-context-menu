@@ -13,7 +13,15 @@ Sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheri
  npm i react-inheritable-contextmenu -s
 ```
 
-# Usage
+## Why another context menu ?
+
+Because none of the existing ones have met my requirements :
+ - Ability to inherit parents context menus
+ - Simple to use
+ - Simple to animate with css
+ - Do not break SSR
+
+## Usage
 
 ```jsx
 
