@@ -240,7 +240,7 @@ export function initContextListeners( ContextMenu ) {
 						}
 					);
 					ContextMenu.DefaultShowAnim &&
-					applyCssAnim(currentMenu, 'slide-in-blurred-left', ContextMenu.DefaultAnimDuration)
+					applyCssAnim(currentMenu, ContextMenu.DefaultShowAnim, ContextMenu.DefaultAnimDuration)
 				}
 			);
 			
