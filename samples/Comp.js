@@ -24391,7 +24391,7 @@ function initContextListeners(ContextMenu) {
         height: currentMenu.offsetHeight + 'px',
         visibility: 'visible'
       });
-      ContextMenu.DefaultShowAnim && applyCssAnim(currentMenu, 'slide-in-blurred-left', ContextMenu.DefaultAnimDuration);
+      ContextMenu.DefaultShowAnim && applyCssAnim(currentMenu, ContextMenu.DefaultShowAnim, ContextMenu.DefaultAnimDuration);
     });
     e.preventDefault();
     e.stopPropagation();
