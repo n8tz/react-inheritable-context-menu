@@ -2,12 +2,12 @@
 
 <p align="center"><img src="assets/demo.gif" alt="Samples" /></p>
 
-<a href="https://www.npmjs.com/package/react-inheritable-contextmenu">
-<img src="https://img.shields.io/npm/v/react-inheritable-contextmenu.svg" alt="Build Status" /></a>
+<a href="https://www.npmjs.com/package/react-inheritable-context-menu">
+<img src="https://img.shields.io/npm/v/react-inheritable-context-menu.svg" alt="Build Status" /></a>
 
-Simple Context menu component for react showing all inherited parents menu in theirs contexts with SSR compa.
+Simple Context menu component for react showing all inherited parents menu with SSR compatibility.
 
-Sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheritable-contextmenu/blob/master/samples/index.html)
+Check the sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/react-inheritable-context-menu/blob/master/samples/index.html) [sources](src/samples.js)
 
 ```
  npm i react-inheritable-contextmenu -s
@@ -26,7 +26,7 @@ Because none of the existing ones have met my requirements :
 
 ```jsx
 
-import {ContextMenu} from "react-inheritable-contextmenu";
+import { ContextMenu } from "react-inheritable-context-menu";
 
 // override default rendered comps
 // * there is no css builtin, but there is classNames .inContextMenuLayer > .inContextMenu

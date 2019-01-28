@@ -24595,10 +24595,6 @@ __webpack_require__.r(__webpack_exports__);
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
-
-/**
- * This code need nome smart refactoring
- */
 var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js").unstable_renderSubtreeIntoContainer,
     isBrowserSide = new Function("try {return this===window;}catch(e){ return false;}")(),
     utils = isBrowserSide && __webpack_require__(/*! ./utils */ "./src/utils.js"),
