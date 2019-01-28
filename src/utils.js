@@ -135,8 +135,9 @@ export function initContextListeners( ContextMenu ) {
 			layer.innerHTML = '';
 		};
 		if ( !now ) {
-			ContextMenu.DefaultHideAnim &&
-			applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear)
+			if ( ContextMenu.DefaultHideAnim )
+				applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear)
+			else setTimeout(clear, 10);
 		}
 		else clear();
 		window.removeEventListener('resize', resize);
@@ -173,7 +174,7 @@ export function initContextListeners( ContextMenu ) {
 				return;
 			
 			
-			document.body.addEventListener('click', destroy)
+			document.body.addEventListener('click', destroy);
 			
 			layer.style.display = 'block';
 			

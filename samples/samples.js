@@ -24765,9 +24765,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log("Dev !");
-___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultShowAnim = 'slide-in-blurred-left';
-___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultHideAnim = 'slide-out-blurred-right';
+console.log("Dev !"); //ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
+//ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
+
 ___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultAnimDuration = 400;
 
 ___WEBPACK_IMPORTED_MODULE_7__["ContextMenu"].DefaultMenuComp = function (_ref) {
@@ -25049,8 +25049,11 @@ function applyCssAnim(node, id, tm, cb) {
 }
 ;
 function clearContextListeners() {
-  document.body.removeChild(layer);
-  layer = null;
+  try {
+    document.body.removeChild(layer);
+    document.removeEventListener("contextmenu", contextmenuListener);
+    contextmenuListener = layer = null;
+  } catch (e) {}
 }
 function initContextListeners(ContextMenu) {
   // init overlay
@@ -25079,7 +25082,7 @@ function initContextListeners(ContextMenu) {
     };
 
     if (!now) {
-      ContextMenu.DefaultHideAnim && applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
+      if (ContextMenu.DefaultHideAnim) applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);else setTimeout(clear, 10);
     } else clear();
 
     window.removeEventListener('resize', resize);

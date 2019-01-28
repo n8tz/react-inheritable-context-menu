@@ -24256,8 +24256,11 @@ function applyCssAnim(node, id, tm, cb) {
 }
 ;
 function clearContextListeners() {
-  document.body.removeChild(layer);
-  layer = null;
+  try {
+    document.body.removeChild(layer);
+    document.removeEventListener("contextmenu", contextmenuListener);
+    contextmenuListener = layer = null;
+  } catch (e) {}
 }
 function initContextListeners(ContextMenu) {
   // init overlay
@@ -24286,7 +24289,7 @@ function initContextListeners(ContextMenu) {
     };
 
     if (!now) {
-      ContextMenu.DefaultHideAnim && applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
+      if (ContextMenu.DefaultHideAnim) applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);else setTimeout(clear, 10);
     } else clear();
 
     window.removeEventListener('resize', resize);
