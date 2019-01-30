@@ -50,7 +50,7 @@ class ContextMenu extends React.Component {
 	renderWithContext_ex( target, menus, e ) {
 		let RComp    = ContextMenu.DefaultSubMenuComp,
 		    Renderer = <RComp>
-			    <React.Fragment>{ this.renderMenu(e, menus) }</React.Fragment>
+			    { this.renderMenu(e, menus) }
 		    </RComp>,
 		    menu     = document.createElement("div");
 		
