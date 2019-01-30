@@ -16,80 +16,67 @@ var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeInto
     isBrowserSide              = (new Function("try {return this===window;}catch(e){ return false;}"))(),
     utils                      = isBrowserSide && require('./utils'),
     React                      = require('react'),
-    initialized                = 0,
-    ContextMenu;
+    initialized                = 0;
 
-if ( !isBrowserSide ) {
-	class ContextMenuSSR extends React.Component {
-		render() {
-			return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
-		}
+class ContextMenu extends React.Component {
+	
+	static DefaultZIndex       = 1000;
+	static DefaultAnimDuration = 250;
+	static DefaultMenuComp     = 'div';
+	static DefaultSubMenuComp  = 'div';
+	static DefaultShowAnim     = false;
+	static DefaultHideAnim     = false;
+	
+	
+	constructor( props ) {
+		super(...arguments)
+		if ( !initialized && isBrowserSide )
+			utils.initContextListeners(ContextMenu);
+		initialized++;
 	}
 	
-	ContextMenu = ContextMenuSSR;
-}
-else {
-	class ContextMenuFront extends React.Component {
-		
-		static DefaultZIndex       = 1000;
-		static DefaultAnimDuration = 250;
-		static DefaultMenuComp     = 'div';
-		static DefaultSubMenuComp  = 'div';
-		static DefaultShowAnim     = false;
-		static DefaultHideAnim     = false;
-		
-		
-		constructor( props ) {
-			super(...arguments)
-			if ( !initialized )
-				utils.initContextListeners(ContextMenu);
-			initialized++;
-		}
-		
-		componentWillUnmount() {
-			if ( !--initialized )
-				utils.clearContextListeners(ContextMenu);
-		}
-		
-		renderWithContext( menus, e, current ) {
-			let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
-			return <CRCComp key={ current }/>;
-		}
-		
-		renderWithContext_ex( target, menus, e ) {
-			let RComp    = ContextMenu.DefaultSubMenuComp,
-			    Renderer = React.cloneElement(
-				    <RComp>
-					    <React.Fragment>{ this.renderMenu(e, menus) }</React.Fragment>
-				    </RComp>,
-				    {}),
-			    menu     = document.createElement("div");
-			
-			target.appendChild(menu);
-			
-			renderSubtreeIntoContainer(this, Renderer, menu);
-			
-			return menu
-		}
-		
-		shouldComponentUpdate( props, ns ) {
-			this.renderableChilds = React.Children.toArray(props.children) || [];
-			return false;
-		}
-		
-		renderMenu( e, menus ) {
-			let childs = this.renderableChilds;
-			return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
-			       <React.Fragment>{ childs || '' }</React.Fragment>
-		}
-		
-		render() {
-			this.renderableChilds = React.Children.toArray(this.props.children) || [];
-			return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
-		}
+	componentWillUnmount() {
+		if ( !--initialized )
+			utils.clearContextListeners(ContextMenu);
 	}
 	
-	ContextMenu = ContextMenuFront;
+	renderWithContext( menus, e, current ) {
+		let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
+		return <CRCComp key={ current }/>;
+	}
+	
+	renderWithContext_ex( target, menus, e ) {
+		let RComp    = ContextMenu.DefaultSubMenuComp,
+		    Renderer = React.cloneElement(
+			    <RComp>
+				    <React.Fragment>{ this.renderMenu(e, menus) }</React.Fragment>
+			    </RComp>,
+			    {}),
+		    menu     = document.createElement("div");
+		
+		target.appendChild(menu);
+		
+		renderSubtreeIntoContainer(this, Renderer, menu);
+		
+		return menu
+	}
+	
+	shouldComponentUpdate( props, ns ) {
+		this.renderableChilds = React.Children.toArray(props.children) || [];
+		return false;
+	}
+	
+	renderMenu( e, menus ) {
+		let childs = this.renderableChilds;
+		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
+		       <React.Fragment>{ childs || '' }</React.Fragment>
+	}
+	
+	render() {
+		this.renderableChilds = React.Children.toArray(this.props.children) || [];
+		return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
+	}
 }
+
 export {ContextMenu};
 export default ContextMenu;
