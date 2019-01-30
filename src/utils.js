@@ -12,6 +12,9 @@
  *  @contact : n8tz.js@gmail.com
  */
 
+/**
+ * @todo : comments & clean..
+ */
 
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
     React                      = require('react'),
@@ -63,7 +66,6 @@ export function airRender( render, menus, e ) {
 		return class AirRCComp extends React.Component {
 			
 			componentDidMount() {
-				// ...
 				openPortals.push(render(this.refs.node.parentNode, menus, e));
 			}
 			

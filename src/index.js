@@ -11,7 +11,9 @@
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
-
+/**
+ * @todo : comments & clean..
+ */
 var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
     isBrowserSide              = (new Function("try {return this===window;}catch(e){ return false;}"))(),
     utils                      = isBrowserSide && require('./utils'),
@@ -47,11 +49,9 @@ class ContextMenu extends React.Component {
 	
 	renderWithContext_ex( target, menus, e ) {
 		let RComp    = ContextMenu.DefaultSubMenuComp,
-		    Renderer = React.cloneElement(
-			    <RComp>
-				    <React.Fragment>{ this.renderMenu(e, menus) }</React.Fragment>
-			    </RComp>,
-			    {}),
+		    Renderer = <RComp>
+			    <React.Fragment>{ this.renderMenu(e, menus) }</React.Fragment>
+		    </RComp>,
 		    menu     = document.createElement("div");
 		
 		target.appendChild(menu);
