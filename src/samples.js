@@ -23,7 +23,7 @@ ContextMenu.DefaultHideAnim     = 'slide-out-blurred-right';
 ContextMenu.DefaultAnimDuration = 400;
 ContextMenu.DefaultMenuComp     = ( { children } ) =>
 	<div className={ "contextMenu" }>
-		<React.Fragment>{ children || '' }</React.Fragment>
+		{ children || '' }
 	</div>;
 
 class Sample extends React.Component {

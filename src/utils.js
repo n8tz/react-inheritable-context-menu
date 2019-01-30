@@ -39,12 +39,12 @@ let
 	},
 	renderMenu         = ( target, menus, renderChilds, DefaultMenuComp ) => {
 		let RComp    = DefaultMenuComp,
-		    Renderer = React.cloneElement(
+		    Renderer =
 			    <RComp>
 				    <React.Fragment>
 					    { renderChilds() }
 				    </React.Fragment>
-			    </RComp>);
+			    </RComp>;
 		
 		let menu = document.createElement("div");
 		target.appendChild(menu)
