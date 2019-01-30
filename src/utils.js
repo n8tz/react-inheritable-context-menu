@@ -44,9 +44,7 @@ let
 		let RComp    = DefaultMenuComp,
 		    Renderer =
 			    <RComp>
-				    <React.Fragment>
-					    { renderChilds() }
-				    </React.Fragment>
+				    { renderChilds() }
 			    </RComp>;
 		
 		let menu = document.createElement("div");
