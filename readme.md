@@ -18,6 +18,7 @@ Check the sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/re
 Because none of the existing ones have met my requirements :
  - Ability to inherit & include parents context menus
  - Possibility to render menu items basing the browser event
+ - Render menus just in time
  - Simple to use
  - Simple to animate with css
  - Do not break SSR
