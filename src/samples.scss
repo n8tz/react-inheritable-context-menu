@@ -49,15 +49,17 @@
   display: inline-block;
 }
 
-.contextMenu {
+.inContextMenu {
   background: white;
   border: 1px solid gray;
   display: inline-block;
 
-  div {
+  .inContextSubMenu {
+    margin: 2px;
     padding: 2px;
     white-space: nowrap;
     list-style: none;
+    cursor: pointer;
 
     &:hover {
       background: lightblue;

@@ -1,6 +1,6 @@
 {
   "name": "react-inheritable-contextmenu",
-  "version": "1.4.8",
+  "version": "1.5.0",
   "description": "Simple Context menu component for react showing all inherited parents menu with SSR compatibility.",
   "license": "MIT",
   "author": "Nathan Braun <n8tz.js@gmail.com>",

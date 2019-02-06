@@ -30,9 +30,8 @@ Because none of the existing ones have met my requirements :
 import { ContextMenu } from "react-inheritable-context-menu";
 
 // override default rendered comps
-// * there is no css builtin, but there is classNames .inContextMenuLayer > .inContextMenu
+// * there is no css builtin, but there is classNames .inContextMenuLayer > .inContextMenu .inContextSubMenu
 ContextMenu.DefaultMenuComp = Paper
-ContextMenu.DefaultSubMenuComp = 'div'
 
 // add optional cool anims ( choose & add in css any anims in http://animista.net/ )
 ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
