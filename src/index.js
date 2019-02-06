@@ -11,14 +11,14 @@
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
-/**
- * @todo : comments & clean..
- */
-var renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
-    isBrowserSide              = (new Function("try {return this===window;}catch(e){ return false;}"))(),
-    utils                      = isBrowserSide && require('./utils'),
-    React                      = require('react'),
-    initialized                = 0;
+import React    from "react";
+import ReactDom from "react-dom";
+
+const renderSubtreeIntoContainer = ReactDom.unstable_renderSubtreeIntoContainer,
+      isBrowserSide              = (new Function("try {return this===window;}catch(e){ return false;}"))(),
+      utils                      = isBrowserSide && require('./utils');
+
+let initialized = 0;
 
 class ContextMenu extends React.Component {
 	
@@ -42,11 +42,25 @@ class ContextMenu extends React.Component {
 			utils.clearContextListeners(ContextMenu);
 	}
 	
+	/**
+	 * Return a rendered React component with the menu
+	 * @param menus
+	 * @param e
+	 * @param current
+	 * @returns {*}
+	 */
 	renderWithContext( menus, e, current ) {
-		let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
+		let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(React.Fragment);
 		return <CRCComp key={ current }/>;
 	}
 	
+	/**
+	 * Return a dom node with the menu rendered inside
+	 * @param target
+	 * @param menus
+	 * @param e
+	 * @returns {HTMLElement}
+	 */
 	renderWithContext_ex( target, menus, e ) {
 		let RComp    = ContextMenu.DefaultSubMenuComp,
 		    Renderer = <RComp>
@@ -54,6 +68,7 @@ class ContextMenu extends React.Component {
 		    </RComp>,
 		    menu     = document.createElement("div");
 		
+		menu.className = "inContextSubMenu";
 		target.appendChild(menu);
 		
 		renderSubtreeIntoContainer(this, Renderer, menu);
@@ -61,11 +76,12 @@ class ContextMenu extends React.Component {
 		return menu
 	}
 	
-	shouldComponentUpdate( props, ns ) {
-		this.renderableChilds = React.Children.toArray(props.children) || [];
-		return false;
-	}
-	
+	/**
+	 * Return / render the real menu
+	 * @param e
+	 * @param menus
+	 * @returns {*}
+	 */
 	renderMenu( e, menus ) {
 		let childs = this.renderableChilds;
 		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
@@ -73,7 +89,10 @@ class ContextMenu extends React.Component {
 	}
 	
 	render() {
+		// keep the renderable so we can render them when asked
 		this.renderableChilds = React.Children.toArray(this.props.children) || [];
+		
+		// render a flagged dom node to be found when recurring on the dom tree
 		return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
 	}
 }

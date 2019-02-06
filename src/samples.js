@@ -11,20 +11,22 @@
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
-import React    from "react";
-import ReactDom from "react-dom";
-
+import React         from "react";
+import ReactDom      from "react-dom";
 import {ContextMenu} from "."
 import "./samples.scss"
 
-console.log("Dev !")
-ContextMenu.DefaultShowAnim     = 'slide-in-blurred-left';
+
+/**
+ * Add some defaults config for the Menu
+ */
+ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
 ContextMenu.DefaultHideAnim     = 'slide-out-blurred-right';
 ContextMenu.DefaultAnimDuration = 400;
-ContextMenu.DefaultMenuComp     = ( { children } ) =>
-	<div className={ "contextMenu" }>
-		{ children || '' }
-	</div>;
+//ContextMenu.DefaultMenuComp     = ( { children } ) =>
+//	<div className={ "contextMenu" }>
+//		{ children || '' }
+//	</div>;
 
 class Sample extends React.Component {
 	render() {
@@ -72,8 +74,6 @@ class Sample extends React.Component {
 }
 
 function renderSamples() {
-	
-	
 	ReactDom.render(
 		<Sample/>
 		, document.getElementById('app'));

@@ -381,6 +381,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 /* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "undefined?588e");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-dom */ "undefined?5e9a");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -401,14 +405,13 @@ __webpack_require__.r(__webpack_exports__);
  *  @contact : n8tz.js@gmail.com
  */
 
-/**
- * @todo : comments & clean..
- */
-var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "undefined?5e9a").unstable_renderSubtreeIntoContainer,
+
+
+var renderSubtreeIntoContainer = react_dom__WEBPACK_IMPORTED_MODULE_6___default.a.unstable_renderSubtreeIntoContainer,
     isBrowserSide = new Function("try {return this===window;}catch(e){ return false;}")(),
-    utils = isBrowserSide && __webpack_require__(/*! ./utils */ "./src/utils.js"),
-    React = __webpack_require__(/*! react */ "undefined?588e"),
-    initialized = 0;
+    utils = isBrowserSide && __webpack_require__(/*! ./utils */ "./src/utils.js");
+
+var initialized = 0;
 
 var ContextMenu =
 /*#__PURE__*/
@@ -431,41 +434,61 @@ function (_React$Component) {
     value: function componentWillUnmount() {
       if (! --initialized) utils.clearContextListeners(ContextMenu);
     }
+    /**
+     * Return a rendered React component with the menu
+     * @param menus
+     * @param e
+     * @param current
+     * @returns {*}
+     */
+
   }, {
     key: "renderWithContext",
     value: function renderWithContext(menus, e, current) {
-      var CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(ContextMenu.DefaultSubMenuComp);
-      return React.createElement(CRCComp, {
+      var CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment);
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(CRCComp, {
         key: current
       });
     }
+    /**
+     * Return a dom node with the menu rendered inside
+     * @param target
+     * @param menus
+     * @param e
+     * @returns {HTMLElement}
+     */
+
   }, {
     key: "renderWithContext_ex",
     value: function renderWithContext_ex(target, menus, e) {
       var RComp = ContextMenu.DefaultSubMenuComp,
-          Renderer = React.createElement(RComp, null, React.createElement(React.Fragment, null, this.renderMenu(e, menus))),
+          Renderer = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(RComp, null, this.renderMenu(e, menus)),
           menu = document.createElement("div");
+      menu.className = "inContextSubMenu";
       target.appendChild(menu);
       renderSubtreeIntoContainer(this, Renderer, menu);
       return menu;
     }
-  }, {
-    key: "shouldComponentUpdate",
-    value: function shouldComponentUpdate(props, ns) {
-      this.renderableChilds = React.Children.toArray(props.children) || [];
-      return false;
-    }
+    /**
+     * Return / render the real menu
+     * @param e
+     * @param menus
+     * @returns {*}
+     */
+
   }, {
     key: "renderMenu",
     value: function renderMenu(e, menus) {
       var childs = this.renderableChilds;
-      return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) : React.createElement(React.Fragment, null, childs || '');
+      return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) : react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, childs || '');
     }
   }, {
     key: "render",
     value: function render() {
-      this.renderableChilds = React.Children.toArray(this.props.children) || [];
-      return React.createElement("div", {
+      // keep the renderable so we can render them when asked
+      this.renderableChilds = react__WEBPACK_IMPORTED_MODULE_5___default.a.Children.toArray(this.props.children) || []; // render a flagged dom node to be found when recurring on the dom tree
+
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: "inContextMenuComp",
         style: {
           display: "none"
@@ -475,7 +498,7 @@ function (_React$Component) {
   }]);
 
   return ContextMenu;
-}(React.Component);
+}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 ContextMenu.DefaultZIndex = 1000;
 ContextMenu.DefaultAnimDuration = 250;
@@ -492,11 +515,14 @@ ContextMenu.DefaultHideAnim = false;
 /*!**********************!*\
   !*** ./src/utils.js ***!
   \**********************/
-/*! exports provided: airRender, applyCssAnim, clearContextListeners, initContextListeners */
+/*! exports provided: findAllMenuFrom, findReactComponent, renderMenu, airRender, applyCssAnim, clearContextListeners, initContextListeners */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findAllMenuFrom", function() { return findAllMenuFrom; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "findReactComponent", function() { return findReactComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderMenu", function() { return renderMenu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "airRender", function() { return airRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "applyCssAnim", function() { return applyCssAnim; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearContextListeners", function() { return clearContextListeners; });
@@ -540,43 +566,78 @@ __webpack_require__.r(__webpack_exports__);
 var renderSubtreeIntoContainer = __webpack_require__(/*! react-dom */ "undefined?5e9a").unstable_renderSubtreeIntoContainer,
     React = __webpack_require__(/*! react */ "undefined?588e"),
     ReactDOM = __webpack_require__(/*! react-dom */ "undefined?5e9a");
+/**
+ * Static values
+ */
 
-var findAllMenuFrom = function findAllMenuFrom(el) {
+
+var layer,
+    currentMenu,
+    contextmenuListener,
+    openPortals = [];
+/**
+ * Find all dom node in the element parent hierarchy
+ * @param element
+ * @returns {Array} An array of dom node generated by the React ContextMenu component
+ */
+
+function findAllMenuFrom(element) {
   var menus = [];
 
   do {
-    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(Array.from(el.children).filter(function (node) {
+    menus.push.apply(menus, _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_5___default()(Array.from(element.children).filter(function (node) {
       return node.classList.contains("inContextMenuComp");
     })));
-    el = el.parentNode;
-  } while (el && el !== document);
+    element = element.parentNode;
+  } while (element && element !== document);
 
   return menus;
-},
-    findReactComponent = function findReactComponent(el) {
+}
+;
+/**
+ * Find the react component that generate element dom node
+ * @param element
+ * @returns {React.Component}
+ */
+
+function findReactComponent(element) {
   var fiberNode;
 
-  for (var key in el) {
+  for (var key in element) {
     if (key.startsWith('__reactInternalInstance$')) {
-      fiberNode = el[key];
+      fiberNode = element[key];
       return fiberNode && fiberNode.return && fiberNode.return.stateNode;
     }
   }
 
   return null;
-},
-    renderMenu = function renderMenu(target, menus, renderChilds, DefaultMenuComp) {
+}
+;
+/**
+ * Render the root of the Context Menu
+ * @param target
+ * @param menus
+ * @param renderChilds
+ * @param DefaultMenuComp
+ * @returns {HTMLElement}
+ */
+
+function renderMenu(target, menus, renderChilds, DefaultMenuComp) {
   var RComp = DefaultMenuComp,
       Renderer = React.createElement(RComp, null, renderChilds());
   var menu = document.createElement("div");
   target.appendChild(menu);
   renderSubtreeIntoContainer(menus[0], Renderer, menu);
   return menu;
-},
-    layer,
-    currentMenu,
-    contextmenuListener,
-    openPortals = [];
+}
+;
+/**
+ * Hoc to make sub menus renderers
+ * @param render
+ * @param menus
+ * @param e
+ * @returns {function(*): {React.Component}}
+ */
 
 function airRender(render, menus, e) {
   return function (Comp) {
@@ -614,6 +675,14 @@ function airRender(render, menus, e) {
   };
 }
 ;
+/**
+ * Apply 'id' css anim on 'node' element during 'tm'ms
+ * @param node
+ * @param id
+ * @param tm
+ * @param cb
+ */
+
 function applyCssAnim(node, id, tm, cb) {
   tm = tm || 500;
 
@@ -638,6 +707,10 @@ function applyCssAnim(node, id, tm, cb) {
   stm = setTimeout(evt, tm * 1.1);
 }
 ;
+/**
+ * Remove all listeners (destroy the context Menu
+ */
+
 function clearContextListeners() {
   try {
     document.body.removeChild(layer);
@@ -645,6 +718,11 @@ function clearContextListeners() {
     contextmenuListener = layer = null;
   } catch (e) {}
 }
+/**
+ * Init the context Menu
+ * @param ContextMenu
+ */
+
 function initContextListeners(ContextMenu) {
   // init overlay
   layer = document.createElement("div");
