@@ -22,7 +22,7 @@ import "./samples.scss"
  */
 ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
 ContextMenu.DefaultHideAnim     = 'slide-out-blurred-right';
-ContextMenu.DefaultAnimDuration = 400;
+ContextMenu.DefaultAnimDuration = 200;
 //ContextMenu.DefaultMenuComp     = ( { children } ) =>
 //	<div className={ "contextMenu" }>
 //		{ children || '' }
