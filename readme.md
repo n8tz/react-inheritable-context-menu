@@ -27,7 +27,7 @@ Because none of the existing ones have met my requirements :
 
 ```jsx
 
-import { ContextMenu } from "react-inheritable-context-menu";
+import { ContextMenu } from "react-inheritable-contextmenu";
 
 // override default rendered comps
 // * there is no css builtin, but there is classNames .inContextMenuLayer > .inContextMenu .inContextSubMenu
