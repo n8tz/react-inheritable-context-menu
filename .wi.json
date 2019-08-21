@@ -1,0 +1,88 @@
+{
+  "default": {
+    "rootFolder": "src",
+    "basedOn": "component",
+    "vars": {
+      "rootAlias": "ContextMenu",
+      "entryPoint": "./src",
+      "production": true,
+      "externals": true,
+      "babelPreset": {
+        "targets": {
+          "browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
+        },
+        "loose": true
+      },
+      "webpackPatch": {
+        "devtool": "source-map"
+      }
+    },
+    "extend": [
+      "wi-layer-react-express"
+    ]
+  },
+  "staging": {
+    "rootFolder": "src",
+    "basedOn": "component",
+    "vars": {
+      "rootAlias": "ContextMenu",
+      "entryPoint": "./src",
+      "externals": true,
+      "production": false,
+      "babelPreset": {
+        "targets": {
+          "browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
+        },
+        "loose": true
+      },
+      "webpackPatch": {
+      }
+    },
+    "extend": [
+      "wi-layer-react-express"
+    ]
+  },
+  "samples": {
+    "rootFolder": "samples",
+    "basedOn": "static",
+    "vars": {
+      "rootAlias": "Samples",
+      "production": false,
+      "targetDir": "dist.samples",
+      "entryPoint": "Samples/index.js",
+      "babelPreset": {
+        "targets": {
+          "browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
+        },
+        "loose": true
+      },
+      "webpackPatch": {
+      }
+    },
+    "extend": [
+      "wi-layer-react-express"
+    ]
+  },
+  "samplesDev": {
+    "rootFolder": "samples",
+    "basedOn": "static",
+    "vars": {
+      "rootAlias": "Samples",
+      "devServer": true,
+      "production": false,
+      "targetDir": "dist.samples",
+      "entryPoint": "Samples/index.js",
+      "babelPreset": {
+        "targets": {
+          "browsers": "> 0.25%, not dead, safari >= 7, ios_saf >= 7, chrome >= 52"
+        },
+        "loose": true
+      },
+      "webpackPatch": {
+      }
+    },
+    "extend": [
+      "wi-layer-react-express"
+    ]
+  }
+}
