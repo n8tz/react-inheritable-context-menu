@@ -13,7 +13,7 @@
  */
 import React         from "react";
 import ReactDom      from "react-dom";
-import {ContextMenu} from "."
+import {ContextMenu} from ".."
 import "./samples.scss"
 
 
@@ -21,7 +21,8 @@ import "./samples.scss"
  * Add some defaults config for the Menu
  */
 ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
-ContextMenu.DefaultHideAnim     = 'slide-out-blurred-right';
+ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
+
 ContextMenu.DefaultAnimDuration = 200;
 //ContextMenu.DefaultMenuComp     = ( { children } ) =>
 //	<div className={ "contextMenu" }>
@@ -30,7 +31,7 @@ ContextMenu.DefaultAnimDuration = 200;
 
 class Sample extends React.Component {
 	render() {
-		return <div className={ "root" }>
+		return <div className={"root"}>
 			<ContextMenu>
 				<div>Menu root</div>
 			</ContextMenu>
@@ -38,29 +39,29 @@ class Sample extends React.Component {
 			<h1>Inheritable context menu demo</h1>
 			<br/>
 			<br/>
-			<div className={ "block" }>
+			<div className={"block"}>
 				2nd menu inheriting the 1st<br/>
 				<ContextMenu>
 					<div>Menu 2</div>
 				</ContextMenu>
 			</div>
 			
-			<div className={ "block" }>
+			<div className={"block"}>
 				another using render fn<br/>
 				<ContextMenu  // show Menu root & menu 2
 					renderMenu={
-						( e, allMenuComps ) => <div>Menu 2 <i>x:{ e.x } x:{ e.y }</i></div>
+						( e, allMenuComps ) => <div>Menu 2 <i>x:{e.x} x:{e.y}</i></div>
 					}/>
 			</div>
-			<div className={ "block" }>
+			<div className={"block"}>
 				Without parent's menu<br/>
 				<ContextMenu
 					root         // don't show parent's menu
 					renderMenu={
-						( e, allMenuComps ) => <div>Menu <i>x:{ e.x } x:{ e.y }</i></div>
+						( e, allMenuComps ) => <div>Menu <i>x:{e.x} x:{e.y}</i></div>
 					}/>
 			</div>
-			<div className={ "block" }>
+			<div className={"block"}>
 				native menu<br/>
 				<ContextMenu
 					native         // use natve menu
@@ -72,6 +73,8 @@ class Sample extends React.Component {
 		</div>;
 	}
 }
+
+document.body.innerHTML = '<div id="app"></div>'
 
 function renderSamples() {
 	ReactDom.render(
