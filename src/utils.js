@@ -28,6 +28,7 @@ let layer,
     contextmenuListener,
     openPortals = [];
 
+
 /**
  * Find all dom node in the element parent hierarchy
  * @param element
@@ -59,6 +60,7 @@ export function findReactComponent( element ) {
 	return null;
 };
 
+
 /**
  * Render the root of the Context Menu
  * @param target
@@ -71,7 +73,7 @@ export function renderMenu( target, menus, renderChilds, DefaultMenuComp ) {
 	let RComp    = DefaultMenuComp,
 	    Renderer =
 		    <RComp>
-			    { renderChilds() }
+			    {renderChilds()}
 		    </RComp>;
 	
 	let menu = document.createElement("div");
@@ -99,7 +101,7 @@ export function airRender( render, menus, e ) {
 			
 			render() {
 				return <Comp>
-					<span ref={ "node" } style={ { display: "none" } }/>
+					<span ref={"node"} style={{ display: "none" }}/>
 				</Comp>
 			}
 		}
@@ -130,7 +132,7 @@ export function applyCssAnim( node, id, tm, cb ) {
 	
 	Object.assign(node.style, { animation: id + " " + (tm / 1000) + "s forwards" });
 	
-	stm = setTimeout(evt, tm * 1.1);
+	stm = setTimeout(evt, tm * 1.5);
 };
 
 /**
@@ -158,8 +160,7 @@ export function initContextListeners( ContextMenu ) {
 	layer = document.createElement("div");
 	Object.assign(layer.style, {
 		pointerEvents: "none",
-		position     : "absolute",
-		overflow     : "hidden",
+		position     : "fixed",
 		width        : "100%",
 		height       : "100%",
 		top          : "0",
@@ -171,23 +172,23 @@ export function initContextListeners( ContextMenu ) {
 	document.body.appendChild(layer);
 	
 	let destroy = ( e, now ) => {
-		
 		let clear = tm => {
 			layer.style.display = 'none';
 			currentMenu         = null;
-			openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node))
+			openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node));
 			layer.innerHTML = '';
 		};
 		if ( !now ) {
 			if ( ContextMenu.DefaultHideAnim )
-				applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear)
+				applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
 			else setTimeout(clear, 10);
 		}
 		else clear();
 		window.removeEventListener('resize', resize);
+		window.removeEventListener('scroll', scroll);
 		document.body.removeEventListener('click', destroy)
 		
-	}, resize;
+	}, resize, scroll;
 	
 	// on right click
 	document.addEventListener(
@@ -211,8 +212,8 @@ export function initContextListeners( ContextMenu ) {
 					    []
 				    ),
 			    x, y,
-			    mw        = document.body.offsetWidth,
-			    mh        = document.body.offsetHeight;
+			    mw        = window.innerWidth,
+			    mh        = window.innerHeight;
 			
 			if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
 				return;
@@ -225,9 +226,9 @@ export function initContextListeners( ContextMenu ) {
 				'resize',
 				resize = () => {
 					x  = (x / mw) * document.body.offsetWidth;
-					//y  = (y / mh) * document.body.offsetHeight;
-					mw = document.body.offsetWidth;
-					mh = document.body.offsetHeight;
+					y  = (y / mh) * document.body.offsetHeight;
+					mw = window.innerWidth;
+					mh = window.innerHeight;
 					Object.assign(
 						currentMenu.style,
 						{
@@ -236,11 +237,16 @@ export function initContextListeners( ContextMenu ) {
 						}
 					)
 				});
+			window.addEventListener(
+				'scroll',
+				scroll = () => {
+					destroy(null, false);
+				});
 			currentMenu = renderMenu(
 				layer,
 				menuComps,
 				() => {
-					return <React.Fragment>{ menuComps.map(( cmp, i ) => cmp.renderWithContext(menuComps, e, i)) }</React.Fragment>;
+					return <React.Fragment>{menuComps.map(( cmp, i ) => cmp.renderWithContext(menuComps, e, i))}</React.Fragment>;
 				}
 				, ContextMenu.DefaultMenuComp
 			);
@@ -262,8 +268,9 @@ export function initContextListeners( ContextMenu ) {
 			// show on next animaton frame
 			requestAnimationFrame(
 				function () {
+					
 					x = e.x;
-					y = e.y + document.body.scrollTop;
+					y = e.y;
 					
 					if ( (x + currentMenu.offsetWidth) > mw )
 						x -= currentMenu.offsetWidth;

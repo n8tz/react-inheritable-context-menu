@@ -1,6 +1,6 @@
 {
   "name": "react-inheritable-contextmenu",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Simple Context menu component for react showing all inherited parents menu with SSR compatibility.",
   "license": "MIT",
   "author": "Nathan Braun <n8tz.js@gmail.com>",
@@ -25,7 +25,7 @@
     "is": "^3.2.1"
   },
   "devDependencies": {
-    "webpack-inherit": "^1.8.2",
-    "wi-layer-react-express": "^1.1.7"
+    "webpack-inherit": "^1.8.8",
+    "wi-layer-react-express": "^1.1.23"
   }
 }
