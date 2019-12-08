@@ -179,7 +179,6 @@ export function initContextListeners( ContextMenu ) {
 			layer.innerHTML = '';
 		};
 		if ( !now ) {
-			debugger
 			if ( ContextMenu.DefaultHideAnim )
 				applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
 			else setTimeout(clear, 10);
