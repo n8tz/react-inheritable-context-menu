@@ -25,7 +25,7 @@
     "is": "^3.2.1"
   },
   "devDependencies": {
-    "layer-pack": "^1.0.0",
-    "lpack-react": "^1.0.0"
+    "layer-pack": "^1.0.8",
+    "lpack-react": "^1.2.3"
   }
 }
