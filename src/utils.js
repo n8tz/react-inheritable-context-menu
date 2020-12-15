@@ -51,9 +51,8 @@ export function findAllMenuFrom( element ) {
 export function findReactComponent( element ) {
 	let fiberNode;
 	for ( const key in element ) {
-		if ( key.startsWith('__reactInternalInstance$') ) {
+		if ( key.startsWith('__reactInternalInstance$') || key.startsWith('__reactFiber$') ) {
 			fiberNode = element[key];
-			
 			return fiberNode && fiberNode.return && fiberNode.return.stateNode;
 		}
 	}
