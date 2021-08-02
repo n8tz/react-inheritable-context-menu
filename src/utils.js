@@ -49,14 +49,20 @@ export function findAllMenuFrom( element ) {
  * @returns {React.Component}
  */
 export function findReactComponent( element ) {
-	let fiberNode;
+	let fiberNode, comps = [element];
 	for ( const key in element ) {
+		
 		if ( key.startsWith('__reactInternalInstance$') || key.startsWith('__reactFiber$') ) {
-			fiberNode = element[key];
-			return fiberNode && fiberNode.return && fiberNode.return.stateNode;
+			fiberNode = element[ key ];
+			while ( fiberNode.return ) {
+				if ( fiberNode.stateNode && !comps.includes(fiberNode.stateNode) )
+					comps.push(fiberNode.stateNode)
+				fiberNode = fiberNode.return;
+			}
+			return comps;
 		}
 	}
-	return null;
+	return element.parentNode && this.findReactParents(element.parentNode);
 };
 
 
