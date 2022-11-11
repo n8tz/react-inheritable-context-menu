@@ -1,6 +1,6 @@
 /*
  * The MIT License (MIT)
- * Copyright (c) 2019. Wise Wild Web
+ * Copyright (c) 2022-2023. Nathan Braun
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -13,7 +13,7 @@
  */
 
 /**
- * @todo : comments & clean..
+ * Note : I still have doubts on why the portals part work without bugs; but there still no bug after years of use so :D
  */
 
 const renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
@@ -28,6 +28,12 @@ let layer,
     contextmenuListener,
     openPortals = [];
 
+function isElement( o ) {
+	return (
+		typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
+		o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string"
+	);
+}
 
 /**
  * Find all dom node in the element parent hierarchy
@@ -53,13 +59,14 @@ export function findReactComponent( element ) {
 	for ( const key in element ) {
 		
 		if ( key.startsWith('__reactInternalInstance$') || key.startsWith('__reactFiber$') ) {
-			fiberNode = element[ key ];
+			fiberNode = element[key];
 			while ( fiberNode.return ) {
 				if ( fiberNode.stateNode && !comps.includes(fiberNode.stateNode) )
 					comps.push(fiberNode.stateNode)
 				fiberNode = fiberNode.return;
 			}
-			return comps;
+			
+			return comps.find(n => !isElement(n));
 		}
 	}
 	return element.parentNode && this.findReactParents(element.parentNode);
@@ -210,7 +217,7 @@ export function initContextListeners( ContextMenu ) {
 					    ( list, cmp ) => {
 						    if ( !cmp || rootExclusive ) return list;
 						    list.push(cmp);
-						    if ( cmp.props.hasOwnProperty("root") )
+						    if ( cmp.props?.hasOwnProperty("root") )
 							    rootExclusive = cmp;
 						    return list
 					    },
