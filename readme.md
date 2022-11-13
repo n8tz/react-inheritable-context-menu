@@ -13,10 +13,6 @@ Check the sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/re
  npm i react-inheritable-contextmenu -s
 ```
 
-## React 18 compat
-
-This lib 
-
 ## Why another context menu ?
 
 Because none of the existing ones have met my requirements :
