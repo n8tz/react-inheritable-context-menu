@@ -1,6 +1,6 @@
 /*
  * The MIT License (MIT)
- * Copyright (c) 2019. Wise Wild Web
+ * Copyright (c) 2022-2023. Nathan Braun
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -22,12 +22,14 @@ let initialized = 0;
 
 class ContextMenu extends React.Component {
 	
-	static DefaultZIndex       = 1000;
-	static DefaultAnimDuration = 250;
-	static DefaultMenuComp     = 'div';
-	static DefaultSubMenuComp  = 'div';
-	static DefaultShowAnim     = false;
-	static DefaultHideAnim     = false;
+	static DefaultZIndex        = 1000;
+	static DefaultAnimDuration  = 250;
+	static DefaultMenuComp      = 'div';
+	static DefaultSubMenuComp   = 'div';
+	static DefaultShowAnim      = false;
+	static DefaultHideAnim      = false;
+	static DefaultMenuEvent     = "contextmenu";
+	static shouldUseContextMenu = e => (e.button === 2 && e.buttons !== 4);
 	
 	
 	constructor( props ) {
@@ -51,7 +53,7 @@ class ContextMenu extends React.Component {
 	 */
 	renderWithContext( menus, e, current ) {
 		let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(React.Fragment);
-		return <CRCComp key={ current }/>;
+		return <CRCComp key={current}/>;
 	}
 	
 	/**
@@ -64,7 +66,7 @@ class ContextMenu extends React.Component {
 	renderWithContext_ex( target, menus, e ) {
 		let RComp    = ContextMenu.DefaultSubMenuComp,
 		    Renderer = <RComp>
-			    { this.renderMenu(e, menus) }
+			    {this.renderMenu(e, menus)}
 		    </RComp>,
 		    menu     = document.createElement("div");
 		
@@ -85,7 +87,7 @@ class ContextMenu extends React.Component {
 	renderMenu( e, menus ) {
 		let childs = this.renderableChilds;
 		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
-		       <React.Fragment>{ childs || '' }</React.Fragment>
+		       <React.Fragment>{childs || ''}</React.Fragment>
 	}
 	
 	render() {
@@ -93,7 +95,7 @@ class ContextMenu extends React.Component {
 		this.renderableChilds = React.Children.toArray(this.props.children) || [];
 		
 		// render a flagged dom node to be found when recurring on the dom tree
-		return <div className={ "inContextMenuComp" } style={ { display: "none" } }></div>;
+		return <div className={"inContextMenuComp"} style={{ display: "none" }}></div>;
 	}
 }
 
