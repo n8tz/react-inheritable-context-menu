@@ -69,7 +69,7 @@ export function findReactComponent( element ) {
 			return comps.find(n => !isElement(n));
 		}
 	}
-	return element.parentNode && this.findReactParents(element.parentNode);
+	return element.parentNode && findReactComponent(element.parentNode);
 };
 
 
@@ -150,11 +150,11 @@ export function applyCssAnim( node, id, tm, cb ) {
 /**
  * Remove all listeners (destroy the context Menu
  */
-export function clearContextListeners() {
+export function clearContextListeners( ContextMenu ) {
 	try {
 		document.body.removeChild(layer);
 		document.removeEventListener(
-			"contextmenu",
+			ContextMenu.DefaultMenuEvent,
 			contextmenuListener);
 		contextmenuListener = layer = null;
 	} catch ( e ) {
@@ -204,9 +204,17 @@ export function initContextListeners( ContextMenu ) {
 	
 	// on right click
 	document.addEventListener(
-		"contextmenu",
+		ContextMenu.DefaultMenuEvent,
 		contextmenuListener = function ( e ) {
-			if ( currentMenu )
+			
+			if ( !ContextMenu.shouldUseContextMenu(e) )
+				return;
+			
+			// ok we deal with this event
+			e.preventDefault();
+			e.stopPropagation();
+			
+			if ( currentMenu ) // if there an open menu
 				destroy(null, true);
 			
 			
@@ -304,8 +312,6 @@ export function initContextListeners( ContextMenu ) {
 				}
 			);
 			
-			e.preventDefault();
-			e.stopPropagation();
 			return false;
 		});
 };

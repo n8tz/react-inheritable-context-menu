@@ -13,6 +13,10 @@ Check the sample [here](http://htmlpreview.github.io/?https://github.com/n8tz/re
  npm i react-inheritable-contextmenu -s
 ```
 
+## React 18 compat
+
+This lib 
+
 ## Why another context menu ?
 
 Because none of the existing ones have met my requirements :
@@ -40,7 +44,9 @@ ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
 // set show/hide anims duration (default to 250)
 ContextMenu.DefaultAnimDuration = 200;
 
-//...
+// Some trigering options ( defaults )
+// ContextMenu.DefaultMenuEvent     = "contextmenu";
+// ContextMenu.shouldUseContextMenu = e => (e.button === 2 && e.buttons !== 4); // Default: don't trigger if right click + middle click   
 
 render(){
     return <div className={ "root" }>
