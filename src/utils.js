@@ -210,9 +210,6 @@ export function initContextListeners( ContextMenu ) {
 			if ( !ContextMenu.shouldUseContextMenu(e) )
 				return;
 			
-			// ok we deal with this event
-			e.preventDefault();
-			e.stopPropagation();
 			
 			if ( currentMenu ) // if there an open menu
 				destroy(null, true);
@@ -237,6 +234,10 @@ export function initContextListeners( ContextMenu ) {
 			
 			if ( !menuComps.length || menuComps[0].props.hasOwnProperty('native') )
 				return;
+			
+			// ok we deal with this event
+			e.preventDefault();
+			e.stopPropagation();
 			
 			document.body.addEventListener('click', destroy);
 			
