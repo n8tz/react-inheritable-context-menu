@@ -12,7 +12,7 @@
  *  @contact : n8tz.js@gmail.com
  */
 import React         from "react";
-import ReactDom      from "react-dom";
+import {createRoot}  from "react-dom/client";
 import {ContextMenu} from ".."
 import "./samples.scss"
 
@@ -24,10 +24,13 @@ ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
 ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
 
 ContextMenu.DefaultAnimDuration = 200;
-//ContextMenu.DefaultMenuComp     = ( { children } ) =>
-//	<div className={ "contextMenu" }>
-//		{ children || '' }
-//	</div>;
+//ContextMenu.DefaultMenuComp     = React.forwardRef(( { children }, ref ) =>
+//	                                                   <div className={"contextMenu"} ref={ref}>
+//		                                                   <div>Da menu:</div>
+//		                                                   <hr/>
+//		                                                   {children || ''}
+//	                                                   </div>
+//);
 
 class Sample extends React.Component {
 	render() {
@@ -76,15 +79,10 @@ class Sample extends React.Component {
 
 document.body.innerHTML = '<div id="app"></div>'
 
-function renderSamples() {
-	ReactDom.render(
-		<Sample/>
-		, document.getElementById('app'));
+function renderSample() {
+	createRoot(document.getElementById('app')).render(
+		<Sample/>);
 	
 }
 
-renderSamples()
-
-if ( process.env.NODE_ENV !== 'production' && module.hot ) {
-	module.hot.accept('.', renderSamples);
-}
+renderSample()

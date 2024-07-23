@@ -23,6 +23,11 @@ Because none of the existing ones have met my requirements :
  - Simple to animate with css
  - Do not break SSR
 
+## Note
+
+Version ^2.0.0 are React 18 compatible<br>
+Use V1.x.x for previous React versions 
+
 ## Usage
 
 ```jsx

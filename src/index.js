@@ -11,93 +11,29 @@
  *  @author : Nathanael Braun
  *  @contact : n8tz.js@gmail.com
  */
-import React    from "react";
-import ReactDom from "react-dom";
+import React          from "react";
+import useContextMenu from "./hooks/useContextMenu";
 
-const renderSubtreeIntoContainer = ReactDom.unstable_renderSubtreeIntoContainer,
-      isBrowserSide              = (new Function("try {return this===window;}catch(e){ return false;}"))(),
-      utils                      = isBrowserSide && require('./utils');
-
-let initialized = 0;
-
-class ContextMenu extends React.Component {
+const ContextMenu = ( props ) => {
+	const node           = React.useRef(),
+	      { portalNode } = useContextMenu(node, props, ContextMenu);
 	
-	static DefaultZIndex        = 1000;
-	static DefaultAnimDuration  = 250;
-	static DefaultMenuComp      = 'div';
-	static DefaultSubMenuComp   = 'div';
-	static DefaultShowAnim      = false;
-	static DefaultHideAnim      = false;
-	static DefaultMenuEvent     = "contextmenu";
-	static shouldUseContextMenu = e => (e.button === 2 && e.buttons !== 4);
-	
-	
-	constructor( props ) {
-		super(...arguments)
-		if ( !initialized && isBrowserSide )
-			utils.initContextListeners(ContextMenu);
-		initialized++;
-	}
-	
-	componentWillUnmount() {
-		if ( !--initialized )
-			utils.clearContextListeners(ContextMenu);
-	}
-	
-	/**
-	 * Return a rendered React component with the menu
-	 * @param menus
-	 * @param e
-	 * @param current
-	 * @returns {*}
-	 */
-	renderWithContext( menus, e, current ) {
-		let CRCComp = utils.airRender(this.renderWithContext_ex.bind(this), menus, e)(React.Fragment);
-		return <CRCComp key={current}/>;
-	}
-	
-	/**
-	 * Return a dom node with the menu rendered inside
-	 * @param target
-	 * @param menus
-	 * @param e
-	 * @returns {HTMLElement}
-	 */
-	renderWithContext_ex( target, menus, e ) {
-		let RComp    = ContextMenu.DefaultSubMenuComp,
-		    Renderer = <RComp>
-			    {this.renderMenu(e, menus)}
-		    </RComp>,
-		    menu     = document.createElement("div");
-		
-		menu.className = "inContextSubMenu";
-		target.appendChild(menu);
-		
-		renderSubtreeIntoContainer(this, Renderer, menu);
-		
-		return menu
-	}
-	
-	/**
-	 * Return / render the real menu
-	 * @param e
-	 * @param menus
-	 * @returns {*}
-	 */
-	renderMenu( e, menus ) {
-		let childs = this.renderableChilds;
-		return this.props.renderMenu ? this.props.renderMenu(e, menus, childs) :
-		       <React.Fragment>{childs || ''}</React.Fragment>
-	}
-	
-	render() {
-		// keep the renderable so we can render them when asked
-		this.renderableChilds = React.Children.toArray(this.props.children) || [];
-		
-		// render a flagged dom node to be found when recurring on the dom tree
-		return <div className={"inContextMenuComp"} style={{ display: "none" }}></div>;
-	}
+	// render a flagged dom node to be found when recurring on the dom tree
+	return <div className={"inContextMenuComp"} style={{ display: "none" }} ref={node}>
+		{
+			portalNode
+		}
+	</div>;
 }
+
+ContextMenu.DefaultZIndex        = 1000;
+ContextMenu.DefaultAnimDuration  = 250;
+ContextMenu.DefaultMenuComp      = 'div';
+ContextMenu.DefaultSubMenuComp   = 'div';
+ContextMenu.DefaultShowAnim      = false;
+ContextMenu.DefaultHideAnim      = false;
+ContextMenu.DefaultMenuEvent     = "contextmenu";
+ContextMenu.shouldUseContextMenu = e => (e.button === 2 && e.buttons !== 4);
 
 export {ContextMenu};
 export default ContextMenu;

@@ -12,28 +12,18 @@
  *  @contact : n8tz.js@gmail.com
  */
 
-/**
- * Note : I still have doubts on why the portals part work without bugs; but there still no bug after years of use so :D
- */
 
-const renderSubtreeIntoContainer = require("react-dom").unstable_renderSubtreeIntoContainer,
-      React                      = require('react'),
-      ReactDOM                   = require('react-dom');
+import {createRoot} from "react-dom/client";
+
+const
+	React = require('react');
 
 /**
  * Static values
  */
 let layer,
     currentMenu,
-    contextmenuListener,
-    openPortals = [];
-
-function isElement( o ) {
-	return (
-		typeof HTMLElement === "object" ? o instanceof HTMLElement : //DOM2
-		o && typeof o === "object" && o !== null && o.nodeType === 1 && typeof o.nodeName === "string"
-	);
-}
+    contextmenuListener;
 
 /**
  * Find all dom node in the element parent hierarchy
@@ -47,78 +37,8 @@ export function findAllMenuFrom( element ) {
 		element = element.parentNode;
 	} while ( element && element !== document );
 	return menus;
-};
+}
 
-/**
- * Find the react component that generate element dom node
- * @param element
- * @returns {React.Component}
- */
-export function findReactComponent( element ) {
-	let fiberNode, comps = [element];
-	for ( const key in element ) {
-		
-		if ( key.startsWith('__reactInternalInstance$') || key.startsWith('__reactFiber$') ) {
-			fiberNode = element[key];
-			while ( fiberNode.return ) {
-				if ( fiberNode.stateNode && !comps.includes(fiberNode.stateNode) )
-					comps.push(fiberNode.stateNode)
-				fiberNode = fiberNode.return;
-			}
-			
-			return comps.find(n => !isElement(n));
-		}
-	}
-	return element.parentNode && findReactComponent(element.parentNode);
-};
-
-
-/**
- * Render the root of the Context Menu
- * @param target
- * @param menus
- * @param renderChilds
- * @param DefaultMenuComp
- * @returns {HTMLElement}
- */
-export function renderMenu( target, menus, renderChilds, DefaultMenuComp ) {
-	let RComp    = DefaultMenuComp,
-	    Renderer =
-		    <RComp>
-			    {renderChilds()}
-		    </RComp>;
-	
-	let menu = document.createElement("div");
-	target.appendChild(menu)
-	
-	renderSubtreeIntoContainer(menus[0], Renderer, menu);
-	return menu
-};
-
-/**
- * Hoc to make sub menus renderers
- * @param render
- * @param menus
- * @param e
- * @returns {function(*): {React.Component}}
- */
-export function airRender( render, menus, e ) {
-	return ( Comp ) => {
-		
-		return class AirRCComp extends React.Component {
-			
-			componentDidMount() {
-				openPortals.push(render(this.refs.node.parentNode, menus, e));
-			}
-			
-			render() {
-				return <Comp>
-					<span ref={"node"} style={{ display: "none" }}/>
-				</Comp>
-			}
-		}
-	}
-};
 
 /**
  * Apply 'id' css anim on 'node' element during 'tm'ms
@@ -136,7 +56,7 @@ export function applyCssAnim( node, id, tm, cb ) {
 		    }
 		    clearTimeout(stm);
 		    Object.assign(node.style, { animation: null });
-		
+		    
 		    node.removeEventListener('animationend', evt);
 		    cb && cb(node);
 	    };
@@ -145,7 +65,7 @@ export function applyCssAnim( node, id, tm, cb ) {
 	Object.assign(node.style, { animation: id + " " + (tm / 1000) + "s forwards" });
 	
 	stm = setTimeout(evt, tm * 1.5);
-};
+}
 
 /**
  * Remove all listeners (destroy the context Menu
@@ -166,7 +86,7 @@ export function clearContextListeners( ContextMenu ) {
  * Init the context Menu
  * @param ContextMenu
  */
-export function initContextListeners( ContextMenu ) {
+export function initContextListeners( ContextMenu, menusById ) {
 	
 	// init overlay
 	layer = document.createElement("div");
@@ -183,11 +103,13 @@ export function initContextListeners( ContextMenu ) {
 	layer.className = "inContextMenuLayer";
 	document.body.appendChild(layer);
 	
-	let destroy = ( e, now ) => {
+	let resize, scroll, menusToClean, reactRoot, destroy = ( e, now ) => {
 		let clear = tm => {
 			layer.style.display = 'none';
 			currentMenu         = null;
-			openPortals.forEach(node => ReactDOM.unmountComponentAtNode(node));
+			while ( menusToClean?.length )
+				menusToClean.pop()()
+			reactRoot.unmount();
 			layer.innerHTML = '';
 		};
 		if ( !now ) {
@@ -200,7 +122,7 @@ export function initContextListeners( ContextMenu ) {
 		window.removeEventListener('scroll', scroll);
 		document.body.removeEventListener('click', destroy)
 		
-	}, resize, scroll;
+	};
 	
 	// on right click
 	document.addEventListener(
@@ -214,12 +136,11 @@ export function initContextListeners( ContextMenu ) {
 			if ( currentMenu ) // if there an open menu
 				destroy(null, true);
 			
-			
 			let rootExclusive,
 			    menuComps = findAllMenuFrom(e.target)
-				    .map(findReactComponent)
 				    .reduce(
-					    ( list, cmp ) => {
+					    ( list, node ) => {
+						    let cmp = node.menuId && menusById[node.menuId];
 						    if ( !cmp || rootExclusive ) return list;
 						    list.push(cmp);
 						    if ( cmp.props?.hasOwnProperty("root") )
@@ -263,16 +184,63 @@ export function initContextListeners( ContextMenu ) {
 				scroll = () => {
 					destroy(null, false);
 				});
-			currentMenu = renderMenu(
-				layer,
-				menuComps,
-				() => {
-					return <React.Fragment>{menuComps.map(( cmp, i ) => cmp.renderWithContext(menuComps, e, i))}</React.Fragment>;
-				}
-				, ContextMenu.DefaultMenuComp
-			);
+			let DefaultMenuComp   = ContextMenu.DefaultMenuComp;
+			currentMenu           = document.createElement('div');//createRoot(layer, <RootMenu/>)
+			currentMenu.className = "inContextMenu";
+			layer.appendChild(currentMenu)
+			reactRoot          = createRoot(currentMenu)
 			
-			openPortals.push(currentMenu);
+			// Must wait the render of JitComp, then the render of all the submenus
+			let waitingRenders = menuComps.length,
+			    doReDim        = () => {
+				    if ( !--waitingRenders )
+					    // show on next animaton frame
+					    requestAnimationFrame(
+						    function () {
+							    
+							    x = e.x;
+							    y = e.y;
+							    
+							    if ( (x + currentMenu.offsetWidth) > mw )
+								    x -= currentMenu.offsetWidth;
+							    if ( (y + currentMenu.offsetHeight) > mh )
+								    y -= currentMenu.offsetHeight;
+							    
+							    Object.assign(
+								    currentMenu.style,
+								    {
+									    top       : y + 'px',
+									    left      : x + 'px',
+									    width     : currentMenu.offsetWidth + 'px',
+									    height    : currentMenu.offsetHeight + 'px',
+									    visibility: 'visible'
+								    }
+							    );
+							    ContextMenu.DefaultShowAnim &&
+							    applyCssAnim(currentMenu, ContextMenu.DefaultShowAnim, ContextMenu.DefaultAnimDuration)
+						    }
+					    );
+			    },
+			    JitComp        = () => {
+				    const airRenderRef = React.useRef();
+				    React.useEffect(
+					    () => {
+						    menusToClean = menuComps.map(
+							    cmp => {
+								    let cmpMenuNode = document.createElement('div');
+								    
+								    cmpMenuNode.className = "inContextSubMenu";
+								    cmp.doReDim           = doReDim;
+								    airRenderRef.current.appendChild(cmpMenuNode);
+								    return cmp.triggerRender(cmpMenuNode, menuComps, e);
+							    }
+						    )
+					    }
+				    )
+				    return <DefaultMenuComp ref={airRenderRef}>
+				    </DefaultMenuComp>
+			    };
+			reactRoot.render(<JitComp/>)
 			
 			Object.assign(
 				currentMenu.style,
@@ -280,39 +248,11 @@ export function initContextListeners( ContextMenu ) {
 					pointerEvents: "all",
 					position     : "absolute",
 					display      : "flex",
-					visibility   : 'hidden'
+					visibility: 'hidden'
 				}
 			);
 			
-			currentMenu.className = "inContextMenu";
-			
-			// show on next animaton frame
-			requestAnimationFrame(
-				function () {
-					
-					x = e.x;
-					y = e.y;
-					
-					if ( (x + currentMenu.offsetWidth) > mw )
-						x -= currentMenu.offsetWidth;
-					if ( (y + currentMenu.offsetHeight) > mh )
-						y -= currentMenu.offsetHeight;
-					
-					Object.assign(
-						currentMenu.style,
-						{
-							top       : y + 'px',
-							left      : x + 'px',
-							width     : currentMenu.offsetWidth + 'px',
-							height    : currentMenu.offsetHeight + 'px',
-							visibility: 'visible'
-						}
-					);
-					ContextMenu.DefaultShowAnim &&
-					applyCssAnim(currentMenu, ContextMenu.DefaultShowAnim, ContextMenu.DefaultAnimDuration)
-				}
-			);
 			
 			return false;
 		});
-};
+}
