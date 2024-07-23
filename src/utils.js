@@ -167,17 +167,7 @@ export function initContextListeners( ContextMenu, menusById ) {
 			window.addEventListener(
 				'resize',
 				resize = () => {
-					x  = (x / mw) * document.body.offsetWidth;
-					y  = (y / mh) * document.body.offsetHeight;
-					mw = window.innerWidth;
-					mh = window.innerHeight;
-					Object.assign(
-						currentMenu.style,
-						{
-							top : y + 'px',
-							left: x + 'px',
-						}
-					)
+					destroy(null, false);
 				});
 			window.addEventListener(
 				'scroll',
