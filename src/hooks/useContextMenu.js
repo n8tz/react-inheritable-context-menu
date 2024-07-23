@@ -6,6 +6,7 @@ const isBrowserSide = (new Function("try {return this===window;}catch(e){ return
 
 
 let initialized = 0,
+    lastId      = 0,
     menuById    = [];
 export default function useContextMenu( ref, props, options ) {
 	const [portalNode, setPortalNode] = React.useState(),
@@ -15,7 +16,8 @@ export default function useContextMenu( ref, props, options ) {
 		if ( !initialized && isBrowserSide )
 			utils.initContextListeners(options, menuById);
 		initialized++;
-		menuIdRef.current = initialized;
+		lastId++;
+		menuIdRef.current = lastId;
 		if ( ref.current )
 			ref.current.menuId = menuIdRef.current;
 		
