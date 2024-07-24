@@ -24,13 +24,18 @@ ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';
 ContextMenu.DefaultHideAnim = 'slide-out-blurred-right';
 
 ContextMenu.DefaultAnimDuration = 200;
-//ContextMenu.DefaultMenuComp     = React.forwardRef(( { children }, ref ) =>
-//	                                                   <div className={"contextMenu"} ref={ref}>
+//ContextMenu.DefaultMenuComp     = ( { children } ) =>
+//	                                                   <div className={"contextMenu"}>
 //		                                                   <div>Da menu:</div>
 //		                                                   <hr/>
 //		                                                   {children || ''}
-//	                                                   </div>
-//);
+//	                                                   </div>;
+//ContextMenu.DefaultSubMenuComp     = ( { children } ) =>
+//	<>
+//		<hr/>
+//		{children || ''}
+//		<hr/>
+//	</>;
 
 class Sample extends React.Component {
 	render() {

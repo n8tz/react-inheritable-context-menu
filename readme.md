@@ -25,7 +25,7 @@ Because none of the existing ones have met my requirements :
 
 ## Note
 
-Version ^2.0.0 are React 18 compatible<br>
+Version ^2.0.0 only work with React ^18<br>
 Use V1.x.x for previous React versions 
 
 ## Usage
@@ -37,6 +37,18 @@ import { ContextMenu } from "react-inheritable-contextmenu";
 // override default rendered comps
 // * there is no css builtin, but there is classNames .inContextMenuLayer > .inContextMenu .inContextSubMenu
 ContextMenu.DefaultMenuComp = Paper
+//ContextMenu.DefaultMenuComp     = ( { children } ) =>
+//	                                                   <div className={"contextMenu"}>
+//		                                                   <div>Da menu:</div>
+//		                                                   <hr/>
+//		                                                   {children || ''}
+//	                                                   </div>;
+//ContextMenu.DefaultSubMenuComp     = ( { children } ) =>
+//	<>
+//		<hr/>
+//		{children || ''}
+//		<hr/>
+//	</>;
 
 // add optional cool anims ( choose & add in css any anims in http://animista.net/ )
 ContextMenu.DefaultShowAnim = 'slide-in-blurred-left';

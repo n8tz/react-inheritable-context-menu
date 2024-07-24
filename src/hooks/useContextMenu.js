@@ -12,8 +12,8 @@ export default function useContextMenu( ref, props, options ) {
 	const [portalNode, setPortalNode] = React.useState(),
 	      menuIdRef                   = React.useRef(0);
 	
-	if ( !menuIdRef.current ) {
-		if ( !initialized && isBrowserSide )
+	if ( !menuIdRef.current  && isBrowserSide) {
+		if ( !initialized )
 			utils.initContextListeners(options, menuById);
 		initialized++;
 		lastId++;

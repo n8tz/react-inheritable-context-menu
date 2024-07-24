@@ -175,10 +175,10 @@ export function initContextListeners( ContextMenu, menusById ) {
 					destroy(null, false);
 				});
 			let DefaultMenuComp   = ContextMenu.DefaultMenuComp;
-			currentMenu           = document.createElement('div');//createRoot(layer, <RootMenu/>)
+			currentMenu           = document.createElement('div');
 			currentMenu.className = "inContextMenu";
 			layer.appendChild(currentMenu)
-			reactRoot          = createRoot(currentMenu)
+			reactRoot = createRoot(currentMenu)
 			
 			// Must wait the render of JitComp, then the render of all the submenus
 			let waitingRenders = menuComps.length,
@@ -221,13 +221,15 @@ export function initContextListeners( ContextMenu, menusById ) {
 								    
 								    cmpMenuNode.className = "inContextSubMenu";
 								    cmp.doReDim           = doReDim;
-								    airRenderRef.current.appendChild(cmpMenuNode);
+								    if ( airRenderRef.current )
+									    airRenderRef.current.parentNode.appendChild(cmpMenuNode);
 								    return cmp.triggerRender(cmpMenuNode, menuComps, e);
 							    }
 						    )
 					    }
 				    )
-				    return <DefaultMenuComp ref={airRenderRef}>
+				    return <DefaultMenuComp>
+					    <div ref={airRenderRef} style={{ display: "none" }}/>
 				    </DefaultMenuComp>
 			    };
 			reactRoot.render(<JitComp/>)
@@ -238,7 +240,7 @@ export function initContextListeners( ContextMenu, menusById ) {
 					pointerEvents: "all",
 					position     : "absolute",
 					display      : "flex",
-					visibility: 'hidden'
+					visibility   : 'hidden'
 				}
 			);
 			
