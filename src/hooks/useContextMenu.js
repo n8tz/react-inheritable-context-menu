@@ -49,9 +49,9 @@ export default function useContextMenu( ref, props, options ) {
 	)
 	React.useLayoutEffect(
 		() => {
-			if ( portalNode && menuById[menuIdRef.current].doReDim ) {
-				menuById[menuIdRef.current].doReDim()
-				delete menuById[menuIdRef.current].doReDim;
+			if ( portalNode && menuById[menuIdRef.current].onMenuItemRendered ) {
+				menuById[menuIdRef.current].onMenuItemRendered()
+				delete menuById[menuIdRef.current].onMenuItemRendered;
 			}
 		}, [portalNode]
 	)

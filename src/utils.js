@@ -78,8 +78,31 @@ export function clearContextListeners( ContextMenu ) {
 			contextmenuListener);
 		contextmenuListener = layer = null;
 	} catch ( e ) {
-	
+		
 	}
+}
+
+const ContextMenuComp = ( { menuComps, onMenuItemRendered, setMenusToClean, DefaultMenuComp, clickEvent } ) => {
+	const airRenderRef = React.useRef();
+	React.useEffect(
+		() => {
+			setMenusToClean(menuComps.map(
+				                cmp => {
+					                let cmpMenuNode = document.createElement('div');
+					                
+					                cmpMenuNode.className  = "inContextSubMenu";
+					                cmp.onMenuItemRendered = onMenuItemRendered;//
+					                if ( airRenderRef.current?.parentNode )
+						                airRenderRef.current.parentNode.appendChild(cmpMenuNode);
+					                return cmp.triggerRender(cmpMenuNode, menuComps, clickEvent);
+				                }
+			                )
+			)
+		}
+	)
+	return <DefaultMenuComp>
+		<div ref={airRenderRef} style={{ display: "none" }}/>
+	</DefaultMenuComp>
 }
 
 /**
@@ -103,26 +126,33 @@ export function initContextListeners( ContextMenu, menusById ) {
 	layer.className = "inContextMenuLayer";
 	document.body.appendChild(layer);
 	
-	let resize, scroll, menusToClean, reactRoot, destroy = ( e, now ) => {
-		let clear = tm => {
-			layer.style.display = 'none';
-			currentMenu         = null;
-			while ( menusToClean?.length )
-				menusToClean.pop()()
-			reactRoot.unmount();
-			layer.innerHTML = '';
-		};
-		if ( !now ) {
-			if ( ContextMenu.DefaultHideAnim )
-				applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
-			else setTimeout(clear, 10);
-		}
-		else clear();
-		window.removeEventListener('resize', resize);
-		window.removeEventListener('scroll', scroll);
-		document.body.removeEventListener('click', destroy)
-		
-	};
+	let resize, scroll, menusToClean, reactRoot,
+	    destroy = ( e, now ) => {
+		    let clear = tm => {
+			    let crRoot          = reactRoot;
+			    layer.style.display = 'none';
+			    currentMenu         = null;
+			    while ( menusToClean?.length )
+				    menusToClean.pop()()
+			    layer.innerHTML = '';
+			    setTimeout(
+				    () => {
+					    
+					    crRoot.unmount();
+				    }, 200
+			    )
+		    };
+		    window.removeEventListener('resize', resize);
+		    window.removeEventListener('scroll', scroll);
+		    document.body.removeEventListener('click', destroy)
+		    if ( !now ) {
+			    if ( ContextMenu.DefaultHideAnim )
+				    applyCssAnim(currentMenu, ContextMenu.DefaultHideAnim, ContextMenu.DefaultAnimDuration, clear);
+			    else setTimeout(clear, 10);
+		    }
+		    else clear();
+		    
+	    };
 	
 	// on right click
 	document.addEventListener(
@@ -181,21 +211,28 @@ export function initContextListeners( ContextMenu, menusById ) {
 			reactRoot = createRoot(currentMenu)
 			
 			// Must wait the render of JitComp, then the render of all the submenus
-			let waitingRenders = menuComps.length,
-			    doReDim        = () => {
+			let waitingRenders     = menuComps.length,
+			    onMenuItemRendered = () => {
 				    if ( !--waitingRenders )
 					    // show on next animaton frame
 					    requestAnimationFrame(
 						    function () {
 							    
+							    let orient = ["Bottom", "Left"]
+							    
 							    x = e.x;
 							    y = e.y;
 							    
-							    if ( (x + currentMenu.offsetWidth) > mw )
-								    x -= currentMenu.offsetWidth;
-							    if ( (y + currentMenu.offsetHeight) > mh )
-								    y -= currentMenu.offsetHeight;
 							    
+							    if ( (x + currentMenu.offsetWidth) > mw ) {
+								    x -= currentMenu.offsetWidth;
+								    orient[1] = "Right";
+							    }
+							    if ( (y + currentMenu.offsetHeight) > mh ) {
+								    y -= currentMenu.offsetHeight;
+								    orient[0] = "Top";
+							    }
+							    currentMenu.classList.add("inContextMenuDir_" + orient.join(""));
 							    Object.assign(
 								    currentMenu.style,
 								    {
@@ -210,29 +247,14 @@ export function initContextListeners( ContextMenu, menusById ) {
 							    applyCssAnim(currentMenu, ContextMenu.DefaultShowAnim, ContextMenu.DefaultAnimDuration)
 						    }
 					    );
-			    },
-			    JitComp        = () => {
-				    const airRenderRef = React.useRef();
-				    React.useEffect(
-					    () => {
-						    menusToClean = menuComps.map(
-							    cmp => {
-								    let cmpMenuNode = document.createElement('div');
-								    
-								    cmpMenuNode.className = "inContextSubMenu";
-								    cmp.doReDim           = doReDim;
-								    if ( airRenderRef.current )
-									    airRenderRef.current.parentNode.appendChild(cmpMenuNode);
-								    return cmp.triggerRender(cmpMenuNode, menuComps, e);
-							    }
-						    )
-					    }
-				    )
-				    return <DefaultMenuComp>
-					    <div ref={airRenderRef} style={{ display: "none" }}/>
-				    </DefaultMenuComp>
 			    };
-			reactRoot.render(<JitComp/>)
+			reactRoot.render(<ContextMenuComp {...{
+				menuComps,
+				onMenuItemRendered,
+				setMenusToClean: ( list ) => (menusToClean = list),
+				DefaultMenuComp,
+				clickEvent     : e
+			}}/>)
 			
 			Object.assign(
 				currentMenu.style,
